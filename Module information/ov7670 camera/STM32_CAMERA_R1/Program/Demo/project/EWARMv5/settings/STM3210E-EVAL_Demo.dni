@@ -1,0 +1,190 @@
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[CodeCoverage]
+Enabled=_ 0
+[Profiling]
+Enabled=0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[JLinkDriver]
+SWOInfo_CpuClock=0x044AA200
+SWOInfo_SWOClockAutoDetect=0
+SWOInfo_JtagSpeed=0x001E8480
+SWOInfo_SWOPrescaler=0x00000024
+SWOInfo_SWOClockWanted=0x001E8480
+SWOInfo_HWTraceEnabled=0
+SWOInfo_TimestampsEnabled=0
+SWOInfo_TimestampsPrescalerIndex=0x00000000
+SWOInfo_TimestampsPrescalerData=0x00000000
+SWOInfo_PCSamplingEnabled=0
+SWOInfo_PCSamplingCYCTAP=0x00000001
+SWOInfo_PCSamplingPOSTCNT=0x0000000F
+SWOInfo_CPIEnabled=0
+SWOInfo_EXCEnabled=0
+SWOInfo_SLEEPEnabled=0
+SWOInfo_LSUEnabled=0
+SWOInfo_FOLDEnabled=0
+SWOInfo_EXCTRCEnabled=0
+SWOInfo_ITMPortsEnabled=0x00000000
+SWOInfo_ITMPortsTermIO=0x00000000
+SWOInfo_ITMPortsLogFile=0x00000000
+SWOInfo_ITMLogFile=$PROJ_DIR$\ITM.log
+SWOInfo_DataLogMode=0x00000000
+[DebugChecksum]
+Checksum=1559841747
+[InstructionProfiling]
+Enabled=_ 0
+[TraceHelperExtra]
+Enabled=0
+ShowSource=1
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$}.58.15@1" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\..\..\..\..\astm32_HZ_LD\Demo\project\EWARMv5}.238.10@1" 0 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "{$PROJ_DIR$}.89.15@1" 0 0 0 0 "" 0 ""
+Bp3=_ "STD_CODE" "{$PROJ_DIR$}.133.9@1" 0 0 0 0 "" 0 ""
+Bp4=_ "STD_CODE" "{$PROJ_DIR$\..\..\..\..\stm32_Demo_camera_demo\Demo\source\diskio.c}.149.15@1" 0 0 0 0 "" 0 ""
+Bp5=_ "STD_CODE" "{$PROJ_DIR$\..\..\..\..\stm32_Demo_camera_demo\Demo\source\diskio.c}.133.5@1" 0 0 0 0 "" 0 ""
+Count=6
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[TraceHelper]
+Enabled=0
+ShowSource=1
+[SWOTraceHWSettings]
+OverrideDefaultClocks=0
+CpuClock=72000000
+ClockAutoDetect=0
+ClockWanted=2000000
+JtagSpeed=2000000
+Prescaler=36
+TimeStampPrescIndex=0
+TimeStampPrescData=0
+PcSampCYCTAP=1
+PcSampPOSTCNT=15
+PcSampIndex=0
+DataLogMode=0
+ITMportsEnable=0
+ITMportsTermIO=0
+ITMportsLogFile=0
+ITMlogFile=$PROJ_DIR$\ITM.log
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title0=I0
+Setup0=0 1 0 500 2 0 4 0 0
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[EventLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+Title0=Ch0
+Setup0=0 1 0 4294967295 1 0 4 0 0
+Title1=Ch1
+Setup1=0 1 0 4294967295 1 0 4 0 0
+Title2=Ch2
+Setup2=0 1 0 4294967295 1 0 4 0 0
+Title3=Ch3
+Setup3=0 1 0 4294967295 1 0 4 0 0
+SumSortOrder=0
+Event0=1 1 1
+Event1=1 1 1
+Event2=1 1 1
+Event3=1 1 1
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerProbe]
+Frequency=10000
+Probe0=I0
+ProbeSetup0=2 1 1 2 0 0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\source\main.c}.220.10" 0 0 1 "" 0 "" 0
+Count=1
+[Aliases]
+A0=_ "C:\Documents and Settings\wangguanfu\×ÀÃæ\stm32_Demo_ov7725\Demo\source\stm32f10x_it.c" "C:\Documents and Settings\wangguanfu\×ÀÃæ\stm32_Demo_ov7670\Demo\source\stm32f10x_it.c"
+A1=_ "D:\astm32_Demo_OV7670\Demo\source\ILI9331.C" "D:\astm32_Demo_OV7725\Demo\source\ILI9331.C"
+A2=_ "D:\astm32_Demo_OV7670\Demo\source\main.c" "D:\astm32_Demo_OV7725\Demo\source\main.c"
+A3=_ "E:\STM32_FOR_ov7670\astm32_Demo_OV7670\Demo\project\EWARMv5\cortexm3_macro.s" "C:\Documents and Settings\wangguanfu\×ÀÃæ\astm32_Demo_OV7725\Demo\project\EWARMv5\cortexm3_macro.s"
+A4=_ "E:\STM32_FOR_ov7670\astm32_Demo_OV7670\FWLib\library\src\stm32f10x_rcc.c" ""
+Count=5
+SuppressDialog=1

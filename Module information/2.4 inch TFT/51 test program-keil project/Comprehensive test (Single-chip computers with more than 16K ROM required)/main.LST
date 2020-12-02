@@ -1,0 +1,135 @@
+C51 COMPILER V9.01   MAIN                                                                  04/22/2014 09:57:08 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <intrins.h>
+   3          #include <sys\sys.h>
+   4          #include <lcd\lcd.h>
+   5          #include <font\font.h>
+   6          #include <touch\touch.h>
+   7          /* 
+   8          代码测试环境:单片机STC12LE5A60S2,晶振33M  单片机工作电压3.3V
+   9          程序默认IO连接方式：
+  10          控制线：RS-P3^5;    WR-P3^6;   RD-P3^7;   CS-P1^0;   REST-P1^2;
+  11          数据线: DB0-DB7依次连接P0^0-P0^7;  DB8-DB15依次连接P2^0-P2^7;（8位模式下DB0-DB7可以不连接）
+  12          触摸功能连接方式：(不使用触摸可不连接)
+  13          T_CLK-P1^7;  T_CS-P1^4;  T_DIN-P3^0;  T_OUT-P3^1;  T_IRQ-P3^4;
+  14          */      
+  15          sbit key1=P3^2;
+  16          sbit key2=P3^3;
+  17          sbit key3=P3^4;
+  18          u8 ref=0;//刷新显示
+  19          
+  20          u8 jiance() //检测触摸和按键
+  21          {
+  22   1              if (tpstate()==0) //如果触摸按下，则进入绘图程序
+  23   1               {
+  24   2                      LCD_Clear(WHITE); //清屏
+  25   2                      BACK_COLOR=WHITE;
+  26   2                      POINT_COLOR=RED;
+  27   2                      point();
+  28   2                      return 1;
+  29   2               }      
+  30   1              if(key1==0)     //如果按键1按下,进入校准程序 
+  31   1                 {
+  32   2                      Touch_Adjust();//校准
+  33   2                      return 1;
+  34   2                 }
+  35   1               if(key2==0)    //三色刷屏
+  36   1                 {
+  37   2                       LCD_Clear(RED);
+  38   2                       delayms(3000);
+  39   2                       LCD_Clear(GREEN);
+  40   2                       delayms(3000);
+  41   2                       LCD_Clear(BLUE);
+  42   2                       delayms(3000);
+  43   2                       return 1;
+  44   2                 }
+  45   1                 return 0;
+  46   1      }
+  47          void xianshi()//显示信息
+  48          {   
+  49   1              u16 lx,ly;
+  50   1              BACK_COLOR=WHITE;
+  51   1              POINT_COLOR=RED;        
+  52   1              showhanzi(10,0,0);  //晶
+  53   1              showhanzi(45,0,1);  //耀
+  54   1          LCD_ShowString(10,35,"http://ttmcu.taobao.com");
+  55   1              LCD_ShowString(10,55,"LCD_W:"); LCD_ShowNum(70,55,LCD_W,3);
+C51 COMPILER V9.01   MAIN                                                                  04/22/2014 09:57:08 PAGE 2   
+
+  56   1              LCD_ShowString(110,55,"LCD_H:");LCD_ShowNum(160,55,LCD_H,3);    
+  57   1              lx=10;ly=75;                    
+  58   1              LCD_ShowString(lx,ly,"VX:");lx+=40;LCD_ShowNum(lx,ly,vx,5);                                     
+  59   1              lx+=60;
+  60   1              LCD_ShowString(lx,ly,"Vy:");lx+=40;LCD_ShowNum(lx,ly,vy,5);                                     
+  61   1              lx=10;ly=95; 
+  62   1              LCD_ShowString(lx,ly,"CHX:");lx+=40;LCD_ShowNum(lx,ly,chx,5);                                   
+  63   1              lx+=60; 
+  64   1              LCD_ShowString(lx,ly,"CHY:");lx+=40;LCD_ShowNum(lx,ly,chy,5);
+  65   1      }
+  66          void showimage() //显示40*40图片
+  67          {
+  68   1              int i,j,k; 
+  69   1              LCD_Clear(WHITE); //清屏  
+  70   1              xianshi(); //显示信息
+  71   1              for(k=3;k<8;k++)
+  72   1              {
+  73   2                      for(j=0;j<6;j++)
+  74   2                      {       
+  75   3                              Address_set(40*j,40*k,40*j+39,40*k+39);         //坐标设置
+  76   3                          for(i=0;i<1600;i++)
+  77   3                               {      
+  78   4                                       if(jiance()) //检测触摸和按键
+  79   4                                       {      
+  80   5                                              ref=1;
+  81   5                                              return; 
+  82   5                                       }              
+  83   4                                       LCD_WR_DATA8(image[i*2+1],image[i*2]);  //发送颜色数据为提高速度高8位低8位分别传递                                                     
+  84   4                               }      
+  85   3                       }
+  86   2              }
+  87   1              ref=0;                          
+  88   1      }
+  89          main()
+  90          { 
+  91   1              spistar()  ;//模拟SPI初始化
+  92   1              Lcd_Init();   //tft初始化
+  93   1              LCD_Clear(WHITE); //清屏
+  94   1              BACK_COLOR=BLACK;;POINT_COLOR=WHITE; 
+  95   1          showimage(); //显示40*40图片
+  96   1      
+  97   1              while(1)
+  98   1              {
+  99   2                  if(jiance()) //检测触摸和按键
+ 100   2                {     
+ 101   3                      showimage(); //显示40*40图片
+ 102   3                }
+ 103   2                if(ref){showimage();} //显示40*40图片
+ 104   2      
+ 105   2          }
+ 106   1      
+ 107   1      
+ 108   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    920    ----
+   CONSTANT SIZE    =     56    ----
+   XDATA SIZE       =      1      10
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   MAIN                                                                  04/22/2014 09:57:08 PAGE 3   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,8 @@
+"STARTUP.obj",
+"main.obj",
+"LCD.obj",
+"sys.obj",
+"font.obj",
+"touch.obj" 
+TO "ceshi" 
+RAMSIZE(256) 

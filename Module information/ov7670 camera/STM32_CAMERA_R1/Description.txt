@@ -1,0 +1,44 @@
+资源：
+
+1：CPU:意法半导体公司（ST）基于ARM Cortex-M3的32位处理器芯片STM32F103RBT6 72MHZ LQFP64脚，片内具有128KB FLASH，20KB RAM( 片上集成12Bit A/D、PWM、CAN、USB、等资源).
+
+2：带SPI模式TF卡座，支持最大8G（1G的卡速度最快）.
+
+3：带2.8英寸26万色TFT LCD  带触摸屏和触摸屏控制器
+
+4：带标准JTAG（SWD）调试接口.
+
+5：带Mini-USB接口.
+
+6:带独立电源指示LED和I/O控制的状态LED。
+
+7：带一个KEY按键
+
+8：拉出空余I/O及RESET/BOOT0跳线等，方便功能扩展
+
+9：提供所选配套CMOS模块的程序（TFT预浏览，QVGA分辨率拍照保存/BMP格式，FATFS文件系统）
+
+10:带32768HZ RTC及0.22F超级电容
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+GUANFU_WANG@126.COM
+QQ:21578936
+未经许可禁止任何商业用途
+*/
+
+代码包 工程环境 IAR6.40.2
+IAR ARM 6.40.2下载地址http://files.iar.com/ftp/pub/box/CD-EWARM-6402-3992.zip
+
+
+支持模块 OV7670/OV7725/MT9M111/MT9D111/cf0k82c/ck0k24c
+
+条件编译开关：OV7670.h文件
+#define CMOS_MD 0 //OV7670
+#define CMOS_MD 1 //OV7725
+#define CMOS_MD 2 //MT9M111
+#define CMOS_MD 3 //MT9D111
+#define CMOS_MD 4 //ck0k82c-v1
+#define CMOS_MD 5 //ck0k24c-v1
+
+
