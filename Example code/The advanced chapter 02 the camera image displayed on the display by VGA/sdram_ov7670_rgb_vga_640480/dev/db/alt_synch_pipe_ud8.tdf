@@ -1,0 +1,42 @@
+--dffpipe DELAY=1 WIDTH=10 clock clrn d q ALTERA_INTERNAL_OPTIONS=X_ON_VIOLATION_OPTION=OFF
+--VERSION_BEGIN 11.1SP2 cbx_a_gray2bin 2012:01:25:21:14:55:SJ cbx_a_graycounter 2012:01:25:21:14:55:SJ cbx_altdpram 2012:01:25:21:14:55:SJ cbx_altsyncram 2012:01:25:21:14:56:SJ cbx_cycloneii 2012:01:25:21:14:56:SJ cbx_dcfifo 2012:01:25:21:14:56:SJ cbx_fifo_common 2012:01:25:21:14:55:SJ cbx_lpm_add_sub 2012:01:25:21:14:56:SJ cbx_lpm_compare 2012:01:25:21:14:56:SJ cbx_lpm_counter 2012:01:25:21:14:56:SJ cbx_lpm_decode 2012:01:25:21:14:56:SJ cbx_lpm_mux 2012:01:25:21:14:56:SJ cbx_mgl 2012:01:25:21:17:49:SJ cbx_scfifo 2012:01:25:21:14:56:SJ cbx_stratix 2012:01:25:21:14:56:SJ cbx_stratixii 2012:01:25:21:14:56:SJ cbx_stratixiii 2012:01:25:21:14:56:SJ cbx_stratixv 2012:01:25:21:14:56:SJ cbx_util_mgl 2012:01:25:21:14:56:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION dffpipe_pe9 (clock, clrn, d[9..0])
+RETURNS ( q[9..0]);
+
+--synthesis_resources = reg 10 
+OPTIONS ALTERA_INTERNAL_OPTION = "X_ON_VIOLATION_OPTION=OFF";
+
+SUBDESIGN alt_synch_pipe_ud8
+( 
+	clock	:	input;
+	clrn	:	input;
+	d[9..0]	:	input;
+	q[9..0]	:	output;
+) 
+VARIABLE 
+	dffpipe11 : dffpipe_pe9;
+
+BEGIN 
+	dffpipe11.clock = clock;
+	dffpipe11.clrn = clrn;
+	dffpipe11.d[] = d[];
+	q[] = dffpipe11.q[];
+END;
+--VALID FILE

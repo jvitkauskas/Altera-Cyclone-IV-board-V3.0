@@ -1,0 +1,53 @@
+--altpll bandwidth_type="AUTO" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" clk1_divide_by=1 clk1_duty_cycle=50 clk1_multiply_by=1 clk1_phase_shift="0" clk2_divide_by=1 clk2_duty_cycle=50 clk2_multiply_by=1 clk2_phase_shift="-4056" compensate_clock="CLK2" device_family="Cyclone IV E" inclk0_input_frequency=20000 intended_device_family="Cyclone IV E" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_UNUSED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_UNUSED" port_clk4="PORT_UNUSED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" width_clock=5 clk inclk CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 11.1SP2 cbx_altclkbuf 2012:01:25:21:14:55:SJ cbx_altiobuf_bidir 2012:01:25:21:14:55:SJ cbx_altiobuf_in 2012:01:25:21:14:55:SJ cbx_altiobuf_out 2012:01:25:21:14:55:SJ cbx_altpll 2012:01:25:21:14:56:SJ cbx_cycloneii 2012:01:25:21:14:56:SJ cbx_lpm_add_sub 2012:01:25:21:14:56:SJ cbx_lpm_compare 2012:01:25:21:14:56:SJ cbx_lpm_decode 2012:01:25:21:14:56:SJ cbx_lpm_mux 2012:01:25:21:14:56:SJ cbx_mgl 2012:01:25:21:17:49:SJ cbx_stratix 2012:01:25:21:14:56:SJ cbx_stratixii 2012:01:25:21:14:56:SJ cbx_stratixiii 2012:01:25:21:14:56:SJ cbx_stratixv 2012:01:25:21:14:56:SJ cbx_util_mgl 2012:01:25:21:14:56:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cycloneive_pll (areset, clkswitch, configupdate, fbin, inclk[1..0], pfdena, phasecounterselect[phasecounterselect_width-1..0], phasestep, phaseupdown, scanclk, scanclkena, scandata)
+WITH ( AUTO_SETTINGS, BANDWIDTH, BANDWIDTH_TYPE, C0_HIGH, C0_INITIAL, C0_LOW, C0_MODE, C0_PH, C0_TEST_SOURCE, C1_HIGH, C1_INITIAL, C1_LOW, C1_MODE, C1_PH, C1_TEST_SOURCE, C1_USE_CASC_IN, C2_HIGH, C2_INITIAL, C2_LOW, C2_MODE, C2_PH, C2_TEST_SOURCE, C2_USE_CASC_IN, C3_HIGH, C3_INITIAL, C3_LOW, C3_MODE, C3_PH, C3_TEST_SOURCE, C3_USE_CASC_IN, C4_HIGH, C4_INITIAL, C4_LOW, C4_MODE, C4_PH, C4_TEST_SOURCE, C4_USE_CASC_IN, CHARGE_PUMP_CURRENT, CHARGE_PUMP_CURRENT_BITS, CLK0_COUNTER, CLK0_DIVIDE_BY, CLK0_DUTY_CYCLE, CLK0_MULTIPLY_BY, CLK0_OUTPUT_FREQUENCY, CLK0_PHASE_SHIFT, CLK0_PHASE_SHIFT_NUM, clk0_use_even_counter_mode, clk0_use_even_counter_value, CLK1_COUNTER, CLK1_DIVIDE_BY, CLK1_DUTY_CYCLE, CLK1_MULTIPLY_BY, CLK1_OUTPUT_FREQUENCY, CLK1_PHASE_SHIFT, CLK1_PHASE_SHIFT_NUM, clk1_use_even_counter_mode, clk1_use_even_counter_value, CLK2_COUNTER, CLK2_DIVIDE_BY, CLK2_DUTY_CYCLE, CLK2_MULTIPLY_BY, CLK2_OUTPUT_FREQUENCY, CLK2_PHASE_SHIFT, CLK2_PHASE_SHIFT_NUM, clk2_use_even_counter_mode, clk2_use_even_counter_value, CLK3_COUNTER, CLK3_DIVIDE_BY, CLK3_DUTY_CYCLE, CLK3_MULTIPLY_BY, CLK3_OUTPUT_FREQUENCY, CLK3_PHASE_SHIFT, CLK3_PHASE_SHIFT_NUM, clk3_use_even_counter_mode, clk3_use_even_counter_value, CLK4_COUNTER, CLK4_DIVIDE_BY, CLK4_DUTY_CYCLE, CLK4_MULTIPLY_BY, CLK4_OUTPUT_FREQUENCY, CLK4_PHASE_SHIFT, CLK4_PHASE_SHIFT_NUM, clk4_use_even_counter_mode, clk4_use_even_counter_value, CLKOUT_WIDTH = 5, COMPENSATE_CLOCK, ENABLE_SWITCH_OVER_COUNTER, INCLK0_INPUT_FREQUENCY, INCLK1_INPUT_FREQUENCY, LOCK_HIGH, LOCK_LOW, lock_window_ui, lock_window_ui_bits, LOOP_FILTER_C, LOOP_FILTER_C_BITS, LOOP_FILTER_R, LOOP_FILTER_R_BITS, M, M_INITIAL, M_PH, M_TEST_SOURCE, N, OPERATION_MODE, PFD_MAX, PFD_MIN, PHASECOUNTERSELECT_WIDTH = 3, PLL_COMPENSATION_DELAY, PLL_TYPE, SCAN_CHAIN_MIF_FILE, self_reset_on_loss_lock, SIMULATION_TYPE, SWITCH_OVER_COUNTER, SWITCH_OVER_TYPE, TEST_BYPASS_LOCK_DETECT, USE_DC_COUPLING, VCO_CENTER, VCO_DIVIDE_BY, vco_frequency_control, VCO_MAX, VCO_MIN, VCO_MULTIPLY_BY, vco_phase_shift_step, VCO_POST_SCALE, VCO_RANGE_DETECTOR_HIGH_BITS, VCO_RANGE_DETECTOR_LOW_BITS)
+RETURNS ( activeclock, clk[CLKOUT_WIDTH-1..0], clkbad[1..0], fbout, locked, phasedone, scandataout, scandone, vcooverrange, vcounderrange);
+
+--synthesis_resources = cycloneive_pll 1 
+SUBDESIGN altpll_3he2
+( 
+	clk[4..0]	:	output;
+	inclk[1..0]	:	input;
+) 
+VARIABLE 
+	pll1 : cycloneive_pll
+		WITH (
+			BANDWIDTH_TYPE = "auto",
+			CLK1_DIVIDE_BY = 1,
+			CLK1_DUTY_CYCLE = 50,
+			CLK1_MULTIPLY_BY = 1,
+			CLK1_PHASE_SHIFT = "0",
+			CLK2_DIVIDE_BY = 1,
+			CLK2_DUTY_CYCLE = 50,
+			CLK2_MULTIPLY_BY = 1,
+			CLK2_PHASE_SHIFT = "-4056",
+			COMPENSATE_CLOCK = "clk2",
+			INCLK0_INPUT_FREQUENCY = 20000,
+			OPERATION_MODE = "normal",
+			PLL_TYPE = "auto"
+		);
+
+BEGIN 
+	pll1.fbin = pll1.fbout;
+	pll1.inclk[] = inclk[];
+	clk[] = ( pll1.clk[4..0]);
+END;
+--VALID FILE

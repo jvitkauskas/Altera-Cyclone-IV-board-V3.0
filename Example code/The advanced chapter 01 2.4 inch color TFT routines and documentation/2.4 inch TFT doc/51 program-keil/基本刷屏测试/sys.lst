@@ -1,0 +1,32 @@
+C51 COMPILER V9.01   SYS                                                                   02/22/2014 16:10:16 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SYS
+OBJECT MODULE PLACED IN sys.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE sys\sys.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\sys.lst) OBJECT(sys.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <intrins.h>
+   3          #include "sys.h"
+   4          void delayms(int count)  // /* X1ms */
+   5          {
+   6   1              int i,j;
+   7   1              for(i=0;i<count;i++)
+   8   1                      for(j=0;j<1000;j++);
+   9   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     38    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,8 @@
+[ProjectWorkspace]
+ptn_Child1=Frames
+[ProjectWorkspace.Frames]
+ptn_Child1=ChildFrames
+[ProjectWorkspace.Frames.ChildFrames]
+ptn_Child1=Document-0
+ptn_Child2=Document-1
+ptn_Child3=Document-2

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Sep 22 00:44:01 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Revision Name : my_and
+Top-level Entity Name : my_and
+Family : Cyclone IV E
+Total logic elements : 1
+    Total combinational functions : 1
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 3
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jun 18 14:07:34 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : my_encode
+Top-level Entity Name : my_encode
+Family : Cyclone IV E
+Total logic elements : 2
+    Total combinational functions : 2
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Sep 22 21:58:06 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Revision Name : my_mux
+Top-level Entity Name : my_mux
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 1 / 6,272 ( < 1 % )
+    Total combinational functions : 1 / 6,272 ( < 1 % )
+    Dedicated logic registers : 0 / 6,272 ( 0 % )
+Total registers : 0
+Total pins : 4 / 92 ( 4 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

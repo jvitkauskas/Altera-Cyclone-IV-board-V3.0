@@ -1,0 +1,85 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+# Date created = 22:58:02  September 23, 2010
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		IR_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6E22C8
+set_global_assignment -name TOP_LEVEL_ENTITY IR
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:58:02  SEPTEMBER 23, 2010"
+set_global_assignment -name LAST_QUARTUS_VERSION 11.0
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VERILOG_FILE IR.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS OUTPUT DRIVING GROUND"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_23 -to clk
+set_location_assignment PIN_25 -to rst_n
+set_location_assignment PIN_100 -to IR
+set_location_assignment PIN_133 -to led_cs[0]
+set_location_assignment PIN_135 -to led_cs[1]
+set_location_assignment PIN_136 -to led_cs[2]
+set_location_assignment PIN_137 -to led_cs[3]
+set_location_assignment PIN_128 -to led_db[0]
+set_location_assignment PIN_121 -to led_db[1]
+set_location_assignment PIN_125 -to led_db[2]
+set_location_assignment PIN_129 -to led_db[3]
+set_location_assignment PIN_132 -to led_db[4]
+set_location_assignment PIN_126 -to led_db[5]
+set_location_assignment PIN_124 -to led_db[6]
+set_location_assignment PIN_127 -to led_db[7]
+set_global_assignment -name MISC_FILE "E:/红外线/IR.dpf"
+set_global_assignment -name MISC_FILE "E:/红外线2/IR.dpf"
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS OUTPUT DRIVING AN UNSPECIFIED SIGNAL"
+set_global_assignment -name DEVICE_FILTER_PACKAGE "ANY QFP"
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8

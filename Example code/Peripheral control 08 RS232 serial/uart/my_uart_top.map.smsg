@@ -1,0 +1,32 @@
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.0 Build 33 02/05/2007 SJ Full Version
+    Info: Processing started: Fri Oct 26 09:31:14 2001
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off my_uart_top -c my_uart_top
+Info: Found 1 design units, including 1 entities, in source file my_uart_rx.v
+    Info: Found entity 1: my_uart_rx
+Info: Found 1 design units, including 1 entities, in source file my_uart_top.v
+    Info: Found entity 1: my_uart_top
+Info: Found 1 design units, including 1 entities, in source file my_uart_tx.v
+    Info: Found entity 1: my_uart_tx
+Info: Found 1 design units, including 1 entities, in source file speed_select.v
+    Info: Found entity 1: speed_select
+Info: Elaborating entity "my_uart_top" for the top level hierarchy
+Info: Elaborating entity "speed_select" for hierarchy "speed_select:speed_select1"
+Info: Elaborating entity "my_uart_rx" for hierarchy "my_uart_rx:my_uart_rx"
+Info: Elaborating entity "my_uart_tx" for hierarchy "my_uart_tx:my_uart_tx"
+Warning: Converted TRI buffer or tri-state bus to logic, or removed OPNDRN
+    Warning: Converting TRI node "my_uart_tx:my_uart_tx|bps_start" that feeds logic to a wire
+    Warning: Converting TRI node "my_uart_rx:my_uart_rx|bps_start" that feeds logic to a wire
+Info: Registers with preset signals will power-up high
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "my_uart_tx/always1~0" lost all its fanouts during netlist optimizations.
+    Info: Register "my_uart_rx/always1~0" lost all its fanouts during netlist optimizations.
+Info: Implemented 116 device resources after synthesis - the final resource count might be different
+    Info: Implemented 3 input pins
+    Info: Implemented 1 output pins
+    Info: Implemented 112 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Allocated 126 megabytes of memory during processing
+    Info: Processing ended: Fri Oct 26 09:31:17 2001
+    Info: Elapsed time: 00:00:03

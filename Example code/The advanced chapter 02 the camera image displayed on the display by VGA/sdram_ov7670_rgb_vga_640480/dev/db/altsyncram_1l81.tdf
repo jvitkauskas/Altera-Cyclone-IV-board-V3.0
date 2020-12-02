@@ -1,0 +1,57 @@
+--altsyncram ADDRESS_REG_B="CLOCK1" CLOCK_ENABLE_INPUT_B="BYPASS" CYCLONEII_M4K_COMPATIBILITY="ON" DEVICE_FAMILY="Cyclone II" LOW_POWER_MODE="AUTO" OPERATION_MODE="DUAL_PORT" OUTDATA_ACLR_B="CLEAR1" OUTDATA_REG_B="CLOCK1" RAM_BLOCK_TYPE="M4K" WIDTH_A=16 WIDTH_B=16 WIDTH_BYTEENA_A=1 WIDTHAD_A=9 WIDTHAD_B=9 aclr1 address_a address_b addressstall_b clock0 clock1 clocken1 data_a q_b wren_a ALTERA_INTERNAL_OPTIONS=suppress_da_rule_internal=r105
+--VERSION_BEGIN 11.1SP2 cbx_altsyncram 2012:01:25:21:14:56:SJ cbx_cycloneii 2012:01:25:21:14:56:SJ cbx_lpm_add_sub 2012:01:25:21:14:56:SJ cbx_lpm_compare 2012:01:25:21:14:56:SJ cbx_lpm_decode 2012:01:25:21:14:56:SJ cbx_lpm_mux 2012:01:25:21:14:56:SJ cbx_mgl 2012:01:25:21:17:49:SJ cbx_stratix 2012:01:25:21:14:56:SJ cbx_stratixii 2012:01:25:21:14:56:SJ cbx_stratixiii 2012:01:25:21:14:56:SJ cbx_stratixv 2012:01:25:21:14:56:SJ cbx_util_mgl 2012:01:25:21:14:56:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION altsyncram_drg1 (aclr1, address_a[8..0], address_b[8..0], addressstall_a, clock0, clock1, clocken0, clocken1, data_a[15..0], data_b[15..0], wren_a, wren_b)
+RETURNS ( q_a[15..0], q_b[15..0]);
+
+--synthesis_resources = M4K 2 
+OPTIONS ALTERA_INTERNAL_OPTION = "suppress_da_rule_internal=r105;OPTIMIZE_POWER_DURING_SYNTHESIS=NORMAL_COMPILATION";
+
+SUBDESIGN altsyncram_1l81
+( 
+	aclr1	:	input;
+	address_a[8..0]	:	input;
+	address_b[8..0]	:	input;
+	addressstall_b	:	input;
+	clock0	:	input;
+	clock1	:	input;
+	clocken1	:	input;
+	data_a[15..0]	:	input;
+	q_b[15..0]	:	output;
+	wren_a	:	input;
+) 
+VARIABLE 
+	altsyncram14 : altsyncram_drg1;
+
+BEGIN 
+	altsyncram14.aclr1 = aclr1;
+	altsyncram14.address_a[] = address_b[];
+	altsyncram14.address_b[] = address_a[];
+	altsyncram14.addressstall_a = addressstall_b;
+	altsyncram14.clock0 = clock1;
+	altsyncram14.clock1 = clock0;
+	altsyncram14.clocken0 = clocken1;
+	altsyncram14.clocken1 = wren_a;
+	altsyncram14.data_a[] = B"1111111111111111";
+	altsyncram14.data_b[] = data_a[];
+	altsyncram14.wren_a = B"0";
+	altsyncram14.wren_b = wren_a;
+	q_b[] = altsyncram14.q_a[];
+END;
+--VALID FILE

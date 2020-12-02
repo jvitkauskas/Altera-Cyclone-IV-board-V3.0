@@ -1,0 +1,7 @@
+|key_led
+key[0] => Decoder0.IN3
+key[1] => Decoder0.IN2
+key[2] => Decoder0.IN1
+key[3] => Decoder0.IN0
+
+

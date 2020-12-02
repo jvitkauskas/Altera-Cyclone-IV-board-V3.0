@@ -1,0 +1,10 @@
+|VGA
+clock => vga_clk.CLK
+switch[0] => Mux0.IN3
+switch[0] => Mux1.IN3
+switch[0] => Mux2.IN3
+switch[1] => Mux0.IN2
+switch[1] => Mux1.IN2
+switch[1] => Mux2.IN2
+
+

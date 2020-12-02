@@ -1,0 +1,219 @@
+Quartus II
+Version 11.0 Build 157 04/27/2011 SJ Full Version
+15
+1165
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+Block1
+# storage
+db|iic_com.(0).cnf
+db|iic_com.(0).cnf
+# case_insensitive
+# source_file
+block1.bdf
+721db9b32c1e9b47be0709e5b60954f
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+uart_txd
+# storage
+db|iic_com.(2).cnf
+db|iic_com.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+uart_txd.v
+51453332513529abb0d990d0f97052
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+idle
+00
+PARAMETER_UNSIGNED_BIN
+USR
+waiting
+01
+PARAMETER_UNSIGNED_BIN
+USR
+sending
+10
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+uart_txd:inst5
+}
+# macro_sequence
+
+# end
+# entity
+speed_select
+# storage
+db|iic_com.(3).cnf
+db|iic_com.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+speed_select.v
+98b3bd25f6f2ccbfbbf4a56b3bf42a9
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+speed_select:inst6
+}
+# macro_sequence
+
+# end
+# entity
+iic_com
+# storage
+db|iic_com.(1).cnf
+db|iic_com.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+iic_com.v
+dfd93625d984208623ac61c0f8d0fe40
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+IDLE
+0000
+PARAMETER_UNSIGNED_BIN
+USR
+START1
+0001
+PARAMETER_UNSIGNED_BIN
+USR
+ADD1
+0010
+PARAMETER_UNSIGNED_BIN
+USR
+ACK1
+0011
+PARAMETER_UNSIGNED_BIN
+USR
+ADD2
+0100
+PARAMETER_UNSIGNED_BIN
+USR
+ACK2
+0101
+PARAMETER_UNSIGNED_BIN
+USR
+START2
+0110
+PARAMETER_UNSIGNED_BIN
+USR
+ADD3
+0111
+PARAMETER_UNSIGNED_BIN
+USR
+ACK3
+1000
+PARAMETER_UNSIGNED_BIN
+USR
+DATA
+1001
+PARAMETER_UNSIGNED_BIN
+USR
+ACK4
+1010
+PARAMETER_UNSIGNED_BIN
+USR
+STOP1
+1011
+PARAMETER_UNSIGNED_BIN
+USR
+STOP2
+1100
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+iic_com:inst
+}
+# macro_sequence
+DEVICE_WRITE8'b1010_0000	SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		BYTE_ADDR8'b0000_0011	SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		WRITE_DATA8'b1111_0001	DEVICE_READ8'b1010_0001	SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_LOW(cnt==3'd3)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		
+# end
+# complete
+

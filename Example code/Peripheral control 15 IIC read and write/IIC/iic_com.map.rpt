@@ -1,0 +1,448 @@
+Analysis & Synthesis report for iic_com
+Tue Jun 18 11:59:49 2013
+Quartus II Version 11.0 Build 157 04/27/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Block1|uart_txd:inst5|state
+  9. State Machine - |Block1|uart_txd:inst5|next_state
+ 10. State Machine - |Block1|iic_com:inst|cstate
+ 11. State Machine - |Block1|iic_com:inst|cnt
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: iic_com:inst
+ 17. Parameter Settings for User Entity Instance: uart_txd:inst5
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jun 18 11:59:49 2013     ;
+; Quartus II Version                 ; 11.0 Build 157 04/27/2011 SJ Full Version ;
+; Revision Name                      ; iic_com                                   ;
+; Top-level Entity Name              ; Block1                                    ;
+; Family                             ; Cyclone IV E                              ;
+; Total logic elements               ; 185                                       ;
+;     Total combinational functions  ; 176                                       ;
+;     Dedicated logic registers      ; 106                                       ;
+; Total registers                    ; 106                                       ;
+; Total pins                         ; 8                                         ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; Block1             ; iic_com            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path        ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------+
+; iic_com.v                        ; yes             ; User Verilog HDL File              ; D:/For_study/IIC/IIC/iic_com.v      ;
+; speed_select.v                   ; yes             ; User Verilog HDL File              ; D:/For_study/IIC/IIC/speed_select.v ;
+; uart_txd.v                       ; yes             ; User Verilog HDL File              ; D:/For_study/IIC/IIC/uart_txd.v     ;
+; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; D:/For_study/IIC/IIC/Block1.bdf     ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 185         ;
+;                                             ;             ;
+; Total combinational functions               ; 176         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 83          ;
+;     -- 3 input functions                    ; 23          ;
+;     -- <=2 input functions                  ; 70          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 135         ;
+;     -- arithmetic mode                      ; 41          ;
+;                                             ;             ;
+; Total registers                             ; 106         ;
+;     -- Dedicated logic registers            ; 106         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 8           ;
+; Maximum fan-out node                        ; rst_n~input ;
+; Maximum fan-out                             ; 96          ;
+; Total fan-out                               ; 877         ;
+; Average fan-out                             ; 2.93        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; |Block1                    ; 176 (0)           ; 106 (0)      ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |Block1                    ;              ;
+;    |iic_com:inst|          ; 132 (132)         ; 65 (65)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|iic_com:inst       ;              ;
+;    |speed_select:inst6|    ; 22 (22)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|speed_select:inst6 ;              ;
+;    |uart_txd:inst5|        ; 22 (22)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|uart_txd:inst5     ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------+
+; State Machine - |Block1|uart_txd:inst5|state               ;
++---------------+------------+---------------+---------------+
+; Name          ; state.idle ; state.sending ; state.waiting ;
++---------------+------------+---------------+---------------+
+; state.idle    ; 0          ; 0             ; 0             ;
+; state.waiting ; 1          ; 0             ; 1             ;
+; state.sending ; 1          ; 1             ; 0             ;
++---------------+------------+---------------+---------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------+
+; State Machine - |Block1|uart_txd:inst5|next_state                              ;
++--------------------+-----------------+--------------------+--------------------+
+; Name               ; next_state.idle ; next_state.sending ; next_state.waiting ;
++--------------------+-----------------+--------------------+--------------------+
+; next_state.idle    ; 0               ; 0                  ; 0                  ;
+; next_state.waiting ; 1               ; 0                  ; 1                  ;
+; next_state.sending ; 1               ; 1                  ; 0                  ;
++--------------------+-----------------+--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Block1|iic_com:inst|cstate                                                                                                                                                               ;
++---------------+--------------+--------------+-------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+-------------+---------------+-------------+
+; Name          ; cstate.STOP2 ; cstate.STOP1 ; cstate.ACK4 ; cstate.DATA ; cstate.ACK3 ; cstate.ADD3 ; cstate.START2 ; cstate.ACK2 ; cstate.ADD2 ; cstate.ACK1 ; cstate.ADD1 ; cstate.START1 ; cstate.IDLE ;
++---------------+--------------+--------------+-------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+-------------+---------------+-------------+
+; cstate.IDLE   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ;
+; cstate.START1 ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 1           ;
+; cstate.ADD1   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 1           ;
+; cstate.ACK1   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 1           ;
+; cstate.ADD2   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ACK2   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.START2 ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ADD3   ; 0            ; 0            ; 0           ; 0           ; 0           ; 1           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ACK3   ; 0            ; 0            ; 0           ; 0           ; 1           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.DATA   ; 0            ; 0            ; 0           ; 1           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ACK4   ; 0            ; 0            ; 1           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.STOP1  ; 0            ; 1            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.STOP2  ; 1            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
++---------------+--------------+--------------+-------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+-------------+---------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |Block1|iic_com:inst|cnt                  ;
++---------+---------+---------+---------+---------+---------+
+; Name    ; cnt.000 ; cnt.011 ; cnt.010 ; cnt.001 ; cnt.101 ;
++---------+---------+---------+---------+---------+---------+
+; cnt.101 ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; cnt.001 ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; cnt.010 ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; cnt.011 ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; cnt.000 ; 1       ; 0       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+---------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; uart_txd:inst5|load_tram_shiftreg      ; Stuck at VCC due to stuck port data_in ;
+; iic_com:inst|db_r[7]                   ; Merged with iic_com:inst|db_r[5]       ;
+; iic_com:inst|db_r[6]                   ; Merged with iic_com:inst|db_r[4]       ;
+; iic_com:inst|db_r[3]                   ; Merged with iic_com:inst|db_r[2]       ;
+; iic_com:inst|db_r[2]                   ; Stuck at GND due to stuck port data_in ;
+; uart_txd:inst5|state.idle              ; Lost fanout                            ;
+; uart_txd:inst5|state.waiting           ; Lost fanout                            ;
+; uart_txd:inst5|state.sending           ; Lost fanout                            ;
+; iic_com:inst|cnt.101                   ; Lost fanout                            ;
+; iic_com:inst|cstate~17                 ; Lost fanout                            ;
+; iic_com:inst|cstate~18                 ; Lost fanout                            ;
+; iic_com:inst|cstate~19                 ; Lost fanout                            ;
+; iic_com:inst|cstate~20                 ; Lost fanout                            ;
+; iic_com:inst|cnt~4                     ; Lost fanout                            ;
+; iic_com:inst|cnt~5                     ; Lost fanout                            ;
+; iic_com:inst|cnt_20ms[0]               ; Merged with iic_com:inst|cnt_delay[0]  ;
+; iic_com:inst|cnt_20ms[1]               ; Merged with iic_com:inst|cnt_delay[1]  ;
+; Total Number of Removed Registers = 17 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 106   ;
+; Number of registers using Synchronous Clear  ; 17    ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 75    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 17    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; iic_com:inst|sda_r                     ; 9       ;
+; iic_com:inst|sw1_r                     ; 10      ;
+; iic_com:inst|sw2_r                     ; 10      ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+-----------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                              ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-----------------------------------------+----------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |Block1|uart_txd:inst5|tram_shiftreg[0] ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |Block1|uart_txd:inst5|count[1]         ;                            ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; |Block1|iic_com:inst|db_r[5]            ;                            ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; |Block1|iic_com:inst|num[3]             ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-----------------------------------------+----------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: iic_com:inst ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; IDLE           ; 0000  ; Unsigned Binary                  ;
+; START1         ; 0001  ; Unsigned Binary                  ;
+; ADD1           ; 0010  ; Unsigned Binary                  ;
+; ACK1           ; 0011  ; Unsigned Binary                  ;
+; ADD2           ; 0100  ; Unsigned Binary                  ;
+; ACK2           ; 0101  ; Unsigned Binary                  ;
+; START2         ; 0110  ; Unsigned Binary                  ;
+; ADD3           ; 0111  ; Unsigned Binary                  ;
+; ACK3           ; 1000  ; Unsigned Binary                  ;
+; DATA           ; 1001  ; Unsigned Binary                  ;
+; ACK4           ; 1010  ; Unsigned Binary                  ;
+; STOP1          ; 1011  ; Unsigned Binary                  ;
+; STOP2          ; 1100  ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_txd:inst5 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; idle           ; 00    ; Unsigned Binary                    ;
+; waiting        ; 01    ; Unsigned Binary                    ;
+; sending        ; 10    ; Unsigned Binary                    ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
+    Info: Processing started: Tue Jun 18 11:59:46 2013
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iic_com -c iic_com
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Found 1 design units, including 1 entities, in source file iic_com.v
+    Info: Found entity 1: iic_com
+Info: Found 1 design units, including 1 entities, in source file speed_select.v
+    Info: Found entity 1: speed_select
+Info: Found 1 design units, including 1 entities, in source file uart_txd.v
+    Info: Found entity 1: uart_txd
+Info: Found 1 design units, including 1 entities, in source file block1.bdf
+    Info: Found entity 1: Block1
+Info: Elaborating entity "Block1" for the top level hierarchy
+Info: Elaborating entity "iic_com" for hierarchy "iic_com:inst"
+Info: Elaborating entity "uart_txd" for hierarchy "uart_txd:inst5"
+Warning (10230): Verilog HDL assignment warning at uart_txd.v(94): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "speed_select" for hierarchy "speed_select:inst6"
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info: 10 registers lost all their fanouts during netlist optimizations. The first 10 are displayed below.
+    Info: Register "uart_txd:inst5|state.idle" lost all its fanouts during netlist optimizations.
+    Info: Register "uart_txd:inst5|state.waiting" lost all its fanouts during netlist optimizations.
+    Info: Register "uart_txd:inst5|state.sending" lost all its fanouts during netlist optimizations.
+    Info: Register "iic_com:inst|cnt.101" lost all its fanouts during netlist optimizations.
+    Info: Register "iic_com:inst|cstate~17" lost all its fanouts during netlist optimizations.
+    Info: Register "iic_com:inst|cstate~18" lost all its fanouts during netlist optimizations.
+    Info: Register "iic_com:inst|cstate~19" lost all its fanouts during netlist optimizations.
+    Info: Register "iic_com:inst|cstate~20" lost all its fanouts during netlist optimizations.
+    Info: Register "iic_com:inst|cnt~4" lost all its fanouts during netlist optimizations.
+    Info: Register "iic_com:inst|cnt~5" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file D:/For_study/IIC/IIC/iic_com.map.smsg
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 195 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 1 bidirectional pins
+    Info: Implemented 187 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 226 megabytes
+    Info: Processing ended: Tue Jun 18 11:59:49 2013
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/For_study/IIC/IIC/iic_com.map.smsg.
+
+

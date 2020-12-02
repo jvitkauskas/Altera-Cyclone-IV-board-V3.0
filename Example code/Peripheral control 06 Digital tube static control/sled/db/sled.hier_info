@@ -1,0 +1,44 @@
+|sled
+clock => dig[0]~reg0.CLK
+clock => dig[1]~reg0.CLK
+clock => dig[2]~reg0.CLK
+clock => dig[3]~reg0.CLK
+clock => count[0].CLK
+clock => count[1].CLK
+clock => count[2].CLK
+clock => count[3].CLK
+clock => count[4].CLK
+clock => count[5].CLK
+clock => count[6].CLK
+clock => count[7].CLK
+clock => count[8].CLK
+clock => count[9].CLK
+clock => count[10].CLK
+clock => count[11].CLK
+clock => count[12].CLK
+clock => count[13].CLK
+clock => count[14].CLK
+clock => count[15].CLK
+clock => count[16].CLK
+clock => count[17].CLK
+clock => count[18].CLK
+clock => count[19].CLK
+clock => count[20].CLK
+clock => count[21].CLK
+clock => count[22].CLK
+clock => count[23].CLK
+clock => count[24].CLK
+clock => count[25].CLK
+clock => count[26].CLK
+clock => count[27].CLK
+clock => count[28].CLK
+clock => count[29].CLK
+clock => count[30].CLK
+clock => count[31].CLK
+clock => count[32].CLK
+clock => count[33].CLK
+clock => count[34].CLK
+clock => count[35].CLK
+clock => count[36].CLK
+
+

@@ -1,0 +1,50 @@
+
+State Machine - |sdram_ov7670_vga|sdram_vga_top:u_sdram_vga_top|sdbank_switch:u_sdbank_switch|state_read
+Name state_read.011 state_read.010 state_read.001 state_read.000 state_read.100 
+state_read.000 0 0 0 0 0 
+state_read.001 0 0 1 1 0 
+state_read.010 0 1 0 1 0 
+state_read.011 1 0 0 1 0 
+state_read.100 0 0 0 1 1 
+
+State Machine - |sdram_ov7670_vga|sdram_vga_top:u_sdram_vga_top|sdbank_switch:u_sdbank_switch|state_write
+Name state_write.011 state_write.010 state_write.001 state_write.000 state_write.100 
+state_write.000 0 0 0 0 0 
+state_write.001 0 0 1 1 0 
+state_write.010 0 1 0 1 0 
+state_write.011 1 0 0 1 0 
+state_write.100 0 0 0 1 1 
+
+State Machine - |sdram_ov7670_vga|sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|sdram_top:u_sdramtop|sdram_ctrl:module_001|work_state_r
+Name work_state_r.1011 work_state_r.1010 work_state_r.1001 work_state_r.1000 work_state_r.0111 work_state_r.0110 work_state_r.0101 work_state_r.0100 work_state_r.0011 work_state_r.0010 work_state_r.0001 work_state_r.0000 
+work_state_r.0000 0 0 0 0 0 0 0 0 0 0 0 0 
+work_state_r.0001 0 0 0 0 0 0 0 0 0 0 1 1 
+work_state_r.0010 0 0 0 0 0 0 0 0 0 1 0 1 
+work_state_r.0011 0 0 0 0 0 0 0 0 1 0 0 1 
+work_state_r.0100 0 0 0 0 0 0 0 1 0 0 0 1 
+work_state_r.0101 0 0 0 0 0 0 1 0 0 0 0 1 
+work_state_r.0110 0 0 0 0 0 1 0 0 0 0 0 1 
+work_state_r.0111 0 0 0 0 1 0 0 0 0 0 0 1 
+work_state_r.1000 0 0 0 1 0 0 0 0 0 0 0 1 
+work_state_r.1001 0 0 1 0 0 0 0 0 0 0 0 1 
+work_state_r.1010 0 1 0 0 0 0 0 0 0 0 0 1 
+work_state_r.1011 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |sdram_ov7670_vga|sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|sdram_top:u_sdramtop|sdram_ctrl:module_001|init_state_r
+Name init_state_r.1001 init_state_r.1000 init_state_r.0111 init_state_r.0110 init_state_r.0101 init_state_r.0100 init_state_r.0011 init_state_r.0010 init_state_r.0001 init_state_r.0000 
+init_state_r.0000 0 0 0 0 0 0 0 0 0 0 
+init_state_r.0001 0 0 0 0 0 0 0 0 1 1 
+init_state_r.0010 0 0 0 0 0 0 0 1 0 1 
+init_state_r.0011 0 0 0 0 0 0 1 0 0 1 
+init_state_r.0100 0 0 0 0 0 1 0 0 0 1 
+init_state_r.0101 0 0 0 0 1 0 0 0 0 1 
+init_state_r.0110 0 0 0 1 0 0 0 0 0 1 
+init_state_r.0111 0 0 1 0 0 0 0 0 0 1 
+init_state_r.1000 0 1 0 0 0 0 0 0 0 1 
+init_state_r.1001 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |sdram_ov7670_vga|I2C_AV_Config:u_I2C_AV_Config|mSetup_ST
+Name mSetup_ST.00 mSetup_ST.10 mSetup_ST.01 
+mSetup_ST.00 0 0 0 
+mSetup_ST.01 1 0 1 
+mSetup_ST.10 1 1 0 

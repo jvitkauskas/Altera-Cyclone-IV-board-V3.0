@@ -1,0 +1,23 @@
+module key_led(key,led);//
+input[7:0]key;//input [7:0] key
+output[7:0]led;
+reg[7:0]led_r;
+reg[7:0]buffer;
+assign led=led_r;
+
+always@(key)
+begin
+	buffer=key;
+	case(buffer)
+		8'b11111110:led_r=8'b11111110;//key1
+		8'b11111101:led_r=8'b11111100;//key2
+		8'b11111011:led_r=8'b11111000;//key3
+		8'b11110111:led_r=8'b11110000;//key4
+	    8'b11101111:led_r=8'b11100000;//key5
+	    8'b11011111:led_r=8'b11000000;//key6
+	    8'b10111111:led_r=8'b10000000;//key7
+	    8'b01111111:led_r=8'b00000000;//key8
+	    default:led_r=8'b11111111;
+	endcase
+end
+endmodule

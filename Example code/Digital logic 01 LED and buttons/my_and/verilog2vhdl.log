@@ -1,0 +1,45 @@
+// *** v2v log file : Opened Thu Sep 21 23:42:11 2017
+
+Command line: C:\SynaptiCAD\bin\win32\verilog2vhdl.exe .\my_and.v
+
+// verilog2vhdl version 20.20
+
+//       Copyright (c) SynaptiCAD Inc. 1992-2014, All Rights Reserved.
+//                      UNPUBLISHED, LICENSED SOFTWARE.
+//           CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//         PROPERTY OF ALTERNATIVE SYSTEM CONCEPTS OR ITS LICENSORS.
+//
+
+Running..
+
+Option -vpp is set. Preprocessing files...
+
+
+Temporary Verilog files are created due to preprocessing.
+Translation will proceed on those files
+
+Option 'environment' set to GENERIC
+Option 'Preserve_Order' has not been set; VHDL concurrent body will be formatted
+Read in map file
+
+    NOTE: Adding VHDL entity 'my_and' to output file 
+    NOTE: Adding VHDL architecture 'VeriArch' for entity 'my_and'
+    NOTE: Adding port 'a' to entity 'my_and'
+    NOTE: Adding port 'b' to entity 'my_and'
+    NOTE: Adding port 'c' to entity 'my_and'
+.\my_and.v(15) : NOTE: Adding intermediate signal 'V2V_c' for 'c'
+    NOTE: Adding VHDL signal assignment with target 'V2V_c' to architecture 'VeriArch'
+
+
+
+
+
+Demo Data:
+HDL file translated : .\my_and.v.vpp
+HDL lines translated (excluding comments and empty lines): 5
+
+        THIS DEMO VERSION OF Verilog2VHDL TRANSLATOR IS DISTRIBUTED
+                         EXCLUSIVELY BY SynaptiCAD.
+           FOR MORE INFORMATION OR EVALUATION OF THE FULL VERSION, 
+                         PLEASE CONTACT SynaptiCAD AT 
+                   800-804-7073 or sales@syncad.com 

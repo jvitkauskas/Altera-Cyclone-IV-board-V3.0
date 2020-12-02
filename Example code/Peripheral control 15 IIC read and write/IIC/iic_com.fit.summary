@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jun 18 11:59:56 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : iic_com
+Top-level Entity Name : Block1
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 185 / 6,272 ( 3 % )
+    Total combinational functions : 176 / 6,272 ( 3 % )
+    Dedicated logic registers : 106 / 6,272 ( 2 % )
+Total registers : 106
+Total pins : 8 / 92 ( 9 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

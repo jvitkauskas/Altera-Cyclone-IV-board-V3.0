@@ -1,0 +1,1604 @@
+!SESSION 2012-08-12 21:14:48.687 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.Colorbar -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-12 21:14:51.453
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.setSelection(PartStack.java:1097)
+	at org.eclipse.ui.internal.PartStack.showPart(PartStack.java:1311)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:601)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyOpenPage(WorkbenchWindow.java:658)
+	at org.eclipse.ui.internal.Workbench.busyOpenWorkbenchWindow(Workbench.java:795)
+	at org.eclipse.ui.internal.Workbench.doOpenFirstTimeWindow(Workbench.java:1437)
+	at org.eclipse.ui.internal.Workbench.openFirstTimeWindow(Workbench.java:1388)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.openFirstTimeWindow(WorkbenchConfigurer.java:190)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:708)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-12 21:27:58.171
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2012-08-12 21:39:13.406 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.Colorbar -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-12 21:39:16.328
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-12 21:43:52.468
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2012-08-12 21:47:53.359 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.Colorbar -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-12 21:47:56.390
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY org.eclipse.ui 4 4 2012-08-12 21:48:01.468
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.ide.core 1 0 2012-08-12 21:48:30.187
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2012-08-13 17:23:14.421 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-08-13 17:23:18.109
+!MESSAGE A workspace crash was detected. The previous session did not exit normally.
+
+!ENTRY org.eclipse.jface 2 0 2012-08-13 17:23:28.203
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-13 17:23:37.906
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2012-08-13 22:16:28.890 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-13 22:16:40.484
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY org.eclipse.ui 4 4 2012-08-13 22:20:06.921
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.ide.core 1 0 2012-08-13 22:20:10.281
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+
+!ENTRY org.eclipse.ui 4 4 2012-08-13 23:00:06.515
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.core.resources 4 368 2012-08-13 23:18:33.359
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY org.eclipse.core.resources 4 368 2012-08-13 23:18:33.375
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY org.eclipse.core.resources 4 368 2012-08-13 23:18:33.421
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY org.eclipse.core.resources 4 368 2012-08-13 23:18:33.437
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY org.eclipse.core.resources 4 368 2012-08-13 23:18:33.484
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY org.eclipse.ui 4 4 2012-08-13 23:18:33.906
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+!SESSION 2012-08-14 09:38:04.703 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-14 09:38:13.484
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-14 09:39:08.937
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+
+!ENTRY org.eclipse.ui 4 4 2012-08-14 10:00:38.625
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2012-08-14 10:02:56.000
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2012-08-14 10:37:22.921
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2012-08-14 11:06:46.406
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+!SESSION 2012-08-20 17:08:51.593 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-20 17:09:10.843
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-20 17:12:12.031
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+
+!ENTRY org.eclipse.core.resources 4 368 2012-08-20 17:34:00.093
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY org.eclipse.ui 4 4 2012-08-20 17:34:01.250
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2012-08-20 22:33:17.531
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.ide.core 4 0 2012-08-20 22:33:58.000
+!MESSAGE Error: creation of local folder bin failed
+
+!SESSION 2012-08-21 09:50:16.218 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-21 09:50:39.125
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-21 09:51:38.859
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 09:52:23.359
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 09:52:30.890
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 09:56:42.671
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.core.resources 4 368 2012-08-21 09:56:56.015
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 09:56:56.468
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.nj.launch 4 104 2012-08-21 10:36:39.640
+!MESSAGE The Nios II ELF executable does not exist. Please verify that the project TFT_software built successfully.
+!STACK 0
+java.io.FileNotFoundException: E:/gj_test/TFT/2.Colorbar/software/TFT_software/Debug/TFT_software.elf not found.
+	at com.altera.nj.launch.internal.Nios2LaunchConfigurationDelegate.getProgramFile(Nios2LaunchConfigurationDelegate.java:1424)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramFile(AbstractCLaunchDelegate.java:378)
+	at com.altera.nj.launch.internal.Nios2LaunchConfigurationDelegate.syncLaunch(Nios2LaunchConfigurationDelegate.java:377)
+	at com.altera.nj.launch.internal.Nios2LaunchConfigurationDelegate.launch(Nios2LaunchConfigurationDelegate.java:342)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:639)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:565)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:754)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$6.run(DebugUIPlugin.java:944)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:58)
+!SUBENTRY 1 com.altera.nj.launch 4 104 2012-08-21 10:36:39.640
+!MESSAGE E:/gj_test/TFT/2.Colorbar/software/TFT_software/Debug/TFT_software.elf not found.
+!STACK 0
+java.io.FileNotFoundException: E:/gj_test/TFT/2.Colorbar/software/TFT_software/Debug/TFT_software.elf not found.
+	at com.altera.nj.launch.internal.Nios2LaunchConfigurationDelegate.getProgramFile(Nios2LaunchConfigurationDelegate.java:1424)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramFile(AbstractCLaunchDelegate.java:378)
+	at com.altera.nj.launch.internal.Nios2LaunchConfigurationDelegate.syncLaunch(Nios2LaunchConfigurationDelegate.java:377)
+	at com.altera.nj.launch.internal.Nios2LaunchConfigurationDelegate.launch(Nios2LaunchConfigurationDelegate.java:342)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:639)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:565)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:754)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$6.run(DebugUIPlugin.java:944)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:58)
+!SESSION 2012-08-21 14:15:47.031 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-21 14:16:00.796
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-21 14:23:12.312
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2012-08-21 19:49:33.265 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.Colorbar -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-21 19:49:37.250
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 19:59:22.515
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.ide.core 1 0 2012-08-21 20:00:11.890
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 20:56:25.218
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.ide.core 4 0 2012-08-21 20:57:27.031
+!MESSAGE Error: creation of local folder bin failed
+
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 20:58:45.203
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2012-08-21 21:38:56.515
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+!SESSION 2012-08-26 21:47:31.562 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.Colorbar -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-26 21:47:35.234
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-26 21:48:00.375
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2012-08-27 12:34:15.156 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.Colorbar -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2012-08-27 12:34:18.156
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2012-08-27 12:47:28.859
+!MESSAGE D:\altera\11.0\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2014-05-13 14:19:13.418 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.ColorbarforE4 -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2014-05-13 14:19:18.461
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+!SESSION 2014-05-13 16:17:59.230 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2014-05-13 16:18:08.353
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+!SESSION 2014-05-24 20:59:56.632 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\gj_test\TFT\2.ColorbarforE4 -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2014-05-24 21:00:05.475
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2014-05-24 21:00:10.091
+!MESSAGE Unable to restore source location: Unable to initialize source location - invalid directory path D:\altera\11.0\nios2eds\bin\nios2-gnutools\src.
+
+!ENTRY org.eclipse.ui 4 4 2014-05-24 21:01:27.651
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.ide.core 4 0 2014-05-24 21:01:58.966
+!MESSAGE Error: creation of local folder bin failed
+
+
+!ENTRY org.eclipse.ui 4 4 2014-05-24 21:02:17.390
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY org.eclipse.ui 4 4 2014-05-24 21:02:18.940
+!MESSAGE Invalid Menu Extension (Path is invalid): RunAsLauterbachISS
+
+!ENTRY com.altera.ide.core 1 0 2014-05-24 21:02:36.906
+!MESSAGE D:\altera\11.0sp1\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2014-05-24 22:47:54.683 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2014-05-24 22:48:07.876
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+!SESSION 2014-08-11 10:20:55.232 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data G:\gj_test\TFT\2.ColorbarforE4 -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 4 567 2014-08-11 10:20:56.255
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2014-08-11 10:20:56.255
+!MESSAGE The project description file (.project) for TFT_software is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2014-08-11 10:20:56.256
+!MESSAGE The project description file (.project) for TFT_software_syslib is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.jface 2 0 2014-08-11 10:20:58.154
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2014-08-11 10:21:01.064
+!MESSAGE Unable to restore source location: Unable to initialize source location - invalid directory path D:\altera\11.0sp1\nios2eds\bin\nios2-gnutools\src.
+
+!ENTRY com.altera.ide.core 4 0 2014-08-11 10:26:22.164
+!MESSAGE Error: creation of local folder bin failed
+
+
+!ENTRY com.altera.ide.core 1 0 2014-08-11 10:26:47.070
+!MESSAGE C:\altera\11.1\quartus\bin\cygwin\bin/cygpath --unix --file - 
+
+!ENTRY com.altera.nj.launch 1 0 2014-08-11 10:37:48.616
+!MESSAGE jtagconfig --listhardware 
+
+!ENTRY com.altera.nj.launch 1 0 2014-08-11 10:37:49.491
+!MESSAGE jtagconfig --cable USB-Blaster [USB-1] --extra-info 
+
+!ENTRY com.altera.nj.launch 1 0 2014-08-11 10:37:52.712
+!MESSAGE jtagconfig --listhardware 
+
+!ENTRY com.altera.nj.launch 1 0 2014-08-11 10:37:53.328
+!MESSAGE jtagconfig --cable USB-Blaster [USB-1] --extra-info 
+
+!ENTRY com.altera.nj.launch 1 0 2014-08-11 10:37:56.166
+!MESSAGE jtagconfig --cable USB-Blaster [USB-1] --extra-info 
+!SESSION 2014-08-11 13:56:01.858 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data G:\gj_test\TFT\2.ColorbarforE4 -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2014-08-11 13:56:06.396
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2014-08-11 13:56:16.312
+!MESSAGE C:\altera\11.1\quartus\bin\cygwin\bin/cygpath --unix --file - 
+!SESSION 2015-04-17 19:00:12.299 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\AA_IO_BD\new\ColorbarforE4 -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2015-04-17 19:00:16.276
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2015-04-17 19:00:19.308
+!MESSAGE Unable to restore source location: Unable to initialize source location - invalid directory path C:\altera\11.1\nios2eds\bin\nios2-gnutools\src.
+
+!ENTRY com.altera.ide.core 1 0 2015-04-17 20:07:49.226
+!MESSAGE C:\altera\11.1sp2\quartus\bin\cygwin\bin/cygpath --unix --file - 
+
+!ENTRY org.eclipse.core.resources 4 368 2015-04-17 20:08:45.583
+!MESSAGE Resource /TFT_software does not exist.
+
+!ENTRY com.altera.ide.core 4 0 2015-04-17 20:09:07.394
+!MESSAGE Error: creation of local folder bin failed
+
+
+!ENTRY com.altera.nj.launch 1 0 2015-04-17 20:15:06.675
+!MESSAGE jtagconfig --listhardware 
+
+!ENTRY com.altera.nj.launch 1 0 2015-04-17 20:15:07.352
+!MESSAGE jtagconfig --cable USB-Blaster [USB-1] --extra-info 
+!SESSION 2015-04-27 13:03:25.512 -----------------------------------------------
+eclipse.buildId=M20060629-1905
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -data E:\AA_IO_BD\new\2.4TFT_ok\ColorbarforE4 -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2015-04-27 13:03:27.897
+!MESSAGE The image could not be loaded: URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+!STACK 0
+org.eclipse.jface.resource.DeviceResourceException: Unable to create resource URLImageDescriptor(bundleentry://36/icons/dtool16/target_filter.gif)
+	at org.eclipse.jface.resource.ImageDescriptor.createResource(ImageDescriptor.java:173)
+	at org.eclipse.jface.resource.DeviceResourceManager.allocate(DeviceResourceManager.java:56)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.LocalResourceManager.allocate(LocalResourceManager.java:83)
+	at org.eclipse.jface.resource.AbstractResourceManager.create(AbstractResourceManager.java:87)
+	at org.eclipse.jface.resource.ResourceManager.createImageWithDefault(ResourceManager.java:114)
+	at org.eclipse.jface.action.ActionContributionItem.updateImages(ActionContributionItem.java:936)
+	at org.eclipse.jface.action.ActionContributionItem.update(ActionContributionItem.java:709)
+	at org.eclipse.jface.action.ActionContributionItem.fill(ActionContributionItem.java:330)
+	at org.eclipse.jface.action.ToolBarManager.update(ToolBarManager.java:317)
+	at org.eclipse.ui.internal.ViewPane.updateActionBars(ViewPane.java:443)
+	at org.eclipse.ui.internal.ViewActionBars.updateActionBars(ViewActionBars.java:59)
+	at org.eclipse.ui.internal.ViewReference.createPartHelper(ViewReference.java:363)
+	at org.eclipse.ui.internal.ViewReference.createPart(ViewReference.java:197)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:566)
+	at org.eclipse.ui.internal.PartPane.setVisible(PartPane.java:290)
+	at org.eclipse.ui.internal.ViewPane.setVisible(ViewPane.java:525)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setVisible(PresentablePart.java:140)
+	at org.eclipse.ui.internal.presentations.util.PresentablePartFolder.select(PresentablePartFolder.java:268)
+	at org.eclipse.ui.internal.presentations.util.LeftToRightTabOrder.select(LeftToRightTabOrder.java:65)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation.selectPart(TabbedStackPresentation.java:394)
+	at org.eclipse.ui.internal.PartStack.refreshPresentationSelection(PartStack.java:1144)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:620)
+	at org.eclipse.ui.internal.PartStack.createControl(PartStack.java:532)
+	at org.eclipse.ui.internal.PartSashContainer.createControl(PartSashContainer.java:562)
+	at org.eclipse.ui.internal.PerspectiveHelper.activate(PerspectiveHelper.java:244)
+	at org.eclipse.ui.internal.Perspective.onActivate(Perspective.java:815)
+	at org.eclipse.ui.internal.WorkbenchPage.onActivate(WorkbenchPage.java:2436)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:2616)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.setActivePage(WorkbenchWindow.java:2597)
+	at org.eclipse.ui.internal.WorkbenchWindow.restoreState(WorkbenchWindow.java:1982)
+	at org.eclipse.ui.internal.Workbench.doRestoreState(Workbench.java:2857)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1665)
+	at org.eclipse.ui.internal.Workbench.access$12(Workbench.java:1650)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1529)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.ui.internal.Workbench.restoreState(Workbench.java:1473)
+	at org.eclipse.ui.internal.WorkbenchConfigurer.restoreState(WorkbenchConfigurer.java:183)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:702)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1085)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1847)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:419)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:95)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at org.eclipse.core.launcher.Main.main(Main.java:952)
+
+!ENTRY com.altera.ide.core 1 0 2015-04-27 13:04:23.585
+!MESSAGE C:\altera\11.1sp2\quartus\bin\cygwin\bin/cygpath --unix --file - 

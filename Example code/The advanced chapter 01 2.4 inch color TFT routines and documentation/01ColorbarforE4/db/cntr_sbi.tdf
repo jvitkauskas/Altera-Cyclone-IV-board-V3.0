@@ -1,0 +1,105 @@
+--lpm_counter CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone II" lpm_modulus=15 lpm_port_updown="PORT_CONNECTIVITY" lpm_width=4 clock q sclr CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 11.0 cbx_cycloneii 2011:04:27:21:07:09:SJ cbx_lpm_add_sub 2011:04:27:21:07:09:SJ cbx_lpm_compare 2011:04:27:21:07:09:SJ cbx_lpm_counter 2011:04:27:21:07:09:SJ cbx_lpm_decode 2011:04:27:21:07:09:SJ cbx_mgl 2011:04:27:21:08:59:SJ cbx_stratix 2011:04:27:21:07:09:SJ cbx_stratixii 2011:04:27:21:07:09:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cycloneii_lcell_comb (cin, dataa, datab, datac, datad)
+WITH ( LUT_MASK, SUM_LUTC_INPUT)
+RETURNS ( combout, cout);
+FUNCTION cycloneii_lcell_ff (aclr, clk, datain, ena, sclr, sdata, sload)
+WITH ( x_on_violation)
+RETURNS ( regout);
+FUNCTION cmpr_8cc (dataa[3..0], datab[3..0])
+RETURNS ( aeb);
+
+--synthesis_resources = lut 4 reg 4 
+SUBDESIGN cntr_sbi
+( 
+	clock	:	input;
+	q[3..0]	:	output;
+	sclr	:	input;
+) 
+VARIABLE 
+	counter_comb_bita0 : cycloneii_lcell_comb
+		WITH (
+			LUT_MASK = "5A90",
+			SUM_LUTC_INPUT = "cin"
+		);
+	counter_comb_bita1 : cycloneii_lcell_comb
+		WITH (
+			LUT_MASK = "5A90",
+			SUM_LUTC_INPUT = "cin"
+		);
+	counter_comb_bita2 : cycloneii_lcell_comb
+		WITH (
+			LUT_MASK = "5A90",
+			SUM_LUTC_INPUT = "cin"
+		);
+	counter_comb_bita3 : cycloneii_lcell_comb
+		WITH (
+			LUT_MASK = "5A90",
+			SUM_LUTC_INPUT = "cin"
+		);
+	counter_reg_bit1a[3..0] : cycloneii_lcell_ff;
+	cmpr2 : cmpr_8cc;
+	aclr_actual	: WIRE;
+	clk_en	: NODE;
+	cnt_en	: NODE;
+	compare_result	: WIRE;
+	cout_actual	: WIRE;
+	data[3..0]	: NODE;
+	external_cin	: WIRE;
+	modulus_bus[3..0]	: WIRE;
+	modulus_trigger	: WIRE;
+	s_val[3..0]	: WIRE;
+	safe_q[3..0]	: WIRE;
+	sload	: NODE;
+	sset	: NODE;
+	time_to_clear	: WIRE;
+	updown_dir	: WIRE;
+
+BEGIN 
+	counter_comb_bita[3..0].cin = ( counter_comb_bita[2..0].cout, external_cin);
+	counter_comb_bita[3..0].dataa = ( counter_reg_bit1a[3..0].regout);
+	counter_comb_bita[3..0].datab = ( updown_dir, updown_dir, updown_dir, updown_dir);
+	counter_comb_bita[3..0].datad = ( B"1", B"1", B"1", B"1");
+	counter_reg_bit1a[].aclr = aclr_actual;
+	counter_reg_bit1a[].clk = clock;
+	counter_reg_bit1a[].datain = ( counter_comb_bita[3..0].combout);
+	counter_reg_bit1a[].ena = (clk_en & (((sclr # sset) # sload) # cnt_en));
+	counter_reg_bit1a[].sdata = ((! sclr) & ((sset & s_val[]) # ((! sset) & ((sload & data[]) # (((! sload) & modulus_bus[]) & (! updown_dir))))));
+	counter_reg_bit1a[].sload = (((sclr # sset) # sload) # modulus_trigger);
+	cmpr2.dataa[] = safe_q[];
+	cmpr2.datab[] = modulus_bus[];
+	aclr_actual = B"0";
+	clk_en = VCC;
+	cnt_en = VCC;
+	compare_result = cmpr2.aeb;
+	cout_actual = (counter_comb_bita[3].cout # (time_to_clear & updown_dir));
+	data[] = GND;
+	external_cin = B"1";
+	modulus_bus[] = B"1110";
+	modulus_trigger = cout_actual;
+	q[] = safe_q[];
+	s_val[] = B"1111";
+	safe_q[] = counter_reg_bit1a[].regout;
+	sload = GND;
+	sset = GND;
+	time_to_clear = compare_result;
+	updown_dir = B"1";
+END;
+--VALID FILE

@@ -1,0 +1,438 @@
+Classic Timing Analyzer report for my_uart_top
+Sun Aug 02 09:05:38 2009
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                   ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+---------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                             ; To                                    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+---------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 2.111 ns                         ; rs232_rx                         ; my_uart_rx:my_uart_rx|rx_temp_data[0] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 8.505 ns                         ; my_uart_tx:my_uart_tx|rs232_tx_r ; rs232_tx                              ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -1.342 ns                        ; rs232_rx                         ; my_uart_rx:my_uart_rx|rx_temp_data[2] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 133.98 MHz ( period = 7.464 ns ) ; speed_select:speed_tx|cnt[1]     ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                  ;                                       ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+---------------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------+---------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                            ; To                                    ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------+---------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.736 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.736 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.736 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.736 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.736 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.736 ns                ;
+; N/A                                     ; 134.32 MHz ( period = 7.445 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.736 ns                ;
+; N/A                                     ; 136.84 MHz ( period = 7.308 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.599 ns                ;
+; N/A                                     ; 136.84 MHz ( period = 7.308 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[5]    ; clk        ; clk      ; None                        ; None                      ; 6.599 ns                ;
+; N/A                                     ; 138.79 MHz ( period = 7.205 ns )                    ; speed_select:speed_rx|clk_bps_r ; my_uart_rx:my_uart_rx|rx_data_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.496 ns                ;
+; N/A                                     ; 138.79 MHz ( period = 7.205 ns )                    ; speed_select:speed_rx|clk_bps_r ; my_uart_rx:my_uart_rx|rx_data_r[5]    ; clk        ; clk      ; None                        ; None                      ; 6.496 ns                ;
+; N/A                                     ; 139.76 MHz ( period = 7.155 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|num[1]          ; clk        ; clk      ; None                        ; None                      ; 6.446 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 141.04 MHz ( period = 7.090 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.60 MHz ( period = 7.062 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 6.353 ns                ;
+; N/A                                     ; 141.60 MHz ( period = 7.062 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 6.353 ns                ;
+; N/A                                     ; 141.60 MHz ( period = 7.062 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 6.353 ns                ;
+; N/A                                     ; 141.60 MHz ( period = 7.062 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 6.353 ns                ;
+; N/A                                     ; 141.60 MHz ( period = 7.062 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 6.353 ns                ;
+; N/A                                     ; 141.60 MHz ( period = 7.062 ns )                    ; speed_select:speed_rx|cnt[1]    ; speed_select:speed_rx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 6.353 ns                ;
+; N/A                                     ; 141.90 MHz ( period = 7.047 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 6.338 ns                ;
+; N/A                                     ; 141.90 MHz ( period = 7.047 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 6.338 ns                ;
+; N/A                                     ; 141.90 MHz ( period = 7.047 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 6.338 ns                ;
+; N/A                                     ; 141.90 MHz ( period = 7.047 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 6.338 ns                ;
+; N/A                                     ; 141.90 MHz ( period = 7.047 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 6.338 ns                ;
+; N/A                                     ; 141.90 MHz ( period = 7.047 ns )                    ; speed_select:speed_tx|cnt[1]    ; speed_select:speed_tx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 6.338 ns                ;
+; N/A                                     ; 142.59 MHz ( period = 7.013 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.304 ns                ;
+; N/A                                     ; 142.59 MHz ( period = 7.013 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.304 ns                ;
+; N/A                                     ; 142.59 MHz ( period = 7.013 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.304 ns                ;
+; N/A                                     ; 142.59 MHz ( period = 7.013 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.304 ns                ;
+; N/A                                     ; 142.59 MHz ( period = 7.013 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.304 ns                ;
+; N/A                                     ; 142.59 MHz ( period = 7.013 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.304 ns                ;
+; N/A                                     ; 142.59 MHz ( period = 7.013 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.304 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.270 ns                ;
+; N/A                                     ; 143.86 MHz ( period = 6.951 ns )                    ; my_uart_rx:my_uart_rx|num[1]    ; my_uart_rx:my_uart_rx|rx_data_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.242 ns                ;
+; N/A                                     ; 143.86 MHz ( period = 6.951 ns )                    ; my_uart_rx:my_uart_rx|num[1]    ; my_uart_rx:my_uart_rx|rx_data_r[5]    ; clk        ; clk      ; None                        ; None                      ; 6.242 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 144.95 MHz ( period = 6.899 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 146.05 MHz ( period = 6.847 ns )                    ; speed_select:speed_tx|cnt[3]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 146.05 MHz ( period = 6.847 ns )                    ; speed_select:speed_tx|cnt[3]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 146.05 MHz ( period = 6.847 ns )                    ; speed_select:speed_tx|cnt[3]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 146.05 MHz ( period = 6.847 ns )                    ; speed_select:speed_tx|cnt[3]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 146.05 MHz ( period = 6.847 ns )                    ; speed_select:speed_tx|cnt[3]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 146.05 MHz ( period = 6.847 ns )                    ; speed_select:speed_tx|cnt[3]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 146.05 MHz ( period = 6.847 ns )                    ; speed_select:speed_tx|cnt[3]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; speed_select:speed_rx|cnt[3]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.113 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; speed_select:speed_rx|cnt[3]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.113 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; speed_select:speed_rx|cnt[3]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.113 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; speed_select:speed_rx|cnt[3]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.113 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; speed_select:speed_rx|cnt[3]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.113 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; speed_select:speed_rx|cnt[3]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.113 ns                ;
+; N/A                                     ; 146.58 MHz ( period = 6.822 ns )                    ; speed_select:speed_rx|cnt[3]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.113 ns                ;
+; N/A                                     ; 147.10 MHz ( period = 6.798 ns )                    ; my_uart_rx:my_uart_rx|num[1]    ; my_uart_rx:my_uart_rx|num[1]          ; clk        ; clk      ; None                        ; None                      ; 6.089 ns                ;
+; N/A                                     ; 147.62 MHz ( period = 6.774 ns )                    ; speed_select:speed_tx|cnt[9]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.065 ns                ;
+; N/A                                     ; 147.62 MHz ( period = 6.774 ns )                    ; speed_select:speed_tx|cnt[9]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.065 ns                ;
+; N/A                                     ; 147.62 MHz ( period = 6.774 ns )                    ; speed_select:speed_tx|cnt[9]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.065 ns                ;
+; N/A                                     ; 147.62 MHz ( period = 6.774 ns )                    ; speed_select:speed_tx|cnt[9]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.065 ns                ;
+; N/A                                     ; 147.62 MHz ( period = 6.774 ns )                    ; speed_select:speed_tx|cnt[9]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.065 ns                ;
+; N/A                                     ; 147.62 MHz ( period = 6.774 ns )                    ; speed_select:speed_tx|cnt[9]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.065 ns                ;
+; N/A                                     ; 147.62 MHz ( period = 6.774 ns )                    ; speed_select:speed_tx|cnt[9]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.065 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; speed_select:speed_tx|cnt[0]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 6.001 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; speed_select:speed_tx|cnt[0]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 6.001 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; speed_select:speed_tx|cnt[0]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 6.001 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; speed_select:speed_tx|cnt[0]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 6.001 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; speed_select:speed_tx|cnt[0]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 6.001 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; speed_select:speed_tx|cnt[0]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 6.001 ns                ;
+; N/A                                     ; 149.03 MHz ( period = 6.710 ns )                    ; speed_select:speed_tx|cnt[0]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 6.001 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; my_uart_rx:my_uart_rx|num[2]    ; my_uart_rx:my_uart_rx|rx_data_r[6]    ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; my_uart_rx:my_uart_rx|num[2]    ; my_uart_rx:my_uart_rx|rx_data_r[5]    ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; speed_select:speed_rx|cnt[8]    ; speed_select:speed_rx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 5.991 ns                ;
+; N/A                                     ; 149.45 MHz ( period = 6.691 ns )                    ; speed_select:speed_rx|cnt[0]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 5.982 ns                ;
+; N/A                                     ; 149.45 MHz ( period = 6.691 ns )                    ; speed_select:speed_rx|cnt[0]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 5.982 ns                ;
+; N/A                                     ; 149.45 MHz ( period = 6.691 ns )                    ; speed_select:speed_rx|cnt[0]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 5.982 ns                ;
+; N/A                                     ; 149.45 MHz ( period = 6.691 ns )                    ; speed_select:speed_rx|cnt[0]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 5.982 ns                ;
+; N/A                                     ; 149.45 MHz ( period = 6.691 ns )                    ; speed_select:speed_rx|cnt[0]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 5.982 ns                ;
+; N/A                                     ; 149.45 MHz ( period = 6.691 ns )                    ; speed_select:speed_rx|cnt[0]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 5.982 ns                ;
+; N/A                                     ; 149.45 MHz ( period = 6.691 ns )                    ; speed_select:speed_rx|cnt[0]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 5.982 ns                ;
+; N/A                                     ; 149.52 MHz ( period = 6.688 ns )                    ; speed_select:speed_tx|cnt[2]    ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 5.979 ns                ;
+; N/A                                     ; 149.52 MHz ( period = 6.688 ns )                    ; speed_select:speed_tx|cnt[2]    ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 5.979 ns                ;
+; N/A                                     ; 149.52 MHz ( period = 6.688 ns )                    ; speed_select:speed_tx|cnt[2]    ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 5.979 ns                ;
+; N/A                                     ; 149.52 MHz ( period = 6.688 ns )                    ; speed_select:speed_tx|cnt[2]    ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 5.979 ns                ;
+; N/A                                     ; 149.52 MHz ( period = 6.688 ns )                    ; speed_select:speed_tx|cnt[2]    ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 5.979 ns                ;
+; N/A                                     ; 149.52 MHz ( period = 6.688 ns )                    ; speed_select:speed_tx|cnt[2]    ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 5.979 ns                ;
+; N/A                                     ; 149.52 MHz ( period = 6.688 ns )                    ; speed_select:speed_tx|cnt[2]    ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 5.979 ns                ;
+; N/A                                     ; 149.72 MHz ( period = 6.679 ns )                    ; my_uart_rx:my_uart_rx|num[0]    ; my_uart_rx:my_uart_rx|rx_data_r[6]    ; clk        ; clk      ; None                        ; None                      ; 5.970 ns                ;
+; N/A                                     ; 149.72 MHz ( period = 6.679 ns )                    ; my_uart_rx:my_uart_rx|num[0]    ; my_uart_rx:my_uart_rx|rx_data_r[5]    ; clk        ; clk      ; None                        ; None                      ; 5.970 ns                ;
+; N/A                                     ; 149.86 MHz ( period = 6.673 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 5.964 ns                ;
+; N/A                                     ; 149.86 MHz ( period = 6.673 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 5.964 ns                ;
+; N/A                                     ; 149.86 MHz ( period = 6.673 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 5.964 ns                ;
+; N/A                                     ; 149.86 MHz ( period = 6.673 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 5.964 ns                ;
+; N/A                                     ; 149.86 MHz ( period = 6.673 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 5.964 ns                ;
+; N/A                                     ; 149.86 MHz ( period = 6.673 ns )                    ; speed_select:speed_tx|cnt[8]    ; speed_select:speed_tx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 5.964 ns                ;
+; N/A                                     ; 150.29 MHz ( period = 6.654 ns )                    ; speed_select:speed_rx|cnt[2]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 5.945 ns                ;
+; N/A                                     ; 150.29 MHz ( period = 6.654 ns )                    ; speed_select:speed_rx|cnt[2]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 5.945 ns                ;
+; N/A                                     ; 150.29 MHz ( period = 6.654 ns )                    ; speed_select:speed_rx|cnt[2]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 5.945 ns                ;
+; N/A                                     ; 150.29 MHz ( period = 6.654 ns )                    ; speed_select:speed_rx|cnt[2]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 5.945 ns                ;
+; N/A                                     ; 150.29 MHz ( period = 6.654 ns )                    ; speed_select:speed_rx|cnt[2]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 5.945 ns                ;
+; N/A                                     ; 150.29 MHz ( period = 6.654 ns )                    ; speed_select:speed_rx|cnt[2]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 5.945 ns                ;
+; N/A                                     ; 150.29 MHz ( period = 6.654 ns )                    ; speed_select:speed_rx|cnt[2]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 5.945 ns                ;
+; N/A                                     ; 150.40 MHz ( period = 6.649 ns )                    ; speed_select:speed_tx|cnt[11]   ; speed_select:speed_tx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 150.40 MHz ( period = 6.649 ns )                    ; speed_select:speed_tx|cnt[11]   ; speed_select:speed_tx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 150.40 MHz ( period = 6.649 ns )                    ; speed_select:speed_tx|cnt[11]   ; speed_select:speed_tx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 150.40 MHz ( period = 6.649 ns )                    ; speed_select:speed_tx|cnt[11]   ; speed_select:speed_tx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 150.40 MHz ( period = 6.649 ns )                    ; speed_select:speed_tx|cnt[11]   ; speed_select:speed_tx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 150.40 MHz ( period = 6.649 ns )                    ; speed_select:speed_tx|cnt[11]   ; speed_select:speed_tx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 150.40 MHz ( period = 6.649 ns )                    ; speed_select:speed_tx|cnt[11]   ; speed_select:speed_tx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 150.49 MHz ( period = 6.645 ns )                    ; speed_select:speed_rx|cnt[11]   ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 150.49 MHz ( period = 6.645 ns )                    ; speed_select:speed_rx|cnt[11]   ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 150.49 MHz ( period = 6.645 ns )                    ; speed_select:speed_rx|cnt[11]   ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 150.49 MHz ( period = 6.645 ns )                    ; speed_select:speed_rx|cnt[11]   ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 150.49 MHz ( period = 6.645 ns )                    ; speed_select:speed_rx|cnt[11]   ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 150.49 MHz ( period = 6.645 ns )                    ; speed_select:speed_rx|cnt[11]   ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 150.49 MHz ( period = 6.645 ns )                    ; speed_select:speed_rx|cnt[11]   ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 150.74 MHz ( period = 6.634 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|clk_bps_r       ; clk        ; clk      ; None                        ; None                      ; 5.925 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_tx|cnt[4]    ; speed_select:speed_tx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; speed_select:speed_rx|cnt[4]    ; speed_select:speed_rx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 5.887 ns                ;
+; N/A                                     ; 152.11 MHz ( period = 6.574 ns )                    ; my_uart_rx:my_uart_rx|rx_int    ; my_uart_rx:my_uart_rx|rx_temp_data[3] ; clk        ; clk      ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 152.25 MHz ( period = 6.568 ns )                    ; my_uart_rx:my_uart_rx|rx_int    ; my_uart_rx:my_uart_rx|rx_temp_data[2] ; clk        ; clk      ; None                        ; None                      ; 5.859 ns                ;
+; N/A                                     ; 152.28 MHz ( period = 6.567 ns )                    ; my_uart_rx:my_uart_rx|rx_int    ; my_uart_rx:my_uart_rx|rx_temp_data[4] ; clk        ; clk      ; None                        ; None                      ; 5.858 ns                ;
+; N/A                                     ; 152.46 MHz ( period = 6.559 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[3]    ; clk        ; clk      ; None                        ; None                      ; 5.850 ns                ;
+; N/A                                     ; 152.46 MHz ( period = 6.559 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[4]    ; clk        ; clk      ; None                        ; None                      ; 5.850 ns                ;
+; N/A                                     ; 152.46 MHz ( period = 6.559 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[0]    ; clk        ; clk      ; None                        ; None                      ; 5.850 ns                ;
+; N/A                                     ; 152.46 MHz ( period = 6.559 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[2]    ; clk        ; clk      ; None                        ; None                      ; 5.850 ns                ;
+; N/A                                     ; 152.63 MHz ( period = 6.552 ns )                    ; my_uart_tx:my_uart_tx|num[0]    ; my_uart_tx:my_uart_tx|rs232_tx_r      ; clk        ; clk      ; None                        ; None                      ; 5.843 ns                ;
+; N/A                                     ; 152.67 MHz ( period = 6.550 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[1]    ; clk        ; clk      ; None                        ; None                      ; 5.841 ns                ;
+; N/A                                     ; 152.67 MHz ( period = 6.550 ns )                    ; my_uart_rx:my_uart_rx|num[3]    ; my_uart_rx:my_uart_rx|rx_data_r[7]    ; clk        ; clk      ; None                        ; None                      ; 5.841 ns                ;
+; N/A                                     ; 152.84 MHz ( period = 6.543 ns )                    ; speed_select:speed_rx|cnt[9]    ; speed_select:speed_rx|cnt[12]         ; clk        ; clk      ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 152.84 MHz ( period = 6.543 ns )                    ; speed_select:speed_rx|cnt[9]    ; speed_select:speed_rx|cnt[7]          ; clk        ; clk      ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 152.84 MHz ( period = 6.543 ns )                    ; speed_select:speed_rx|cnt[9]    ; speed_select:speed_rx|cnt[8]          ; clk        ; clk      ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 152.84 MHz ( period = 6.543 ns )                    ; speed_select:speed_rx|cnt[9]    ; speed_select:speed_rx|cnt[6]          ; clk        ; clk      ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 152.84 MHz ( period = 6.543 ns )                    ; speed_select:speed_rx|cnt[9]    ; speed_select:speed_rx|cnt[9]          ; clk        ; clk      ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 152.84 MHz ( period = 6.543 ns )                    ; speed_select:speed_rx|cnt[9]    ; speed_select:speed_rx|cnt[11]         ; clk        ; clk      ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 152.84 MHz ( period = 6.543 ns )                    ; speed_select:speed_rx|cnt[9]    ; speed_select:speed_rx|cnt[10]         ; clk        ; clk      ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 153.23 MHz ( period = 6.526 ns )                    ; my_uart_rx:my_uart_rx|num[0]    ; my_uart_rx:my_uart_rx|num[1]          ; clk        ; clk      ; None                        ; None                      ; 5.817 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 5.807 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 5.807 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 5.807 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 5.807 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 5.807 ns                ;
+; N/A                                     ; 153.47 MHz ( period = 6.516 ns )                    ; speed_select:speed_rx|cnt[7]    ; speed_select:speed_rx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 5.807 ns                ;
+; N/A                                     ; 153.82 MHz ( period = 6.501 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[0]          ; clk        ; clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 153.82 MHz ( period = 6.501 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[1]          ; clk        ; clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 153.82 MHz ( period = 6.501 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[5]          ; clk        ; clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 153.82 MHz ( period = 6.501 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[3]          ; clk        ; clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 153.82 MHz ( period = 6.501 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[2]          ; clk        ; clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 153.82 MHz ( period = 6.501 ns )                    ; speed_select:speed_tx|cnt[7]    ; speed_select:speed_tx|cnt[4]          ; clk        ; clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 153.94 MHz ( period = 6.496 ns )                    ; my_uart_rx:my_uart_rx|rx_int    ; my_uart_rx:my_uart_rx|rx_data_r[6]    ; clk        ; clk      ; None                        ; None                      ; 5.787 ns                ;
+; N/A                                     ; 153.94 MHz ( period = 6.496 ns )                    ; my_uart_rx:my_uart_rx|rx_int    ; my_uart_rx:my_uart_rx|rx_data_r[5]    ; clk        ; clk      ; None                        ; None                      ; 5.787 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                 ;                                       ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------+---------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; tsu                                                                                             ;
++-------+--------------+------------+----------+---------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From     ; To                                    ; To Clock ;
++-------+--------------+------------+----------+---------------------------------------+----------+
+; N/A   ; None         ; 2.111 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[0] ; clk      ;
+; N/A   ; None         ; 2.099 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[3] ; clk      ;
+; N/A   ; None         ; 2.090 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[5] ; clk      ;
+; N/A   ; None         ; 2.085 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[6] ; clk      ;
+; N/A   ; None         ; 2.040 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[1] ; clk      ;
+; N/A   ; None         ; 2.030 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[7] ; clk      ;
+; N/A   ; None         ; 1.919 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rs232_rx0       ; clk      ;
+; N/A   ; None         ; 1.904 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[4] ; clk      ;
+; N/A   ; None         ; 1.896 ns   ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[2] ; clk      ;
++-------+--------------+------------+----------+---------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------+
+; tco                                                                                          ;
++-------+--------------+------------+----------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                             ; To       ; From Clock ;
++-------+--------------+------------+----------------------------------+----------+------------+
+; N/A   ; None         ; 8.505 ns   ; my_uart_tx:my_uart_tx|rs232_tx_r ; rs232_tx ; clk        ;
++-------+--------------+------------+----------------------------------+----------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; th                                                                                                    ;
++---------------+-------------+-----------+----------+---------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From     ; To                                    ; To Clock ;
++---------------+-------------+-----------+----------+---------------------------------------+----------+
+; N/A           ; None        ; -1.342 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[2] ; clk      ;
+; N/A           ; None        ; -1.350 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[4] ; clk      ;
+; N/A           ; None        ; -1.365 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rs232_rx0       ; clk      ;
+; N/A           ; None        ; -1.476 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[7] ; clk      ;
+; N/A           ; None        ; -1.486 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[1] ; clk      ;
+; N/A           ; None        ; -1.531 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[6] ; clk      ;
+; N/A           ; None        ; -1.536 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[5] ; clk      ;
+; N/A           ; None        ; -1.545 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[3] ; clk      ;
+; N/A           ; None        ; -1.557 ns ; rs232_rx ; my_uart_rx:my_uart_rx|rx_temp_data[0] ; clk      ;
++---------------+-------------+-----------+----------+---------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sun Aug 02 09:05:36 2009
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off my_uart_top -c my_uart_top
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 133.98 MHz between source register "speed_select:speed_tx|cnt[1]" and destination register "speed_select:speed_tx|cnt[12]" (period= 7.464 ns)
+    Info: + Longest register to register delay is 6.755 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y4_N5; Fanout = 4; REG Node = 'speed_select:speed_tx|cnt[1]'
+        Info: 2: + IC(1.307 ns) + CELL(0.914 ns) = 2.221 ns; Loc. = LC_X6_Y4_N9; Fanout = 2; COMB Node = 'speed_select:speed_tx|Equal0~0'
+        Info: 3: + IC(1.165 ns) + CELL(0.511 ns) = 3.897 ns; Loc. = LC_X5_Y4_N2; Fanout = 13; COMB Node = 'speed_select:speed_tx|always0~0'
+        Info: 4: + IC(1.098 ns) + CELL(1.760 ns) = 6.755 ns; Loc. = LC_X6_Y4_N6; Fanout = 3; REG Node = 'speed_select:speed_tx|cnt[12]'
+        Info: Total cell delay = 3.185 ns ( 47.15 % )
+        Info: Total interconnect delay = 3.570 ns ( 52.85 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X6_Y4_N6; Fanout = 3; REG Node = 'speed_select:speed_tx|cnt[12]'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+        Info: - Longest clock path from clock "clk" to source register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y4_N5; Fanout = 4; REG Node = 'speed_select:speed_tx|cnt[1]'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "my_uart_rx:my_uart_rx|rx_temp_data[0]" (data pin = "rs232_rx", clock pin = "clk") is 2.111 ns
+    Info: + Longest pin to register delay is 5.126 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_77; Fanout = 9; PIN Node = 'rs232_rx'
+        Info: 2: + IC(2.933 ns) + CELL(1.061 ns) = 5.126 ns; Loc. = LC_X4_Y2_N4; Fanout = 2; REG Node = 'my_uart_rx:my_uart_rx|rx_temp_data[0]'
+        Info: Total cell delay = 2.193 ns ( 42.78 % )
+        Info: Total interconnect delay = 2.933 ns ( 57.22 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X4_Y2_N4; Fanout = 2; REG Node = 'my_uart_rx:my_uart_rx|rx_temp_data[0]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+Info: tco from clock "clk" to destination pin "rs232_tx" through register "my_uart_tx:my_uart_tx|rs232_tx_r" is 8.505 ns
+    Info: + Longest clock path from clock "clk" to source register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X2_Y4_N4; Fanout = 2; REG Node = 'my_uart_tx:my_uart_tx|rs232_tx_r'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.781 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X2_Y4_N4; Fanout = 2; REG Node = 'my_uart_tx:my_uart_tx|rs232_tx_r'
+        Info: 2: + IC(2.459 ns) + CELL(2.322 ns) = 4.781 ns; Loc. = PIN_78; Fanout = 0; PIN Node = 'rs232_tx'
+        Info: Total cell delay = 2.322 ns ( 48.57 % )
+        Info: Total interconnect delay = 2.459 ns ( 51.43 % )
+Info: th for register "my_uart_rx:my_uart_rx|rx_temp_data[2]" (data pin = "rs232_rx", clock pin = "clk") is -1.342 ns
+    Info: + Longest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X4_Y2_N9; Fanout = 2; REG Node = 'my_uart_rx:my_uart_rx|rx_temp_data[2]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 4.911 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_77; Fanout = 9; PIN Node = 'rs232_rx'
+        Info: 2: + IC(2.975 ns) + CELL(0.804 ns) = 4.911 ns; Loc. = LC_X4_Y2_N9; Fanout = 2; REG Node = 'my_uart_rx:my_uart_rx|rx_temp_data[2]'
+        Info: Total cell delay = 1.936 ns ( 39.42 % )
+        Info: Total interconnect delay = 2.975 ns ( 60.58 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 135 megabytes
+    Info: Processing ended: Sun Aug 02 09:05:38 2009
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

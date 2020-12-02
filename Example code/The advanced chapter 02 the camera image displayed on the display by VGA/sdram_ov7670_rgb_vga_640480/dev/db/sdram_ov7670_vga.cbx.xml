@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="sdram_ov7670_vga">
+		<CBX_INST_ENTRY INSTANCE_NAME="|sdram_ov7670_vga|sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|dcfifo_ctrl:u_dcfifo_ctrl|rdfifo:u_rdfifo|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_nen1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|sdram_ov7670_vga|sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|dcfifo_ctrl:u_dcfifo_ctrl|wrfifo:u_wrfifo|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_4en1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

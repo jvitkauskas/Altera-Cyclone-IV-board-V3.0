@@ -1,0 +1,134 @@
+Altera SOPC Builder Version 11.12 Build 259
+Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
+
+
+No .sopc_builder configuration file(!)
+# 2015.04.17 20:20:33 (*) mk_custom_sdk starting
+# 2015.04.17 20:20:33 (*) Reading project E:/AA_IO_BD/new/TFT_SD_for24TFT/lcd_at_nios_qii_part/nios_ii_sys.ptf.
+
+# 2015.04.17 20:20:33 (*) Finding all CPUs
+# 2015.04.17 20:20:33 (*) Finding all available components
+# 2015.04.17 20:20:33 (*) Reading E:/AA_IO_BD/new/TFT_SD_for24TFT/lcd_at_nios_qii_part/.sopc_builder/install.ptf
+
+# 2015.04.17 20:20:33 (*) Found 63 components
+
+# 2015.04.17 20:20:33 (*) Finding all peripherals
+
+# 2015.04.17 20:20:34 (*) Finding software components
+
+# 2015.04.17 20:20:34 (*) (Legacy SDK Generation Skipped)
+# 2015.04.17 20:20:34 (*) (All TCL Script Generation Skipped)
+# 2015.04.17 20:20:34 (*) (No Libraries Built)
+# 2015.04.17 20:20:34 (*) (Contents Generation Skipped)
+# 2015.04.17 20:20:34 (*) mk_custom_sdk finishing
+
+# 2015.04.17 20:20:34 (*) Starting generation for system: nios_ii_sys.
+
+.
+.
+.
+.
+.
+...
+.
+........
+.
+.......
+
+# 2015.04.17 20:20:35 (*) Running Generator Program for nios_f
+
+# 2015.04.17 20:20:36 (*) Starting Nios II generation
+# 2015.04.17 20:20:37 (*)   Checking for plaintext license.
+# 2015.04.17 20:20:37 (*)   Plaintext license not found.
+# 2015.04.17 20:20:37 (*)   Checking for encrypted license (non-evaluation).
+# 2015.04.17 20:20:38 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2015.04.17 20:20:38 (*)   Getting CPU configuration settings
+# 2015.04.17 20:20:38 (*)   Elaborating CPU configuration settings
+# 2015.04.17 20:20:38 (*)   Creating all objects for CPU
+
+# 2015.04.17 20:20:38 (*)     Testbench
+# 2015.04.17 20:20:38 (*)     Instruction decoding
+# 2015.04.17 20:20:38 (*)       Instruction fields
+# 2015.04.17 20:20:38 (*)       Instruction decodes
+# 2015.04.17 20:20:39 (*)       Signals for RTL simulation waveforms
+# 2015.04.17 20:20:39 (*)       Instruction controls
+# 2015.04.17 20:20:39 (*)     Pipeline frontend
+# 2015.04.17 20:20:39 (*)     Pipeline backend
+# 2015.04.17 20:20:42 (*)   Generating HDL from CPU objects
+# 2015.04.17 20:20:45 (*)   Creating encrypted HDL
+
+# 2015.04.17 20:20:46 (*) Done Nios II generation
+
+# 2015.04.17 20:20:47 (*) Running Generator Program for sdram
+
+# 2015.04.17 20:20:48 (*) Running Generator Program for epcs
+
+# 2015.04.17 20:20:50 (*) Running Generator Program for jtag_uart
+
+# 2015.04.17 20:20:51 (*) Running Generator Program for sysid
+
+# 2015.04.17 20:20:52 (*) Running Generator Program for sys_clk_timer
+
+# 2015.04.17 20:20:53 (*) Running Generator Program for high_res_timer
+
+# 2015.04.17 20:20:54 (*) Running Generator Program for watchdog_timer
+
+# 2015.04.17 20:20:56 (*) Running Generator Program for ili_db
+
+# 2015.04.17 20:20:57 (*) Running Generator Program for ili_nrst
+
+# 2015.04.17 20:20:58 (*) Running Generator Program for ili_ncs
+
+# 2015.04.17 20:20:59 (*) Running Generator Program for ili_nwr
+
+# 2015.04.17 20:21:00 (*) Running Generator Program for ili_nrd
+
+# 2015.04.17 20:21:01 (*) Running Generator Program for ili_rs
+
+# 2015.04.17 20:21:02 (*) Running Generator Program for ads_busy
+
+# 2015.04.17 20:21:03 (*) Running Generator Program for ads_nirq
+
+# 2015.04.17 20:21:04 (*) Running Generator Program for ads_clk
+
+# 2015.04.17 20:21:06 (*) Running Generator Program for ads_dout
+
+# 2015.04.17 20:21:07 (*) Running Generator Program for ads_din
+
+# 2015.04.17 20:21:08 (*) Running Generator Program for ads_ncs
+
+# 2015.04.17 20:21:09 (*) Running Generator Program for sd_ncs
+
+# 2015.04.17 20:21:10 (*) Running Generator Program for sd_clk
+
+# 2015.04.17 20:21:11 (*) Running Generator Program for sd_din
+
+# 2015.04.17 20:21:12 (*) Running Generator Program for sd_dout
+
+# 2015.04.17 20:21:13 (*) Running Generator Program for pipeline_bridge_0
+
+.
+
+
+# 2015.04.17 20:21:15 (*) Running Test Generator Program for sdram
+
+# 2015.04.17 20:21:16 (*) Making arbitration and system (top) modules.
+
+# 2015.04.17 20:21:27 (*) Generating Quartus symbol for top level: nios_ii_sys
+
+# 2015.04.17 20:21:27 (*) Symbol E:/AA_IO_BD/new/TFT_SD_for24TFT/lcd_at_nios_qii_part/nios_ii_sys.bsf already exists, no need to regenerate
+# 2015.04.17 20:21:27 (*) Creating command-line system-generation script: E:/AA_IO_BD/new/TFT_SD_for24TFT/lcd_at_nios_qii_part/nios_ii_sys_generation_script
+
+# 2015.04.17 20:21:27 (*) Running setup for HDL simulator: modelsim
+
+
+# 2015.04.17 20:21:28 (*) Completed generation for system: nios_ii_sys.
+# 2015.04.17 20:21:28 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : E:/AA_IO_BD/new/TFT_SD_for24TFT/lcd_at_nios_qii_part/nios_ii_sys.ptf 
+  System HDL Model : E:/AA_IO_BD/new/TFT_SD_for24TFT/lcd_at_nios_qii_part/nios_ii_sys.v 
+  System Generation Script : E:/AA_IO_BD/new/TFT_SD_for24TFT/lcd_at_nios_qii_part/nios_ii_sys_generation_script 
+
+# 2015.04.17 20:21:28 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

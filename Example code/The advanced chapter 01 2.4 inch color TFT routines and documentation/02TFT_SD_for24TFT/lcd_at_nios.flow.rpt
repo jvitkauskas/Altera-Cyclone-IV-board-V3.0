@@ -1,0 +1,143 @@
+Flow report for lcd_at_nios
+Fri Apr 17 20:52:32 2015
+Quartus II 64-Bit Version 11.1 Build 259 01/25/2012 Service Pack 2.11 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; Flow Summary                                                                           ;
++------------------------------------+---------------------------------------------------+
+; Flow Status                        ; Successful - Fri Apr 17 20:52:26 2015             ;
+; Quartus II 64-Bit Version          ; 11.1 Build 259 01/25/2012 SP 2.11 SJ Full Version ;
+; Revision Name                      ; lcd_at_nios                                       ;
+; Top-level Entity Name              ; lcd_at_nios                                       ;
+; Family                             ; Cyclone IV E                                      ;
+; Device                             ; EP4CE6E22C8                                       ;
+; Timing Models                      ; Final                                             ;
+; Total logic elements               ; 3,696 / 6,272 ( 59 % )                            ;
+;     Total combinational functions  ; 3,269 / 6,272 ( 52 % )                            ;
+;     Dedicated logic registers      ; 2,279 / 6,272 ( 36 % )                            ;
+; Total registers                    ; 2347                                              ;
+; Total pins                         ; 67 / 92 ( 73 % )                                  ;
+; Total virtual pins                 ; 0                                                 ;
+; Total memory bits                  ; 55,552 / 276,480 ( 20 % )                         ;
+; Embedded Multiplier 9-bit elements ; 4 / 30 ( 13 % )                                   ;
+; Total PLLs                         ; 1 / 2 ( 50 % )                                    ;
++------------------------------------+---------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/17/2015 20:51:20 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; lcd_at_nios         ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                ;
++-------------------------------------+------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                          ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 106258779494184.142927508017876                ; --            ; --          ; --         ;
+; ENABLE_ADVANCED_IO_TIMING           ; On                                             ; --            ; --          ; --         ;
+; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS  ; On                                             ; Off           ; --          ; --         ;
+; FLOW_ENABLE_RTL_VIEWER              ; On                                             ; Off           ; --          ; --         ;
+; IP_TOOL_ENV                         ; sopc                                           ; --            ; nios_ii_sys ; --         ;
+; IP_TOOL_NAME                        ; ALTPLL                                         ; --            ; --          ; --         ;
+; IP_TOOL_NAME                        ; sopc                                           ; --            ; nios_ii_sys ; --         ;
+; IP_TOOL_VERSION                     ; 11.1                                           ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                     ; 11.1sp2                                        ; --            ; nios_ii_sys ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                             ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                              ; --            ; --          ; --         ;
+; MISC_FILE                           ; pll.bsf                                        ; --            ; --          ; --         ;
+; MISC_FILE                           ; pll_inst.v                                     ; --            ; --          ; --         ;
+; MISC_FILE                           ; pll.ppf                                        ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/Amy-S/lcd/lcd_at_nios.dpf                   ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/DATA/Amy-studio/_5_temp/lcd/lcd_at_nios.dpf ; --            ; --          ; --         ;
+; MISC_FILE                           ; D:/Amy-S/lcd_at_nios_qii_part/lcd_at_nios.dpf  ; --            ; --          ; --         ;
+; NUM_PARALLEL_PROCESSORS             ; All                                            ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                              ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                              ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                     ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                     ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 14622752                                       ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                          ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                         ; --            ; --          ; Top        ;
+; SMART_RECOMPILE                     ; On                                             ; Off           ; --          ; --         ;
+; SOPC_BUILDER_SIGNATURE_ID           ; 60A44CCE57280000014CC7525063                   ; --            ; --          ; --         ;
++-------------------------------------+------------------------------------------------+---------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:30     ; 1.0                     ; 521 MB              ; 00:00:30                           ;
+; I/O Assignment Analysis   ; 00:00:04     ; 1.0                     ; 421 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:18     ; 1.9                     ; 611 MB              ; 00:00:20                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 364 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 2.1                     ; 468 MB              ; 00:00:10                           ;
+; Total                     ; 00:01:00     ; --                      ; --                  ; 00:01:07                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; I/O Assignment Analysis   ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off lcd_at_nios -c lcd_at_nios
+quartus_fit --read_settings_files=off --write_settings_files=off lcd_at_nios -c lcd_at_nios --check_ios
+quartus_fit --read_settings_files=off --write_settings_files=off lcd_at_nios -c lcd_at_nios
+quartus_asm --read_settings_files=off --write_settings_files=off lcd_at_nios -c lcd_at_nios
+quartus_sta lcd_at_nios -c lcd_at_nios
+
+
+

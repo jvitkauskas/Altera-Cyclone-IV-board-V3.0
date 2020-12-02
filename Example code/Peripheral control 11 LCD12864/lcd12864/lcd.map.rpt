@@ -1,0 +1,493 @@
+Analysis & Synthesis report for lcd
+Fri May 13 22:37:39 2011
+Quartus II Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |lcd|next
+  9. State Machine - |lcd|current
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |lcd
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 13 22:37:39 2011         ;
+; Quartus II Version                 ; 9.1 Build 304 01/25/2010 SP 1 SJ Full Version ;
+; Revision Name                      ; lcd                                           ;
+; Top-level Entity Name              ; lcd                                           ;
+; Family                             ; Cyclone II                                    ;
+; Total logic elements               ; 84                                            ;
+;     Total combinational functions  ; 52                                            ;
+;     Dedicated logic registers      ; 64                                            ;
+; Total registers                    ; 64                                            ;
+; Total pins                         ; 12                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C8Q208C8        ;                    ;
+; Top-level entity name                                                      ; lcd                ; lcd                ;
+; Family name                                                                ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                         ;
++----------------------------------+-----------------+------------------------+----------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path     ;
++----------------------------------+-----------------+------------------------+----------------------------------+
+; lcd.v                            ; yes             ; User Verilog HDL File  ; F:/fpgatest/wx/13_LCD12864/lcd.v ;
++----------------------------------+-----------------+------------------------+----------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 84    ;
+;                                             ;       ;
+; Total combinational functions               ; 52    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 25    ;
+;     -- 3 input functions                    ; 7     ;
+;     -- <=2 input functions                  ; 20    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 37    ;
+;     -- arithmetic mode                      ; 15    ;
+;                                             ;       ;
+; Total registers                             ; 64    ;
+;     -- Dedicated logic registers            ; 64    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 12    ;
+; Maximum fan-out node                        ; clkr  ;
+; Maximum fan-out                             ; 49    ;
+; Total fan-out                               ; 297   ;
+; Average fan-out                             ; 2.32  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |lcd                       ; 52 (52)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |lcd                ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lcd|next                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++------------+----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; Name       ; next.nul ; next.dat26 ; next.dat25 ; next.dat24 ; next.dat23 ; next.dat22 ; next.dat21 ; next.dat20 ; next.dat19 ; next.dat18 ; next.dat17 ; next.dat16 ; next.dat15 ; next.dat14 ; next.dat13 ; next.dat12 ; next.dat11 ; next.dat10 ; next.dat9 ; next.dat8 ; next.dat7 ; next.dat6 ; next.dat5 ; next.dat4 ; next.dat3 ; next.dat2 ; next.dat1 ; next.dat0 ; next.set6 ; next.set5 ; next.set4 ; next.set3 ; next.set2 ; next.set1 ; next.set0 ;
++------------+----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; next.set0  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ;
+; next.set1  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 1         ;
+; next.set2  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 1         ;
+; next.set3  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 1         ;
+; next.set4  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 1         ;
+; next.set5  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.set6  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat0  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat1  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat2  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat3  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat4  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat5  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat6  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat7  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat8  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat9  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat10 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat11 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat12 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat13 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat14 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat15 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat16 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat17 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat18 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat19 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat20 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat21 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat22 ; 0        ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat23 ; 0        ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat24 ; 0        ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat25 ; 0        ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat26 ; 0        ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.nul   ; 1        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
++------------+----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lcd|current                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
++---------------+-------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name          ; current.nul ; current.dat26 ; current.dat25 ; current.dat24 ; current.dat23 ; current.dat22 ; current.dat21 ; current.dat20 ; current.dat19 ; current.dat18 ; current.dat17 ; current.dat16 ; current.dat15 ; current.dat14 ; current.dat13 ; current.dat12 ; current.dat11 ; current.dat10 ; current.dat9 ; current.dat8 ; current.dat7 ; current.dat6 ; current.dat5 ; current.dat4 ; current.dat3 ; current.dat2 ; current.dat1 ; current.dat0 ; current.set6 ; current.set5 ; current.set4 ; current.set3 ; current.set2 ; current.set1 ; current.set0 ;
++---------------+-------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; current.set0  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; current.set1  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; current.set2  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; current.set3  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; current.set4  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; current.set5  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.set6  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat0  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat1  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat2  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat3  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat4  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat5  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat6  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat7  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat8  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat9  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat10 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat11 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat12 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat13 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat14 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat15 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat16 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat17 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat18 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat19 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat20 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat21 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat22 ; 0           ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat23 ; 0           ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat24 ; 0           ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat25 ; 0           ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat26 ; 0           ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.nul   ; 1           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++---------------+-------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; current.set0                           ; Lost fanout        ;
+; current.set1                           ; Lost fanout        ;
+; current.set2                           ; Lost fanout        ;
+; current.set3                           ; Lost fanout        ;
+; current.set4                           ; Lost fanout        ;
+; current.set5                           ; Lost fanout        ;
+; current.set6                           ; Lost fanout        ;
+; current.dat0                           ; Lost fanout        ;
+; current.dat1                           ; Lost fanout        ;
+; current.dat2                           ; Lost fanout        ;
+; current.dat3                           ; Lost fanout        ;
+; current.dat4                           ; Lost fanout        ;
+; current.dat5                           ; Lost fanout        ;
+; current.dat6                           ; Lost fanout        ;
+; current.dat7                           ; Lost fanout        ;
+; current.dat8                           ; Lost fanout        ;
+; current.dat9                           ; Lost fanout        ;
+; current.dat10                          ; Lost fanout        ;
+; current.dat11                          ; Lost fanout        ;
+; current.dat12                          ; Lost fanout        ;
+; current.dat13                          ; Lost fanout        ;
+; current.dat14                          ; Lost fanout        ;
+; current.dat15                          ; Lost fanout        ;
+; current.dat16                          ; Lost fanout        ;
+; current.dat17                          ; Lost fanout        ;
+; current.dat18                          ; Lost fanout        ;
+; current.dat19                          ; Lost fanout        ;
+; current.dat20                          ; Lost fanout        ;
+; current.dat21                          ; Lost fanout        ;
+; current.dat22                          ; Lost fanout        ;
+; current.dat23                          ; Lost fanout        ;
+; current.dat24                          ; Lost fanout        ;
+; current.dat25                          ; Lost fanout        ;
+; current.dat26                          ; Lost fanout        ;
+; current.nul                            ; Lost fanout        ;
+; next~2                                 ; Lost fanout        ;
+; next~3                                 ; Lost fanout        ;
+; next~4                                 ; Lost fanout        ;
+; next~5                                 ; Lost fanout        ;
+; next~6                                 ; Lost fanout        ;
+; next~7                                 ; Lost fanout        ;
+; current~2                              ; Lost fanout        ;
+; current~3                              ; Lost fanout        ;
+; current~4                              ; Lost fanout        ;
+; current~5                              ; Lost fanout        ;
+; current~6                              ; Lost fanout        ;
+; current~7                              ; Lost fanout        ;
+; Total Number of Removed Registers = 47 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |lcd ;
++----------------+--------+-------------------------------------------+
+; Parameter Name ; Value  ; Type                                      ;
++----------------+--------+-------------------------------------------+
+; set0           ; 000000 ; Unsigned Binary                           ;
+; set1           ; 000001 ; Unsigned Binary                           ;
+; set2           ; 000010 ; Unsigned Binary                           ;
+; set3           ; 000011 ; Unsigned Binary                           ;
+; set4           ; 000100 ; Unsigned Binary                           ;
+; set5           ; 000101 ; Unsigned Binary                           ;
+; set6           ; 000110 ; Unsigned Binary                           ;
+; dat0           ; 000111 ; Unsigned Binary                           ;
+; dat1           ; 001000 ; Unsigned Binary                           ;
+; dat2           ; 001001 ; Unsigned Binary                           ;
+; dat3           ; 001010 ; Unsigned Binary                           ;
+; dat4           ; 001011 ; Unsigned Binary                           ;
+; dat5           ; 001100 ; Unsigned Binary                           ;
+; dat6           ; 001101 ; Unsigned Binary                           ;
+; dat7           ; 001110 ; Unsigned Binary                           ;
+; dat8           ; 001111 ; Unsigned Binary                           ;
+; dat9           ; 010000 ; Unsigned Binary                           ;
+; dat10          ; 010010 ; Unsigned Binary                           ;
+; dat11          ; 010011 ; Unsigned Binary                           ;
+; dat12          ; 010100 ; Unsigned Binary                           ;
+; dat13          ; 010101 ; Unsigned Binary                           ;
+; dat14          ; 010110 ; Unsigned Binary                           ;
+; dat15          ; 010111 ; Unsigned Binary                           ;
+; dat16          ; 011000 ; Unsigned Binary                           ;
+; dat17          ; 011001 ; Unsigned Binary                           ;
+; dat18          ; 011010 ; Unsigned Binary                           ;
+; dat19          ; 011011 ; Unsigned Binary                           ;
+; dat20          ; 011100 ; Unsigned Binary                           ;
+; dat21          ; 011101 ; Unsigned Binary                           ;
+; dat22          ; 011110 ; Unsigned Binary                           ;
+; dat23          ; 011111 ; Unsigned Binary                           ;
+; dat24          ; 100000 ; Unsigned Binary                           ;
+; dat25          ; 100001 ; Unsigned Binary                           ;
+; dat26          ; 100010 ; Unsigned Binary                           ;
+; nul            ; 110001 ; Unsigned Binary                           ;
++----------------+--------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Full Version
+    Info: Processing started: Fri May 13 22:37:37 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lcd -c lcd
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (10229): Verilog HDL Expression warning at lcd.v(52): truncated literal to match 6 bits
+Info: Found 1 design units, including 1 entities, in source file lcd.v
+    Info: Found entity 1: lcd
+Info: Elaborating entity "lcd" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at lcd.v(55): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at lcd.v(108): truncated value with size 32 to match size of target (2)
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rw" is stuck at GND
+Info: 47 registers lost all their fanouts during netlist optimizations. The first 47 are displayed below.
+    Info: Register "current.set0" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set1" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set2" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set3" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set4" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set5" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set6" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat0" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat1" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat2" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat3" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat4" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat5" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat6" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat7" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat8" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat9" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat10" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat11" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat12" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat13" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat14" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat15" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat16" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat17" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat18" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat19" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat20" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat21" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat22" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat23" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat24" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat25" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat26" lost all its fanouts during netlist optimizations.
+    Info: Register "current.nul" lost all its fanouts during netlist optimizations.
+    Info: Register "next~2" lost all its fanouts during netlist optimizations.
+    Info: Register "next~3" lost all its fanouts during netlist optimizations.
+    Info: Register "next~4" lost all its fanouts during netlist optimizations.
+    Info: Register "next~5" lost all its fanouts during netlist optimizations.
+    Info: Register "next~6" lost all its fanouts during netlist optimizations.
+    Info: Register "next~7" lost all its fanouts during netlist optimizations.
+    Info: Register "current~2" lost all its fanouts during netlist optimizations.
+    Info: Register "current~3" lost all its fanouts during netlist optimizations.
+    Info: Register "current~4" lost all its fanouts during netlist optimizations.
+    Info: Register "current~5" lost all its fanouts during netlist optimizations.
+    Info: Register "current~6" lost all its fanouts during netlist optimizations.
+    Info: Register "current~7" lost all its fanouts during netlist optimizations.
+Info: Implemented 113 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 11 output pins
+    Info: Implemented 101 logic cells
+Info: Generated suppressed messages file F:/fpgatest/wx/13_LCD12864/lcd.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 170 megabytes
+    Info: Processing ended: Fri May 13 22:37:39 2011
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/fpgatest/wx/13_LCD12864/lcd.map.smsg.
+
+

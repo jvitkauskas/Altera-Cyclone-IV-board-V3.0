@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Mar 18 12:05:32 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : sled
+Top-level Entity Name : sled
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 36 / 6,272 ( 1 % )
+    Total combinational functions : 36 / 6,272 ( 1 % )
+    Dedicated logic registers : 29 / 6,272 ( < 1 % )
+Total registers : 29
+Total pins : 13 / 92 ( 14 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

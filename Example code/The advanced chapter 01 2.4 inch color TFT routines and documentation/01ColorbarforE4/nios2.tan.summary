@@ -1,0 +1,106 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.429 ns
+From           : in_port_to_the_sd_dout
+To             : nios32:inst|sd_dout:the_sd_dout|readdata
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.074 ns
+From           : nios32:inst|sd_clk:the_sd_clk|data_out
+To             : out_port_from_the_sd_clk
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.106 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.522 ns
+From           : altera_internal_jtag~TDIUTAP
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|lpm_shiftreg:status_register|dffs[16]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altpll0:inst1|altpll:altpll_component|_clk1'
+Slack          : -3.474 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : 74.22 MHz ( period = 13.474 ns )
+From           : nios32:inst|cpu:the_cpu|M_ctrl_shift_rot
+To             : nios32:inst|cpu:the_cpu|M_alu_result[0]
+From Clock     : altpll0:inst1|altpll:altpll_component|_clk1
+To Clock       : altpll0:inst1|altpll:altpll_component|_clk1
+Failed Paths   : 4800
+
+Type           : Clock Setup: 'clk'
+Slack          : 13.843 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 162.42 MHz ( period = 6.157 ns )
+From           : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[2]
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[3]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 51.66 MHz ( period = 19.356 ns )
+From           : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[4]
+To             : sld_hub:sld_hub_inst|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'altpll0:inst1|altpll:altpll_component|_clk1'
+Slack          : 0.499 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : N/A
+From           : nios32:inst|sdram:the_sdram|active_dqm[0]
+To             : nios32:inst|sdram:the_sdram|active_dqm[0]
+From Clock     : altpll0:inst1|altpll:altpll_component|_clk1
+To Clock       : altpll0:inst1|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : 0.499 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|trigger_out_mode_ff
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|trigger_out_mode_ff
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 4800
+
+--------------------------------------------------------------------------------------
+

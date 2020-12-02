@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Mar 18 14:49:09 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : IR
+Top-level Entity Name : IR
+Family : Cyclone IV E
+Total logic elements : 114
+    Total combinational functions : 106
+    Dedicated logic registers : 58
+Total registers : 58
+Total pins : 15
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

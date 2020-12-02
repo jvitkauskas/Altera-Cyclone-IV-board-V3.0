@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Apr 17 20:06:34 2015
+Quartus II 64-Bit Version : 11.1 Build 259 01/25/2012 SP 2.11 SJ Full Version
+Revision Name : nios2
+Top-level Entity Name : nios2
+Family : Cyclone IV E
+Total logic elements : 4,119
+    Total combinational functions : 3,362
+    Dedicated logic registers : 2,407
+Total registers : 2407
+Total pins : 67
+Total virtual pins : 0
+Total memory bits : 55,680
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 1

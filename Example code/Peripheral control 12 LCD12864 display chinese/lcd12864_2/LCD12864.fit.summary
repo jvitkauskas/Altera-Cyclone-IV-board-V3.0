@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Jun 17 14:31:07 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : LCD12864
+Top-level Entity Name : LCD12864
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 85 / 6,272 ( 1 % )
+    Total combinational functions : 65 / 6,272 ( 1 % )
+    Dedicated logic registers : 76 / 6,272 ( 1 % )
+Total registers : 76
+Total pins : 12 / 92 ( 13 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

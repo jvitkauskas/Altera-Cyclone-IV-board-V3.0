@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="nios2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2|nios32:inst|cpu:the_cpu|cpu_nios2_oci:the_cpu_nios2_oci|cpu_nios2_oci_im:the_cpu_nios2_oci_im|cpu_traceram_lpm_dram_bdp_component_module:cpu_traceram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_e502.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2|nios32:inst|cpu:the_cpu|cpu_nios2_oci:the_cpu_nios2_oci|cpu_nios2_ocimem:the_cpu_nios2_ocimem|cpu_ociram_lpm_dram_bdp_component_module:cpu_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_t072.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2|nios32:inst|cpu:the_cpu|cpu_rf_module:cpu_rf|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ig22.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2|nios32:inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_5n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2|nios32:inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_r:the_jtag_uart_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_5n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2|sld_hub:sld_hub_inst|lpm_decode:instruction_decoder" CBX_FILE_NAME="decode_aoi.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

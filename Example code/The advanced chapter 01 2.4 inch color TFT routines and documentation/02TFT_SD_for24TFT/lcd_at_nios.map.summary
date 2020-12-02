@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Apr 17 20:51:52 2015
+Quartus II 64-Bit Version : 11.1 Build 259 01/25/2012 SP 2.11 SJ Full Version
+Revision Name : lcd_at_nios
+Top-level Entity Name : lcd_at_nios
+Family : Cyclone IV E
+Total logic elements : 3,983
+    Total combinational functions : 3,263
+    Dedicated logic registers : 2,354
+Total registers : 2354
+Total pins : 67
+Total virtual pins : 0
+Total memory bits : 55,552
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 1

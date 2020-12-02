@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Feb 03 12:39:40 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : beep
+Top-level Entity Name : beep
+Family : Cyclone IV E
+Total logic elements : 29
+    Total combinational functions : 29
+    Dedicated logic registers : 28
+Total registers : 28
+Total pins : 2
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

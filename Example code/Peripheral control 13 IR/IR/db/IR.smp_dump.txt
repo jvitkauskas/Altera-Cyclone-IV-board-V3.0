@@ -1,0 +1,7 @@
+
+State Machine - |IR|cs
+Name cs.IDLE cs.DATA_STATE cs.LEADER_4 cs.LEADER_9 
+cs.IDLE 0 0 0 0 
+cs.LEADER_9 1 0 0 1 
+cs.LEADER_4 1 0 1 0 
+cs.DATA_STATE 1 1 0 0 

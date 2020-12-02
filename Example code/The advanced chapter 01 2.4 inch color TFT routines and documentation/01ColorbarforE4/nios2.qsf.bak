@@ -1,0 +1,136 @@
+# Copyright (C) 1991-2007 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		nios2_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C8Q208C8
+set_global_assignment -name TOP_LEVEL_ENTITY nios2
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 7.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:10:27  DECEMBER 14, 2007"
+set_global_assignment -name LAST_QUARTUS_VERSION 8.0
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_palace
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name DEVICE_FILTER_PACKAGE "ANY QFP"
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 208
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 2147039 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_location_assignment PIN_23 -to clk
+set_location_assignment PIN_164 -to flash_addr[22]
+set_location_assignment PIN_165 -to flash_addr[21]
+set_location_assignment PIN_162 -to flash_addr[20]
+set_location_assignment PIN_163 -to flash_addr[19]
+set_location_assignment PIN_160 -to flash_addr[18]
+set_location_assignment PIN_128 -to flash_addr[17]
+set_location_assignment PIN_133 -to flash_addr[16]
+set_location_assignment PIN_135 -to flash_addr[15]
+set_location_assignment PIN_134 -to flash_addr[14]
+set_location_assignment PIN_138 -to flash_addr[13]
+set_location_assignment PIN_137 -to flash_addr[12]
+set_location_assignment PIN_141 -to flash_addr[11]
+set_location_assignment PIN_152 -to flash_addr[10]
+set_location_assignment PIN_151 -to flash_addr[9]
+set_location_assignment PIN_150 -to flash_addr[8]
+set_location_assignment PIN_149 -to flash_addr[7]
+set_location_assignment PIN_147 -to flash_addr[6]
+set_location_assignment PIN_146 -to flash_addr[5]
+set_location_assignment PIN_145 -to flash_addr[4]
+set_location_assignment PIN_144 -to flash_addr[3]
+set_location_assignment PIN_142 -to flash_addr[2]
+set_location_assignment PIN_143 -to flash_addr[1]
+set_location_assignment PIN_116 -to flash_addr[0]
+set_location_assignment PIN_139 -to flash_cs_n
+set_location_assignment PIN_106 -to flash_data[7]
+set_location_assignment PIN_110 -to flash_data[6]
+set_location_assignment PIN_108 -to flash_data[5]
+set_location_assignment PIN_113 -to flash_data[4]
+set_location_assignment PIN_112 -to flash_data[3]
+set_location_assignment PIN_115 -to flash_data[2]
+set_location_assignment PIN_114 -to flash_data[1]
+set_location_assignment PIN_127 -to flash_data[0]
+set_location_assignment PIN_107 -to flash_rd_n
+set_location_assignment PIN_118 -to flash_wr_n
+set_location_assignment PIN_105 -to led
+set_location_assignment PIN_161 -to reset_n
+
+set_location_assignment PIN_86 -to sdram_addr[11]
+set_location_assignment PIN_99 -to sdram_addr[10]
+set_location_assignment PIN_87 -to sdram_addr[9]
+set_location_assignment PIN_88 -to sdram_addr[8]
+set_location_assignment PIN_90 -to sdram_addr[7]
+set_location_assignment PIN_89 -to sdram_addr[6]
+set_location_assignment PIN_94 -to sdram_addr[5]
+set_location_assignment PIN_92 -to sdram_addr[4]
+set_location_assignment PIN_104 -to sdram_addr[3]
+set_location_assignment PIN_103 -to sdram_addr[2]
+set_location_assignment PIN_102 -to sdram_addr[1]
+set_location_assignment PIN_101 -to sdram_addr[0]
+set_location_assignment PIN_97 -to sdram_ba[1]
+set_location_assignment PIN_95 -to sdram_ba[0]
+set_location_assignment PIN_67 -to sdram_cas_n
+set_location_assignment PIN_84 -to sdram_cke
+set_location_assignment PIN_47 -to sdram_clk
+set_location_assignment PIN_96 -to sdram_cs_n
+set_location_assignment PIN_69 -to sdram_data[7]
+set_location_assignment PIN_72 -to sdram_data[6]
+set_location_assignment PIN_75 -to sdram_data[5]
+set_location_assignment PIN_77 -to sdram_data[4]
+set_location_assignment PIN_60 -to sdram_data[3]
+set_location_assignment PIN_58 -to sdram_data[2]
+set_location_assignment PIN_56 -to sdram_data[1]
+set_location_assignment PIN_48 -to sdram_data[0]
+set_location_assignment PIN_81 -to sdram_dqm[1]
+set_location_assignment PIN_63 -to sdram_dqm[0]
+set_location_assignment PIN_68 -to sdram_ras_n
+set_location_assignment PIN_64 -to sdram_we_n
+
+
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_addr
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_ba
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_cas_n
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_cke
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_clk
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_cs_n
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_dqm
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_ras_n
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_we_n
+set_instance_assignment -name FAST_INPUT_REGISTER ON -to sdram_data
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to sdram_data
+set_instance_assignment -name AUTO_GLOBAL_CLOCK ON -to sdram_clk
+set_instance_assignment -name AUTO_GLOBAL_CLOCK ON -to clk
+
+set_global_assignment -name USE_CHECKSUM_AS_USERCODE ON
+set_global_assignment -name GENERATE_TTF_FILE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_CONFIGURATION_DEVICE EPCS1
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name VHDL_FILE altera_europa_support.vhd
+set_global_assignment -name BDF_FILE nios2.bdf
+set_global_assignment -name QIP_FILE nios32.qip

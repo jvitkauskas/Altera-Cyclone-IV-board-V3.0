@@ -1,0 +1,68 @@
+--a_graycounter DEVICE_FAMILY="Cyclone II" WIDTH=10 aclr clock cnt_en q
+--VERSION_BEGIN 11.1SP2 cbx_a_gray2bin 2012:01:25:21:14:55:SJ cbx_a_graycounter 2012:01:25:21:14:55:SJ cbx_cycloneii 2012:01:25:21:14:56:SJ cbx_mgl 2012:01:25:21:17:49:SJ cbx_stratix 2012:01:25:21:14:56:SJ cbx_stratixii 2012:01:25:21:14:56:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+
+--synthesis_resources = reg 14 
+OPTIONS ALTERA_INTERNAL_OPTION = "{-to sub_parity6a0} POWER_UP_LEVEL=HIGH;{-to parity5} POWER_UP_LEVEL=LOW";
+
+SUBDESIGN a_graycounter_o96
+( 
+	aclr	:	input;
+	clock	:	input;
+	cnt_en	:	input;
+	q[9..0]	:	output;
+) 
+VARIABLE 
+	counter7a[9..0] : dffeas;
+	parity5 : dffeas
+		WITH (
+			power_up = "low"
+		);
+	sub_parity6a0 : dffeas
+		WITH (
+			power_up = "high"
+		);
+	sub_parity6a1 : dffeas;
+	sub_parity6a2 : dffeas;
+	cntr_cout[9..0]	: WIRE;
+	parity_cout	: WIRE;
+	sclr	: NODE;
+	updown	: NODE;
+
+BEGIN 
+	counter7a[].clk = clock;
+	counter7a[].clrn = ( (! aclr), (! aclr), (! aclr), (! aclr), (! aclr), (! aclr), (! aclr), (! aclr), (! aclr), (! aclr));
+	counter7a[].d = ( (counter7a[9].q $ cntr_cout[8..8]), (counter7a[8].q $ (counter7a[7].q & cntr_cout[7..7])), (counter7a[7].q $ (counter7a[6].q & cntr_cout[6..6])), (counter7a[6].q $ (counter7a[5].q & cntr_cout[5..5])), (counter7a[5].q $ (counter7a[4].q & cntr_cout[4..4])), (counter7a[4].q $ (counter7a[3].q & cntr_cout[3..3])), (counter7a[3].q $ (counter7a[2].q & cntr_cout[2..2])), (counter7a[2].q $ (counter7a[1].q & cntr_cout[1..1])), (counter7a[1].q $ (counter7a[0].q & cntr_cout[0..0])), ((cnt_en & (counter7a[0].q $ (! parity_cout))) # ((! cnt_en) & counter7a[0].q)));
+	counter7a[].sclr = sclr;
+	parity5.clk = clock;
+	parity5.clrn = (! aclr);
+	parity5.d = ((cnt_en & ((sub_parity6a[0..0].q $ sub_parity6a[1..1].q) $ sub_parity6a[2..2].q)) # ((! cnt_en) & parity5.q));
+	parity5.sclr = sclr;
+	sub_parity6a[2..0].clk = ( clock, clock, clock);
+	sub_parity6a[2..1].clrn = (! aclr);
+	sub_parity6a[2..0].d = ( ((cnt_en & (counter7a[8..8].q $ counter7a[9..9].q)) # ((! cnt_en) & sub_parity6a[2].q)), ((cnt_en & (((counter7a[4..4].q $ counter7a[5..5].q) $ counter7a[6..6].q) $ counter7a[7..7].q)) # ((! cnt_en) & sub_parity6a[1].q)), ((cnt_en & (((counter7a[0..0].q $ counter7a[1..1].q) $ counter7a[2..2].q) $ counter7a[3..3].q)) # ((! cnt_en) & sub_parity6a[0].q)));
+	sub_parity6a[0].prn = (! aclr);
+	sub_parity6a[2..0].sclr = ( sclr, sclr, sclr);
+	cntr_cout[] = ( B"0", (cntr_cout[7..7] & (! counter7a[7].q)), (cntr_cout[6..6] & (! counter7a[6].q)), (cntr_cout[5..5] & (! counter7a[5].q)), (cntr_cout[4..4] & (! counter7a[4].q)), (cntr_cout[3..3] & (! counter7a[3].q)), (cntr_cout[2..2] & (! counter7a[2].q)), (cntr_cout[1..1] & (! counter7a[1].q)), (cntr_cout[0..0] & (! counter7a[0].q)), (cnt_en & parity_cout));
+	parity_cout = ((parity5.q $ (! updown)) & cnt_en);
+	q[] = counter7a[].q;
+	sclr = GND;
+	updown = VCC;
+END;
+--VALID FILE

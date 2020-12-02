@@ -1,0 +1,5 @@
+PLL_Name	system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|pll
+PLLJITTER	30
+PLLSPEmax	84
+PLLSPEmin	-53
+

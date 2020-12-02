@@ -1,0 +1,36 @@
+
+State Machine - |Block1|uart_txd:inst5|state
+Name state.idle state.sending state.waiting 
+state.idle 0 0 0 
+state.waiting 1 0 1 
+state.sending 1 1 0 
+
+State Machine - |Block1|uart_txd:inst5|next_state
+Name next_state.idle next_state.sending next_state.waiting 
+next_state.idle 0 0 0 
+next_state.waiting 1 0 1 
+next_state.sending 1 1 0 
+
+State Machine - |Block1|iic_com:inst|cstate
+Name cstate.STOP2 cstate.STOP1 cstate.ACK4 cstate.DATA cstate.ACK3 cstate.ADD3 cstate.START2 cstate.ACK2 cstate.ADD2 cstate.ACK1 cstate.ADD1 cstate.START1 cstate.IDLE 
+cstate.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 
+cstate.START1 0 0 0 0 0 0 0 0 0 0 0 1 1 
+cstate.ADD1 0 0 0 0 0 0 0 0 0 0 1 0 1 
+cstate.ACK1 0 0 0 0 0 0 0 0 0 1 0 0 1 
+cstate.ADD2 0 0 0 0 0 0 0 0 1 0 0 0 1 
+cstate.ACK2 0 0 0 0 0 0 0 1 0 0 0 0 1 
+cstate.START2 0 0 0 0 0 0 1 0 0 0 0 0 1 
+cstate.ADD3 0 0 0 0 0 1 0 0 0 0 0 0 1 
+cstate.ACK3 0 0 0 0 1 0 0 0 0 0 0 0 1 
+cstate.DATA 0 0 0 1 0 0 0 0 0 0 0 0 1 
+cstate.ACK4 0 0 1 0 0 0 0 0 0 0 0 0 1 
+cstate.STOP1 0 1 0 0 0 0 0 0 0 0 0 0 1 
+cstate.STOP2 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Block1|iic_com:inst|cnt
+Name cnt.000 cnt.011 cnt.010 cnt.001 cnt.101 
+cnt.101 0 0 0 0 0 
+cnt.001 0 0 0 1 1 
+cnt.010 0 0 1 0 1 
+cnt.011 0 1 0 0 1 
+cnt.000 1 0 0 0 1 

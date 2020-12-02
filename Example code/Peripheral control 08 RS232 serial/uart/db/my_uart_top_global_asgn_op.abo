@@ -1,0 +1,4743 @@
+Version:
+	9.0 Build 132 02/25/2009 SJ Full Version
+
+Chip Device Options:
+	Device Name:	EPM240T100C5
+	Device JTAG code:	ffffffff
+	Programming_mode:	Passive Serial
+	NWS_NRS_NCS:	UNRESERVED
+	RDYNBUSY:	UNRESERVED
+	DATA 7 to 1:	UNRESERVED
+	nCEO:	UNRESERVED
+	UNUSED PINS:	RESERVED_INPUT
+	Default IO Standard::	3.3-V LVTTL
+	User Start-up Clock:	0
+	Auto Restart on Error:	0
+	Release Clears Before Tristates:	0
+	Device Clear:	0
+	Test And Scan:	0
+	Device OE:	0
+	Enable Lock Output:	0
+	Enable Init Done:	0
+	Enable JTAG BST:	0
+	Enable Vref A:	0
+	Enable Vref B:	0
+
+
+
+****************************
+******Individual Atoms******
+****************************
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rs232_tx_r -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 1
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rs232_tx_r~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|rs232_tx_r~5	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|rs232_tx_r	LIT INDEX 0 FANOUTS 2 REGED INV
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 1111
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_en -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 2
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rx_int2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|rx_int1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|tx_en	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_en	LIT INDEX 0 FANOUTS 4 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = f222
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|clk_bps_r -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 3
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_tx|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_tx|cnt[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|clk_bps_r	LIT INDEX 0 FANOUTS 6 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0080
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|num[0]~8 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 4
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|tx_en	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|num[0]~8	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8888
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 5
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[5]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|num[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 6
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|num[3]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0 FANOUTS 9 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 28cc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 7
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[4]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|num[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 8
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_tx:my_uart_tx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|tx_en	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0 FANOUTS 8 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 2cf0
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 9
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[3]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|Mux0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 10
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|tx_data[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|tx_data[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|Mux0~0	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = e5e0
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 11
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[6]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|Mux0~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 12
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|tx_data[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|Mux0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|tx_data[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|Mux0~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = f838
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 13
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[2]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 14
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[0]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rs232_tx_r~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 15
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|tx_data[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|tx_data[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [DATAD]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|rs232_tx_r~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aacc
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 16
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[1]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rs232_tx_r~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 17
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rs232_tx_r~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|tx_data[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|rs232_tx_r~2	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aac0
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|num[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 18
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|Add0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|num[3]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|num[2]	LIT INDEX 0 FANOUTS 5 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 28cc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rs232_tx_r~3 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 19
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|num[0]~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|Mux0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|rs232_tx_r~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|rs232_tx_r~3	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 88a0
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|tx_data[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 20
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_data_r[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|tx_data[7]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rs232_tx_r~4 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 21
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|tx_data[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|rs232_tx_r~4	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = fffe
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|num[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 22
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|Add0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|num[3]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|num[3]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 28cc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rs232_tx_r~5 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 23
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rs232_tx_r~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|num[0]~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|rs232_tx_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|rs232_tx_r~5	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 808f
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rx_int2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 26
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rx_int1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|rx_int2	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rx_int1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 27
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rx_int0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|rx_int1	LIT INDEX 0 FANOUTS 4 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|neg_rx_int -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 28
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rx_int2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: [DATAD]	  my_uart_tx:my_uart_tx|rx_int1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|neg_rx_int	LIT INDEX 0 FANOUTS 8
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 00aa
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|Equal0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 29
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|Equal0~0	LIT INDEX 0 FANOUTS 4
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = bfff
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 30
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[0]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[0]~14	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 55aa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 31
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[0]~14	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[1]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[1]~16	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 32
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[6]~34	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[7]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[7]~18	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[8] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 33
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[8]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[7]~18	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[8]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[8]~20	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|Equal0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 34
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_tx|cnt[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|cnt[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_tx|cnt[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_tx|cnt[8]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_tx|Equal0~0	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 35
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[2]~26	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[3]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[3]~22	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 36
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[4]~28	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[5]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[5]~24	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 37
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[1]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[2]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[2]~26	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 38
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[3]~22	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[4]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[4]~28	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|Equal1~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 39
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_tx|cnt[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|cnt[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_tx|cnt[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_tx|cnt[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_tx|Equal1~0	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[9] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 40
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[8]~20	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[9]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[9]~30	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[11] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 41
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[10]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[11]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[11]~32	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 42
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[5]~24	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[6]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[6]~34	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[10] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 43
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[9]~30	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[10]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_tx|cnt[10]~36	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|Equal1~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 44
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_tx|cnt[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|cnt[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_tx|cnt[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_tx|cnt[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_tx|Equal1~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|cnt[12] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 45
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_tx|cnt[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_tx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_tx|cnt[11]~32	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_tx|cnt[12]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a5a5
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 46
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[5]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|num[3]~9 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 47
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|tx_en	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [DATAD]	  my_uart_tx:my_uart_tx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|num[3]~9	LIT INDEX 0 FANOUTS 3
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 88aa
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 48
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[4]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 49
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[3]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 50
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[6]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 51
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[2]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 52
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[0]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 53
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[1]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|Add0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 54
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|Add0~0	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8888
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 55
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_data_r[7]	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|Add0~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 56
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_tx:my_uart_tx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_tx:my_uart_tx|Add0~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8080
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|rx_int0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 57
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|rx_int0	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|Equal0~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 58
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_tx|cnt[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|cnt[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_tx|cnt[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_tx|cnt[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_tx|Equal0~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|Equal0~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 59
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_tx|cnt[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: [DATAD]	  speed_select:speed_tx|cnt[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_tx|Equal0~2	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 00aa
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|Equal0~3 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 60
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_tx|cnt[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|cnt[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_tx|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_tx|cnt[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_tx|Equal0~3	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0080
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_tx:my_uart_tx|bps_start_r -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 61
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_tx:my_uart_tx|rx_int2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_tx:my_uart_tx|rx_int1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_tx:my_uart_tx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|bps_start_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_tx:my_uart_tx|bps_start_r	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = f222
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_tx|always0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 62
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_tx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_tx|Equal0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_tx|Equal0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_tx:my_uart_tx|bps_start_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_tx|always0~0	LIT INDEX 0 FANOUTS 13
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 80ff
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 63
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_temp_data[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Decoder0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[5]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = accc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|num[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 64
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Add0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[3]~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0 FANOUTS 11 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 28cc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|num[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 65
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Add0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[3]~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|num[3]	LIT INDEX 0 FANOUTS 6 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 28cc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|num[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 66
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[3]~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0 FANOUTS 8 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 28cc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|num[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 67
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [DATAB]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0 FANOUTS 9 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 3ccc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 68
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~0	LIT INDEX 0 FANOUTS 5
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 000a
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_int -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 69
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|neg_rs232_rx~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0 FANOUTS 9 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aeee
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|clk_bps_r -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 70
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|cnt[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|clk_bps_r	LIT INDEX 0 FANOUTS 10 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0080
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_data_r[7]~16 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 71
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|Decoder0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|rx_data_r[7]~16	LIT INDEX 0 FANOUTS 8
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0080
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 72
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_temp_data[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[4]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = accc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 73
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Decoder0~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[3]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaca
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 74
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_temp_data[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Add0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[6]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = accc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 75
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_temp_data[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~5	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[2]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = accc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 76
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_temp_data[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Decoder0~5	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[0]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaca
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 77
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_temp_data[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Decoder0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[1]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = accc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rx_temp_data[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 78
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_temp_data[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|Decoder0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rx_temp_data[7]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = accc
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 80
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~1	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 00aa
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 81
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~2	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0080
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Add0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 82
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Add0~0	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8888
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|num[3]~8 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 83
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|num[3]~8	LIT INDEX 0 FANOUTS 3
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = a888
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Add0~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 84
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Add0~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8080
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rs232_rx2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 85
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rs232_rx1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rs232_rx2	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rs232_rx3 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 86
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rs232_rx2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rs232_rx3	LIT INDEX 0 FANOUTS 1 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rs232_rx0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 87
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  rs232_rx	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rs232_rx0	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|rs232_rx1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 88
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rs232_rx0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|rs232_rx1	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aaaa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|neg_rs232_rx~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 89
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rs232_rx2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|rs232_rx3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|rs232_rx0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|rs232_rx1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|neg_rs232_rx~2	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 90
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[0]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[0]~14	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 55aa
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 91
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[0]~14	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[1]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[1]~16	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 92
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[6]~34	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[7]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[7]~18	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[8] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 93
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[8]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[7]~18	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[8]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[8]~20	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|Equal0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 94
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_rx|cnt[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|cnt[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|cnt[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|cnt[8]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_rx|Equal0~0	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 95
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[2]~26	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[3]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[3]~22	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 96
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[4]~28	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[5]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[5]~24	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 97
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[1]~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[2]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[2]~26	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 98
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[3]~22	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[4]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[4]~28	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|Equal1~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 99
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_rx|cnt[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|cnt[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|cnt[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|cnt[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_rx|Equal1~0	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[9] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 100
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[8]~20	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[9]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[9]~30	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[11] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 101
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[10]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[11]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[11]~32	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a5f
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 102
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[5]~24	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[6]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[6]~34	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[10] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 103
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[9]~30	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[10]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: [COUT]	speed_select:speed_rx|cnt[10]~36	LIT INDEX 0 FANOUTS 1
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = arithmetic
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a50a
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|Equal1~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 104
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_rx|cnt[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|cnt[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|cnt[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|cnt[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_rx|Equal1~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|cnt[12] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 105
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  speed_select:speed_rx|cnt[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	  speed_select:speed_rx|always0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		8: NO ITERM
+		9: [ENA]	DISCONNECTED
+		10: [CIN]	  speed_select:speed_rx|cnt[11]~32	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	speed_select:speed_rx|cnt[12]	LIT INDEX 0 FANOUTS 3 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = on
+		register_cascade_mode          = off
+		sum_lutc_input                 = cin
+		lut_mask                       = a5a5
+		cin_used                       = true
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~3 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 106
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~3	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8888
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~4 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 107
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|Decoder0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~4	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~5 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 108
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|num[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|Decoder0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~5	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~6 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 109
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~6	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|Decoder0~7 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 110
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  my_uart_rx:my_uart_rx|rx_int	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|clk_bps_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [DATAD]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	my_uart_rx:my_uart_rx|Decoder0~7	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0088
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|Equal0~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 111
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_rx|cnt[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|cnt[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|cnt[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|cnt[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_rx|Equal0~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0008
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|Equal0~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 112
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_rx|cnt[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: [DATAD]	  speed_select:speed_rx|cnt[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_rx|Equal0~2	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 00aa
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|Equal0~3 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 113
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_rx|cnt[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|cnt[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  speed_select:speed_rx|cnt[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_rx|Equal0~3	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0080
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: my_uart_rx:my_uart_rx|bps_start_r -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 114
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  my_uart_rx:my_uart_rx|neg_rs232_rx~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  my_uart_rx:my_uart_rx|bps_start_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  my_uart_rx:my_uart_rx|num[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|Decoder0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	my_uart_rx:my_uart_rx|bps_start_r	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = aeee
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: speed_select:speed_rx|always0~0 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 115
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  speed_select:speed_rx|Equal0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  speed_select:speed_rx|Equal0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  speed_select:speed_rx|Equal0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  my_uart_rx:my_uart_rx|bps_start_r	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	speed_select:speed_rx|always0~0	LIT INDEX 0 FANOUTS 13
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 80ff
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: clk -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 24
+	Atom Type: maxii_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	clk	LIT INDEX 0 FANOUTS 72
+		1: [PADIO]	clk	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = input
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: rst_n -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 25
+	Atom Type: maxii_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	rst_n	LIT INDEX 0 FANOUTS 70
+		1: [PADIO]	rst_n	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = input
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: rs232_rx -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 79
+	Atom Type: maxii_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	rs232_rx	LIT INDEX 0 FANOUTS 9
+		1: [PADIO]	rs232_rx	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = input
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: rs232_tx -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 0
+	Atom Type: maxii_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  !(my_uart_tx:my_uart_tx|rs232_tx_r)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [PADIO]	rs232_tx	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = output
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+

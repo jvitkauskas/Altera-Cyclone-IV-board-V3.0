@@ -1,0 +1,7 @@
+|ckey_led
+ckey[1] => LED[1].DATAIN
+ckey[2] => LED[2].DATAIN
+ckey[3] => LED[3].DATAIN
+ckey[4] => LED[4].DATAIN
+
+

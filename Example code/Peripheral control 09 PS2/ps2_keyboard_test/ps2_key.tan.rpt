@@ -1,0 +1,557 @@
+Classic Timing Analyzer report for ps2_key
+Sun Aug 02 10:12:42 2009
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. Clock Hold: 'clk'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                 ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------------+----------------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                             ; To                               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------------+----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 2.953 ns                         ; rst_n                            ; ps2scan:ps2scan|ps2_byte_r[7]    ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 7.901 ns                         ; my_uart_tx:my_uart_tx|rs232_tx_r ; rs232_tx                         ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; -1.263 ns                        ; ps2k_data                        ; ps2scan:ps2scan|temp_data[2]     ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A                                      ; None          ; 44.19 MHz ( period = 22.628 ns ) ; ps2scan:ps2scan|ps2_asci[3]      ; my_uart_tx:my_uart_tx|tx_data[3] ; clk        ; clk      ; 0            ;
+; Clock Hold: 'clk'            ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; ps2scan:ps2scan|ps2_byte_r[7]    ; ps2scan:ps2scan|ps2_asci[1]      ; clk        ; clk      ; 40           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                  ;                                  ;            ;          ; 40           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------------+----------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                             ; To                                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 44.19 MHz ( period = 22.628 ns )                    ; ps2scan:ps2scan|ps2_asci[4]      ; my_uart_tx:my_uart_tx|tx_data[4]  ; clk        ; clk      ; None                        ; None                      ; 0.269 ns                ;
+; N/A                                     ; 44.19 MHz ( period = 22.628 ns )                    ; ps2scan:ps2scan|ps2_asci[3]      ; my_uart_tx:my_uart_tx|tx_data[3]  ; clk        ; clk      ; None                        ; None                      ; 0.269 ns                ;
+; N/A                                     ; 44.20 MHz ( period = 22.624 ns )                    ; ps2scan:ps2scan|ps2_asci[0]      ; my_uart_tx:my_uart_tx|tx_data[0]  ; clk        ; clk      ; None                        ; None                      ; 0.269 ns                ;
+; N/A                                     ; 44.21 MHz ( period = 22.620 ns )                    ; ps2scan:ps2scan|ps2_asci[2]      ; my_uart_tx:my_uart_tx|tx_data[2]  ; clk        ; clk      ; None                        ; None                      ; 0.269 ns                ;
+; N/A                                     ; 44.34 MHz ( period = 22.552 ns )                    ; ps2scan:ps2scan|ps2_asci[1]      ; my_uart_tx:my_uart_tx|tx_data[1]  ; clk        ; clk      ; None                        ; None                      ; 0.269 ns                ;
+; N/A                                     ; 89.75 MHz ( period = 11.142 ns )                    ; ps2scan:ps2scan|ps2_byte_r[2]    ; ps2scan:ps2scan|ps2_asci[1]       ; clk        ; clk      ; None                        ; None                      ; 10.420 ns               ;
+; N/A                                     ; 97.66 MHz ( period = 10.240 ns )                    ; ps2scan:ps2scan|ps2_byte_r[3]    ; ps2scan:ps2scan|ps2_asci[1]       ; clk        ; clk      ; None                        ; None                      ; 9.969 ns                ;
+; N/A                                     ; 100.64 MHz ( period = 9.936 ns )                    ; ps2scan:ps2scan|ps2_byte_r[6]    ; ps2scan:ps2scan|ps2_asci[1]       ; clk        ; clk      ; None                        ; None                      ; 9.817 ns                ;
+; N/A                                     ; 102.29 MHz ( period = 9.776 ns )                    ; ps2scan:ps2scan|ps2_byte_r[0]    ; ps2scan:ps2scan|ps2_asci[1]       ; clk        ; clk      ; None                        ; None                      ; 9.737 ns                ;
+; N/A                                     ; 102.88 MHz ( period = 9.720 ns )                    ; ps2scan:ps2scan|ps2_byte_r[4]    ; ps2scan:ps2scan|ps2_asci[3]       ; clk        ; clk      ; None                        ; None                      ; 9.599 ns                ;
+; N/A                                     ; 104.78 MHz ( period = 9.544 ns )                    ; ps2scan:ps2scan|ps2_byte_r[1]    ; ps2scan:ps2scan|ps2_asci[1]       ; clk        ; clk      ; None                        ; None                      ; 9.621 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 116.51 MHz ( period = 8.583 ns )                    ; ps2scan:ps2scan|num[3]           ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 7.874 ns                ;
+; N/A                                     ; 117.01 MHz ( period = 8.546 ns )                    ; my_uart_tx:my_uart_tx|tx_data[3] ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 7.837 ns                ;
+; N/A                                     ; 120.00 MHz ( period = 8.333 ns )                    ; my_uart_tx:my_uart_tx|num[3]     ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 7.624 ns                ;
+; N/A                                     ; 120.22 MHz ( period = 8.318 ns )                    ; ps2scan:ps2scan|ps2_byte_r[5]    ; ps2scan:ps2scan|ps2_asci[4]       ; clk        ; clk      ; None                        ; None                      ; 8.879 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 120.26 MHz ( period = 8.315 ns )                    ; ps2scan:ps2scan|num[0]           ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 7.606 ns                ;
+; N/A                                     ; 122.40 MHz ( period = 8.170 ns )                    ; ps2scan:ps2scan|ps2_byte_r[5]    ; ps2scan:ps2scan|ps2_asci[1]       ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.37 MHz ( period = 8.106 ns )                    ; ps2scan:ps2scan|num[2]           ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 7.397 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 123.53 MHz ( period = 8.095 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 7.386 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.63 MHz ( period = 8.024 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 7.315 ns                ;
+; N/A                                     ; 124.89 MHz ( period = 8.007 ns )                    ; my_uart_tx:my_uart_tx|num[2]     ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 7.298 ns                ;
+; N/A                                     ; 125.02 MHz ( period = 7.999 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|ps2_state_r       ; clk        ; clk      ; None                        ; None                      ; 7.290 ns                ;
+; N/A                                     ; 126.14 MHz ( period = 7.928 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|ps2_state_r       ; clk        ; clk      ; None                        ; None                      ; 7.219 ns                ;
+; N/A                                     ; 126.53 MHz ( period = 7.903 ns )                    ; my_uart_tx:my_uart_tx|num[2]     ; my_uart_tx:my_uart_tx|num[3]      ; clk        ; clk      ; None                        ; None                      ; 7.194 ns                ;
+; N/A                                     ; 126.61 MHz ( period = 7.898 ns )                    ; my_uart_tx:my_uart_tx|tx_data[2] ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 7.189 ns                ;
+; N/A                                     ; 126.61 MHz ( period = 7.898 ns )                    ; my_uart_tx:my_uart_tx|num[2]     ; my_uart_tx:my_uart_tx|num[1]      ; clk        ; clk      ; None                        ; None                      ; 7.189 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 126.76 MHz ( period = 7.889 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 7.180 ns                ;
+; N/A                                     ; 127.98 MHz ( period = 7.814 ns )                    ; ps2scan:ps2scan|ps2_byte_r[4]    ; ps2scan:ps2scan|ps2_asci[1]       ; clk        ; clk      ; None                        ; None                      ; 8.756 ns                ;
+; N/A                                     ; 128.32 MHz ( period = 7.793 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|ps2_state_r       ; clk        ; clk      ; None                        ; None                      ; 7.084 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; ps2scan:ps2scan|num[1]           ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 129.92 MHz ( period = 7.697 ns )                    ; my_uart_tx:my_uart_tx|tx_data[0] ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 6.988 ns                ;
+; N/A                                     ; 130.02 MHz ( period = 7.691 ns )                    ; ps2scan:ps2scan|temp_data[1]     ; ps2scan:ps2scan|key_f0            ; clk        ; clk      ; None                        ; None                      ; 6.982 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 130.50 MHz ( period = 7.663 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 6.954 ns                ;
+; N/A                                     ; 131.23 MHz ( period = 7.620 ns )                    ; ps2scan:ps2scan|temp_data[4]     ; ps2scan:ps2scan|key_f0            ; clk        ; clk      ; None                        ; None                      ; 6.911 ns                ;
+; N/A                                     ; 131.32 MHz ( period = 7.615 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 6.906 ns                ;
+; N/A                                     ; 131.32 MHz ( period = 7.615 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 6.906 ns                ;
+; N/A                                     ; 131.32 MHz ( period = 7.615 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 6.906 ns                ;
+; N/A                                     ; 131.32 MHz ( period = 7.615 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 6.906 ns                ;
+; N/A                                     ; 131.32 MHz ( period = 7.615 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 6.906 ns                ;
+; N/A                                     ; 131.32 MHz ( period = 7.615 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 6.906 ns                ;
+; N/A                                     ; 132.15 MHz ( period = 7.567 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|ps2_state_r       ; clk        ; clk      ; None                        ; None                      ; 6.858 ns                ;
+; N/A                                     ; 133.60 MHz ( period = 7.485 ns )                    ; ps2scan:ps2scan|temp_data[3]     ; ps2scan:ps2scan|key_f0            ; clk        ; clk      ; None                        ; None                      ; 6.776 ns                ;
+; N/A                                     ; 133.78 MHz ( period = 7.475 ns )                    ; my_uart_tx:my_uart_tx|tx_data[4] ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 6.766 ns                ;
+; N/A                                     ; 134.39 MHz ( period = 7.441 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 6.732 ns                ;
+; N/A                                     ; 134.39 MHz ( period = 7.441 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 6.732 ns                ;
+; N/A                                     ; 134.39 MHz ( period = 7.441 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 6.732 ns                ;
+; N/A                                     ; 134.39 MHz ( period = 7.441 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 6.732 ns                ;
+; N/A                                     ; 134.39 MHz ( period = 7.441 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 6.732 ns                ;
+; N/A                                     ; 134.39 MHz ( period = 7.441 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 6.732 ns                ;
+; N/A                                     ; 134.95 MHz ( period = 7.410 ns )                    ; ps2scan:ps2scan|ps2k_clk_r1      ; ps2scan:ps2scan|temp_data[7]      ; clk        ; clk      ; None                        ; None                      ; 6.701 ns                ;
+; N/A                                     ; 135.06 MHz ( period = 7.404 ns )                    ; my_uart_tx:my_uart_tx|num[0]     ; my_uart_tx:my_uart_tx|num[3]      ; clk        ; clk      ; None                        ; None                      ; 6.695 ns                ;
+; N/A                                     ; 135.15 MHz ( period = 7.399 ns )                    ; my_uart_tx:my_uart_tx|num[0]     ; my_uart_tx:my_uart_tx|num[1]      ; clk        ; clk      ; None                        ; None                      ; 6.690 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 136.24 MHz ( period = 7.340 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 6.631 ns                ;
+; N/A                                     ; 137.23 MHz ( period = 7.287 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 6.578 ns                ;
+; N/A                                     ; 137.23 MHz ( period = 7.287 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 6.578 ns                ;
+; N/A                                     ; 137.23 MHz ( period = 7.287 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 6.578 ns                ;
+; N/A                                     ; 137.23 MHz ( period = 7.287 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 6.578 ns                ;
+; N/A                                     ; 137.23 MHz ( period = 7.287 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 6.578 ns                ;
+; N/A                                     ; 137.23 MHz ( period = 7.287 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 6.578 ns                ;
+; N/A                                     ; 137.76 MHz ( period = 7.259 ns )                    ; ps2scan:ps2scan|temp_data[7]     ; ps2scan:ps2scan|key_f0            ; clk        ; clk      ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 137.80 MHz ( period = 7.257 ns )                    ; my_uart_tx:my_uart_tx|tx_data[1] ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 6.548 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|ps2_state_r       ; clk        ; clk      ; None                        ; None                      ; 6.535 ns                ;
+; N/A                                     ; 138.68 MHz ( period = 7.211 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 6.502 ns                ;
+; N/A                                     ; 138.68 MHz ( period = 7.211 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 6.502 ns                ;
+; N/A                                     ; 138.68 MHz ( period = 7.211 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 6.502 ns                ;
+; N/A                                     ; 138.68 MHz ( period = 7.211 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 6.502 ns                ;
+; N/A                                     ; 138.68 MHz ( period = 7.211 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 6.502 ns                ;
+; N/A                                     ; 138.68 MHz ( period = 7.211 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 6.502 ns                ;
+; N/A                                     ; 138.68 MHz ( period = 7.211 ns )                    ; speed_select:speed_select|cnt[8] ; speed_select:speed_select|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 6.502 ns                ;
+; N/A                                     ; 141.16 MHz ( period = 7.084 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 6.375 ns                ;
+; N/A                                     ; 141.16 MHz ( period = 7.084 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 6.375 ns                ;
+; N/A                                     ; 141.16 MHz ( period = 7.084 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 6.375 ns                ;
+; N/A                                     ; 141.16 MHz ( period = 7.084 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 6.375 ns                ;
+; N/A                                     ; 141.16 MHz ( period = 7.084 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 6.375 ns                ;
+; N/A                                     ; 141.16 MHz ( period = 7.084 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 6.375 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.18 MHz ( period = 7.083 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 6.374 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; speed_select:speed_select|cnt[7] ; speed_select:speed_select|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 6.342 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; speed_select:speed_select|cnt[7] ; speed_select:speed_select|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 6.342 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; speed_select:speed_select|cnt[7] ; speed_select:speed_select|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 6.342 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; speed_select:speed_select|cnt[7] ; speed_select:speed_select|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 6.342 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; speed_select:speed_select|cnt[7] ; speed_select:speed_select|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 6.342 ns                ;
+; N/A                                     ; 141.82 MHz ( period = 7.051 ns )                    ; speed_select:speed_select|cnt[7] ; speed_select:speed_select|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 6.342 ns                ;
+; N/A                                     ; 142.11 MHz ( period = 7.037 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 6.328 ns                ;
+; N/A                                     ; 142.11 MHz ( period = 7.037 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 6.328 ns                ;
+; N/A                                     ; 142.11 MHz ( period = 7.037 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 6.328 ns                ;
+; N/A                                     ; 142.11 MHz ( period = 7.037 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 6.328 ns                ;
+; N/A                                     ; 142.11 MHz ( period = 7.037 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 6.328 ns                ;
+; N/A                                     ; 142.11 MHz ( period = 7.037 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 6.328 ns                ;
+; N/A                                     ; 142.11 MHz ( period = 7.037 ns )                    ; speed_select:speed_select|cnt[1] ; speed_select:speed_select|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 6.328 ns                ;
+; N/A                                     ; 142.98 MHz ( period = 6.994 ns )                    ; ps2scan:ps2scan|ps2_byte_r[3]    ; ps2scan:ps2scan|ps2_asci[4]       ; clk        ; clk      ; None                        ; None                      ; 8.217 ns                ;
+; N/A                                     ; 143.45 MHz ( period = 6.971 ns )                    ; my_uart_tx:my_uart_tx|num[1]     ; my_uart_tx:my_uart_tx|num[3]      ; clk        ; clk      ; None                        ; None                      ; 6.262 ns                ;
+; N/A                                     ; 143.55 MHz ( period = 6.966 ns )                    ; my_uart_tx:my_uart_tx|num[1]     ; my_uart_tx:my_uart_tx|num[1]      ; clk        ; clk      ; None                        ; None                      ; 6.257 ns                ;
+; N/A                                     ; 144.18 MHz ( period = 6.936 ns )                    ; ps2scan:ps2scan|temp_data[2]     ; ps2scan:ps2scan|key_f0            ; clk        ; clk      ; None                        ; None                      ; 6.227 ns                ;
+; N/A                                     ; 144.80 MHz ( period = 6.906 ns )                    ; speed_select:speed_select|cnt[3] ; speed_select:speed_select|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 6.197 ns                ;
+; N/A                                     ; 144.80 MHz ( period = 6.906 ns )                    ; speed_select:speed_select|cnt[3] ; speed_select:speed_select|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 6.197 ns                ;
+; N/A                                     ; 144.80 MHz ( period = 6.906 ns )                    ; speed_select:speed_select|cnt[3] ; speed_select:speed_select|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 6.197 ns                ;
+; N/A                                     ; 144.80 MHz ( period = 6.906 ns )                    ; speed_select:speed_select|cnt[3] ; speed_select:speed_select|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 6.197 ns                ;
+; N/A                                     ; 144.80 MHz ( period = 6.906 ns )                    ; speed_select:speed_select|cnt[3] ; speed_select:speed_select|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 6.197 ns                ;
+; N/A                                     ; 144.80 MHz ( period = 6.906 ns )                    ; speed_select:speed_select|cnt[3] ; speed_select:speed_select|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 6.197 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; speed_select:speed_select|cnt[2] ; speed_select:speed_select|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.73 MHz ( period = 6.862 ns )                    ; ps2scan:ps2scan|ps2k_clk_r2      ; ps2scan:ps2scan|temp_data[5]      ; clk        ; clk      ; None                        ; None                      ; 6.153 ns                ;
+; N/A                                     ; 145.73 MHz ( period = 6.862 ns )                    ; ps2scan:ps2scan|ps2_byte_r[6]    ; ps2scan:ps2scan|ps2_asci[4]       ; clk        ; clk      ; None                        ; None                      ; 8.151 ns                ;
+; N/A                                     ; 145.79 MHz ( period = 6.859 ns )                    ; ps2scan:ps2scan|ps2k_clk_r2      ; ps2scan:ps2scan|temp_data[1]      ; clk        ; clk      ; None                        ; None                      ; 6.150 ns                ;
+; N/A                                     ; 146.67 MHz ( period = 6.818 ns )                    ; my_uart_tx:my_uart_tx|num[2]     ; my_uart_tx:my_uart_tx|num[2]      ; clk        ; clk      ; None                        ; None                      ; 6.109 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[5]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[3]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[4]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[0]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[1]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[2]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[6]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 146.71 MHz ( period = 6.816 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_byte_r[7]     ; clk        ; clk      ; None                        ; None                      ; 6.107 ns                ;
+; N/A                                     ; 148.74 MHz ( period = 6.723 ns )                    ; my_uart_tx:my_uart_tx|num[0]     ; my_uart_tx:my_uart_tx|rs232_tx_r  ; clk        ; clk      ; None                        ; None                      ; 6.014 ns                ;
+; N/A                                     ; 148.81 MHz ( period = 6.720 ns )                    ; ps2scan:ps2scan|temp_data[0]     ; ps2scan:ps2scan|ps2_state_r       ; clk        ; clk      ; None                        ; None                      ; 6.011 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 5.971 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 5.971 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 5.971 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 5.971 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 5.971 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 5.971 ns                ;
+; N/A                                     ; 149.70 MHz ( period = 6.680 ns )                    ; speed_select:speed_select|cnt[0] ; speed_select:speed_select|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 5.971 ns                ;
+; N/A                                     ; 149.72 MHz ( period = 6.679 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 5.970 ns                ;
+; N/A                                     ; 149.72 MHz ( period = 6.679 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 5.970 ns                ;
+; N/A                                     ; 149.72 MHz ( period = 6.679 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 5.970 ns                ;
+; N/A                                     ; 149.72 MHz ( period = 6.679 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 5.970 ns                ;
+; N/A                                     ; 149.72 MHz ( period = 6.679 ns )                    ; speed_select:speed_select|cnt[5] ; speed_select:speed_select|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 5.970 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                  ;                                   ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk'                                                                                                                                                                                                   ;
++------------------------------------------+-------------------------------+-----------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                          ; To                          ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-------------------------------+-----------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[7] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 3.501 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[5] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 3.635 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[4] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 4.427 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[6] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 4.466 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[1] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 4.554 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[2] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 4.675 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[7] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 4.798 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[1] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 4.852 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[5] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 5.153 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[7] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 5.203 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[2] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 5.224 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[5] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 5.247 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[2] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 5.250 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[3] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 5.331 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[0] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 5.448 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[2] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 5.559 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[7] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 5.605 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[6] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 5.677 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[6] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 5.753 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[0] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 5.970 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[4] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 6.057 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[3] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 6.125 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[6] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 6.163 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[1] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 6.202 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[4] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 6.392 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[0] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 6.529 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[3] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 6.541 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[7] ; ps2scan:ps2scan|ps2_asci[0] ; clk        ; clk      ; None                       ; None                       ; 6.603 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[0] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 6.615 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[6] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 6.683 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[5] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 6.745 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[3] ; ps2scan:ps2scan|ps2_asci[3] ; clk        ; clk      ; None                       ; None                       ; 6.787 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[4] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 6.869 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[3] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 6.973 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[1] ; ps2scan:ps2scan|ps2_asci[2] ; clk        ; clk      ; None                       ; None                       ; 7.067 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[1] ; ps2scan:ps2scan|ps2_asci[4] ; clk        ; clk      ; None                       ; None                       ; 7.162 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[2] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 7.141 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[5] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 7.171 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[0] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 7.602 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ps2scan:ps2scan|ps2_byte_r[4] ; ps2scan:ps2scan|ps2_asci[1] ; clk        ; clk      ; None                       ; None                       ; 7.932 ns                 ;
++------------------------------------------+-------------------------------+-----------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; tsu                                                                                      ;
++-------+--------------+------------+-----------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From      ; To                            ; To Clock ;
++-------+--------------+------------+-----------+-------------------------------+----------+
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[5] ; clk      ;
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[3] ; clk      ;
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[4] ; clk      ;
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[0] ; clk      ;
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[1] ; clk      ;
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[2] ; clk      ;
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[6] ; clk      ;
+; N/A   ; None         ; 2.953 ns   ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[7] ; clk      ;
+; N/A   ; None         ; 2.069 ns   ; ps2k_clk  ; ps2scan:ps2scan|ps2k_clk_r0   ; clk      ;
+; N/A   ; None         ; 2.060 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[7]  ; clk      ;
+; N/A   ; None         ; 1.996 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[5]  ; clk      ;
+; N/A   ; None         ; 1.995 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[0]  ; clk      ;
+; N/A   ; None         ; 1.993 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[1]  ; clk      ;
+; N/A   ; None         ; 1.986 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[4]  ; clk      ;
+; N/A   ; None         ; 1.980 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[6]  ; clk      ;
+; N/A   ; None         ; 1.836 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[3]  ; clk      ;
+; N/A   ; None         ; 1.817 ns   ; ps2k_data ; ps2scan:ps2scan|temp_data[2]  ; clk      ;
++-------+--------------+------------+-----------+-------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------+
+; tco                                                                                          ;
++-------+--------------+------------+----------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                             ; To       ; From Clock ;
++-------+--------------+------------+----------------------------------+----------+------------+
+; N/A   ; None         ; 7.901 ns   ; my_uart_tx:my_uart_tx|rs232_tx_r ; rs232_tx ; clk        ;
++-------+--------------+------------+----------------------------------+----------+------------+
+
+
++------------------------------------------------------------------------------------------------+
+; th                                                                                             ;
++---------------+-------------+-----------+-----------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From      ; To                            ; To Clock ;
++---------------+-------------+-----------+-----------+-------------------------------+----------+
+; N/A           ; None        ; -1.263 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[2]  ; clk      ;
+; N/A           ; None        ; -1.282 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[3]  ; clk      ;
+; N/A           ; None        ; -1.426 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[6]  ; clk      ;
+; N/A           ; None        ; -1.432 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[4]  ; clk      ;
+; N/A           ; None        ; -1.439 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[1]  ; clk      ;
+; N/A           ; None        ; -1.441 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[0]  ; clk      ;
+; N/A           ; None        ; -1.442 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[5]  ; clk      ;
+; N/A           ; None        ; -1.506 ns ; ps2k_data ; ps2scan:ps2scan|temp_data[7]  ; clk      ;
+; N/A           ; None        ; -1.515 ns ; ps2k_clk  ; ps2scan:ps2scan|ps2k_clk_r0   ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[5] ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[3] ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[4] ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[0] ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[1] ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[2] ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[6] ; clk      ;
+; N/A           ; None        ; -2.399 ns ; rst_n     ; ps2scan:ps2scan|ps2_byte_r[7] ; clk      ;
++---------------+-------------+-----------+-----------+-------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sun Aug 02 10:12:40 2009
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ps2_key -c ps2_key
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "ps2scan:ps2scan|ps2_asci[4]" is a latch
+    Warning: Node "ps2scan:ps2scan|ps2_asci[2]" is a latch
+    Warning: Node "ps2scan:ps2scan|ps2_asci[0]" is a latch
+    Warning: Node "ps2scan:ps2scan|ps2_asci[1]" is a latch
+    Warning: Node "ps2scan:ps2scan|ps2_asci[3]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 16 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr1~6" as buffer
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr1~5" as buffer
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr1~4" as buffer
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr1~3" as buffer
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr1~2" as buffer
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr1~1" as buffer
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr1~0" as buffer
+    Info: Detected gated clock "ps2scan:ps2scan|WideOr5~0" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[7]" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[6]" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[2]" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[1]" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[0]" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[4]" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[3]" as buffer
+    Info: Detected ripple clock "ps2scan:ps2scan|ps2_byte_r[5]" as buffer
+Info: Clock "clk" has Internal fmax of 44.19 MHz between source register "ps2scan:ps2scan|ps2_asci[4]" and destination register "my_uart_tx:my_uart_tx|tx_data[4]" (period= 22.628 ns)
+    Info: + Longest register to register delay is 0.269 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X4_Y2_N4; Fanout = 1; REG Node = 'ps2scan:ps2scan|ps2_asci[4]'
+        Info: 2: + IC(0.000 ns) + CELL(0.269 ns) = 0.269 ns; Loc. = LC_X4_Y2_N4; Fanout = 1; REG Node = 'my_uart_tx:my_uart_tx|tx_data[4]'
+        Info: Total cell delay = 0.269 ns ( 100.00 % )
+    Info: - Smallest clock skew is -10.712 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 55; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X4_Y2_N4; Fanout = 1; REG Node = 'my_uart_tx:my_uart_tx|tx_data[4]'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+        Info: - Longest clock path from clock "clk" to source register is 14.060 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 55; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(1.294 ns) = 3.724 ns; Loc. = LC_X3_Y1_N3; Fanout = 19; REG Node = 'ps2scan:ps2scan|ps2_byte_r[2]'
+            Info: 3: + IC(1.441 ns) + CELL(0.914 ns) = 6.079 ns; Loc. = LC_X2_Y1_N0; Fanout = 1; COMB Node = 'ps2scan:ps2scan|WideOr1~4'
+            Info: 4: + IC(0.734 ns) + CELL(0.740 ns) = 7.553 ns; Loc. = LC_X2_Y1_N6; Fanout = 1; COMB Node = 'ps2scan:ps2scan|WideOr1~5'
+            Info: 5: + IC(0.704 ns) + CELL(0.914 ns) = 9.171 ns; Loc. = LC_X2_Y1_N4; Fanout = 5; COMB Node = 'ps2scan:ps2scan|WideOr1~6'
+            Info: 6: + IC(4.378 ns) + CELL(0.511 ns) = 14.060 ns; Loc. = LC_X4_Y2_N4; Fanout = 1; REG Node = 'ps2scan:ps2scan|ps2_asci[4]'
+            Info: Total cell delay = 5.536 ns ( 39.37 % )
+            Info: Total interconnect delay = 8.524 ns ( 60.63 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Warning: Circuit may not operate. Detected 40 non-operational path(s) clocked by clock "clk" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "ps2scan:ps2scan|ps2_byte_r[7]" and destination pin or register "ps2scan:ps2scan|ps2_asci[1]" for clock "clk" (Hold time is 6.797 ns)
+    Info: + Largest clock skew is 10.674 ns
+        Info: + Longest clock path from clock "clk" to destination register is 14.022 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 55; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(1.294 ns) = 3.724 ns; Loc. = LC_X3_Y1_N3; Fanout = 19; REG Node = 'ps2scan:ps2scan|ps2_byte_r[2]'
+            Info: 3: + IC(1.441 ns) + CELL(0.914 ns) = 6.079 ns; Loc. = LC_X2_Y1_N0; Fanout = 1; COMB Node = 'ps2scan:ps2scan|WideOr1~4'
+            Info: 4: + IC(0.734 ns) + CELL(0.740 ns) = 7.553 ns; Loc. = LC_X2_Y1_N6; Fanout = 1; COMB Node = 'ps2scan:ps2scan|WideOr1~5'
+            Info: 5: + IC(0.704 ns) + CELL(0.914 ns) = 9.171 ns; Loc. = LC_X2_Y1_N4; Fanout = 5; COMB Node = 'ps2scan:ps2scan|WideOr1~6'
+            Info: 6: + IC(4.340 ns) + CELL(0.511 ns) = 14.022 ns; Loc. = LC_X2_Y1_N1; Fanout = 1; REG Node = 'ps2scan:ps2scan|ps2_asci[1]'
+            Info: Total cell delay = 5.536 ns ( 39.48 % )
+            Info: Total interconnect delay = 8.486 ns ( 60.52 % )
+        Info: - Shortest clock path from clock "clk" to source register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 55; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X3_Y1_N9; Fanout = 7; REG Node = 'ps2scan:ps2scan|ps2_byte_r[7]'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: - Micro clock to output delay of source is 0.376 ns
+    Info: - Shortest register to register delay is 3.501 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X3_Y1_N9; Fanout = 7; REG Node = 'ps2scan:ps2scan|ps2_byte_r[7]'
+        Info: 2: + IC(0.000 ns) + CELL(0.595 ns) = 0.595 ns; Loc. = LC_X3_Y1_N9; Fanout = 1; COMB Node = 'ps2scan:ps2scan|WideOr9~3'
+        Info: 3: + IC(1.782 ns) + CELL(0.200 ns) = 2.577 ns; Loc. = LC_X2_Y1_N8; Fanout = 1; COMB Node = 'ps2scan:ps2scan|WideOr9~9'
+        Info: 4: + IC(0.724 ns) + CELL(0.200 ns) = 3.501 ns; Loc. = LC_X2_Y1_N1; Fanout = 1; REG Node = 'ps2scan:ps2scan|ps2_asci[1]'
+        Info: Total cell delay = 0.995 ns ( 28.42 % )
+        Info: Total interconnect delay = 2.506 ns ( 71.58 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "ps2scan:ps2scan|ps2_byte_r[5]" (data pin = "rst_n", clock pin = "clk") is 2.953 ns
+    Info: + Longest pin to register delay is 5.968 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_44; Fanout = 47; PIN Node = 'rst_n'
+        Info: 2: + IC(2.712 ns) + CELL(0.200 ns) = 4.044 ns; Loc. = LC_X3_Y1_N6; Fanout = 8; COMB Node = 'ps2scan:ps2scan|ps2_byte_r[0]~24'
+        Info: 3: + IC(0.681 ns) + CELL(1.243 ns) = 5.968 ns; Loc. = LC_X3_Y1_N7; Fanout = 15; REG Node = 'ps2scan:ps2scan|ps2_byte_r[5]'
+        Info: Total cell delay = 2.575 ns ( 43.15 % )
+        Info: Total interconnect delay = 3.393 ns ( 56.85 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 55; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X3_Y1_N7; Fanout = 15; REG Node = 'ps2scan:ps2scan|ps2_byte_r[5]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+Info: tco from clock "clk" to destination pin "rs232_tx" through register "my_uart_tx:my_uart_tx|rs232_tx_r" is 7.901 ns
+    Info: + Longest clock path from clock "clk" to source register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 55; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X6_Y4_N5; Fanout = 2; REG Node = 'my_uart_tx:my_uart_tx|rs232_tx_r'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.177 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y4_N5; Fanout = 2; REG Node = 'my_uart_tx:my_uart_tx|rs232_tx_r'
+        Info: 2: + IC(1.855 ns) + CELL(2.322 ns) = 4.177 ns; Loc. = PIN_78; Fanout = 0; PIN Node = 'rs232_tx'
+        Info: Total cell delay = 2.322 ns ( 55.59 % )
+        Info: Total interconnect delay = 1.855 ns ( 44.41 % )
+Info: th for register "ps2scan:ps2scan|temp_data[2]" (data pin = "ps2k_data", clock pin = "clk") is -1.263 ns
+    Info: + Longest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 55; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X4_Y1_N2; Fanout = 3; REG Node = 'ps2scan:ps2scan|temp_data[2]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 4.832 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_26; Fanout = 8; PIN Node = 'ps2k_data'
+        Info: 2: + IC(2.517 ns) + CELL(1.183 ns) = 4.832 ns; Loc. = LC_X4_Y1_N2; Fanout = 3; REG Node = 'ps2scan:ps2scan|temp_data[2]'
+        Info: Total cell delay = 2.315 ns ( 47.91 % )
+        Info: Total interconnect delay = 2.517 ns ( 52.09 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 135 megabytes
+    Info: Processing ended: Sun Aug 02 10:12:42 2009
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

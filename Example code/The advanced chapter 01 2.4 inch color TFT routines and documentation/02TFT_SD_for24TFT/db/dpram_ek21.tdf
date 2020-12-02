@@ -1,0 +1,48 @@
+--altdpram DEVICE_FAMILY="Cyclone III" lpm_hint="RAM_BLOCK_TYPE=AUTO" RAM_BLOCK_TYPE="AUTO" RDCONTROL_ACLR="OFF" RDCONTROL_REG="UNREGISTERED" SUPPRESS_MEMORY_CONVERSION_WARNINGS="ON" USE_EAB="ON" WIDTH=8 WIDTHAD=6 data inclock outclock outclocken q rdaddress wraddress wren CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 CYCLONEII_M4K_COMPATIBILITY="ON" LOW_POWER_MODE="AUTO"
+--VERSION_BEGIN 8.0 cbx_altdpram 2008:03:07:257777 cbx_altsyncram 2008:03:26:267331 cbx_cycloneii 2008:02:23:252825 cbx_lpm_add_sub 2008:03:09:257947 cbx_lpm_compare 2008:02:23:252825 cbx_lpm_decode 2008:02:23:252825 cbx_lpm_mux 2008:02:23:252825 cbx_mgl 2008:04:11:273944 cbx_stratix 2008:02:23:252825 cbx_stratixii 2008:02:23:252825 cbx_stratixiii 2008:04:23:278548 cbx_util_mgl 2008:04:15:275689  VERSION_END
+
+
+-- Copyright (C) 1991-2008 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION altsyncram_i0m1 (address_a[5..0], address_b[5..0], clock0, clock1, clocken1, data_a[7..0], wren_a)
+RETURNS ( q_b[7..0]);
+
+--synthesis_resources = M9K 1 
+SUBDESIGN dpram_ek21
+( 
+	data[7..0]	:	input;
+	inclock	:	input;
+	outclock	:	input;
+	outclocken	:	input;
+	q[7..0]	:	output;
+	rdaddress[5..0]	:	input;
+	wraddress[5..0]	:	input;
+	wren	:	input;
+) 
+VARIABLE 
+	altsyncram1 : altsyncram_i0m1;
+
+BEGIN 
+	altsyncram1.address_a[] = wraddress[];
+	altsyncram1.address_b[] = rdaddress[];
+	altsyncram1.clock0 = inclock;
+	altsyncram1.clock1 = outclock;
+	altsyncram1.clocken1 = outclocken;
+	altsyncram1.data_a[] = data[];
+	altsyncram1.wren_a = wren;
+	q[] = altsyncram1.q_b[];
+END;
+--VALID FILE

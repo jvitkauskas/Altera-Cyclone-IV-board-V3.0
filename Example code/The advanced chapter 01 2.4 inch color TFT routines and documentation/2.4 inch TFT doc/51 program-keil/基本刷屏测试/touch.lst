@@ -1,0 +1,369 @@
+C51 COMPILER V9.01   TOUCH                                                                 06/20/2013 10:54:50 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TOUCH
+OBJECT MODULE PLACED IN touch.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE touch\touch.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\touch.lst) OBJECT(tou
+                    -ch.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <intrins.h>
+   3          #include <sys\sys.h>
+   4          #include <touch\touch.h>
+   5          #include <lcd\lcd.h>
+   6          
+   7          //***Òò´¥ÃþÆÁÅú´Î²»Í¬µÈÔ­Òò£¬Ä¬ÈÏµÄÐ£×¼²ÎÊýÖµ¿ÉÄÜ»áÒýÆð´¥ÃþÊ¶±ð²»×¼£¬½¨ÒéÐ£×¼ºóÔÙÊ¹ÓÃ£¬²»½¨ÒéÊ¹ÓÃ¹Ì¶¨µÄÄ¬È
+             -ÏÐ£×¼²ÎÊý
+   8          u16 vx=13581,vy=10879;  //±ÈÀýÒò×Ó£¬´ËÖµ³ýÒÔ1000Ö®ºó±íÊ¾¶àÉÙ¸öADÖµ´ú±íÒ»¸öÏñËØµã
+   9          u16 chx=3676,chy=3886;//Ä¬ÈÏÏñËØµã×ø±êÎª0Ê±µÄADÆðÊ¼Öµ
+  10          //***Òò´¥ÃþÆÁÅú´Î²»Í¬µÈÔ­Òò£¬Ä¬ÈÏµÄÐ£×¼²ÎÊýÖµ¿ÉÄÜ»áÒýÆð´¥ÃþÊ¶±ð²»×¼£¬½¨ÒéÐ£×¼ºóÔÙÊ¹ÓÃ£¬²»½¨ÒéÊ¹ÓÃ¹Ì¶¨µÄÄ¬È
+             -ÏÐ£×¼²ÎÊý
+  11          
+  12          struct tp_pix_  tp_pixad,tp_pixlcd;      //µ±Ç°´¥¿Ø×ø±êµÄADÖµ,Ç°´¥¿Ø×ø±êµÄÏñËØÖµ   
+  13          
+  14          
+  15          u8 tpstate(void)
+  16          {
+  17   1              return  Penirq;
+  18   1      }
+  19          //**********************************************************
+  20          void spistar(void)                                     //SPI¿ªÊ¼
+  21          {
+  22   1      CS=1;
+  23   1      DCLK=1;
+  24   1      DIN=1;
+  25   1      DCLK=1;
+  26   1      }
+  27          //**********************************************************
+  28          void WriteCharTo7843(unsigned char num)          //SPIÐ´Êý¾Ý
+  29          {
+  30   1      unsigned char count=0;
+  31   1      DCLK=0;
+  32   1      for(count=0;count<8;count++)
+  33   1      {
+  34   2      num<<=1;
+  35   2      DIN=CY;
+  36   2      DCLK=0; _nop_();_nop_();_nop_();                //ÉÏÉýÑØÓÐÐ§
+  37   2      DCLK=1; _nop_();_nop_();_nop_();
+  38   2      }
+  39   1      }
+  40          //**********************************************************
+  41          u16 ReadFromCharFrom7843()             //SPI ¶ÁÊý¾Ý
+  42          {
+  43   1              u8 count=0;
+  44   1              u16 Num=0;
+  45   1              for(count=0;count<12;count++)
+  46   1              {
+  47   2                      Num<<=1;                
+  48   2                      DCLK=1; _nop_();_nop_();_nop_();                //ÏÂ½µÑØÓÐÐ§
+  49   2                      DCLK=0; _nop_();_nop_();_nop_();
+  50   2                      if(DOUT)
+  51   2                      {
+  52   3                              Num|=1;
+C51 COMPILER V9.01   TOUCH                                                                 06/20/2013 10:54:50 PAGE 2   
+
+  53   3                      }
+  54   2                      
+  55   2              }
+  56   1      
+  57   1      return(Num);
+  58   1      }       
+  59          //´Ó7846/7843/XPT2046/UH7843/UH7846¶ÁÈ¡adcÖµ      0x90=y   0xd0-x
+  60          u16 ADS_Read_AD(unsigned char CMD)          
+  61          {
+  62   1      u16 l;
+  63   1      CS=0;
+  64   1      WriteCharTo7843(CMD);        //ËÍ¿ØÖÆ×Ö¼´ÓÃ²î·Ö·½Ê½¶ÁX×ø±ê ÏêÏ¸Çë¼ûÓÐ¹Ø×ÊÁÏ
+  65   1      DCLK=1; _nop_();_nop_();_nop_();_nop_();
+  66   1      DCLK=0; _nop_();_nop_();_nop_();_nop_();
+  67   1      l=ReadFromCharFrom7843();
+  68   1      CS=1;
+  69   1      return l;
+  70   1      }                  
+  71          //¶ÁÈ¡Ò»¸ö×ø±êÖµ
+  72          //Á¬Ðø¶ÁÈ¡READ_TIMES´ÎÊý¾Ý,¶ÔÕâÐ©Êý¾ÝÉýÐòÅÅÁÐ,
+  73          //È»ºóÈ¥µô×îµÍºÍ×î¸ßLOST_VAL¸öÊý,È¡Æ½¾ùÖµ 
+  74          #define READ_TIMES 15 //¶ÁÈ¡´ÎÊý
+  75          #define LOST_VAL 5        //¶ªÆúÖµ
+  76          u16 ADS_Read_XY(u8 xy)
+  77          {
+  78   1              u16 i, j;
+  79   1              u16 buf[READ_TIMES];
+  80   1              u16 sum=0;
+  81   1              u16 temp;
+  82   1              for(i=0;i<READ_TIMES;i++)
+  83   1              {                                
+  84   2                      buf[i]=ADS_Read_AD(xy);     
+  85   2              }                                   
+  86   1              for(i=0;i<READ_TIMES-1; i++)//ÅÅÐò
+  87   1              {
+  88   2                      for(j=i+1;j<READ_TIMES;j++)
+  89   2                      {
+  90   3                              if(buf[i]>buf[j])//ÉýÐòÅÅÁÐ
+  91   3                              {
+  92   4                                      temp=buf[i];
+  93   4                                      buf[i]=buf[j];
+  94   4                                      buf[j]=temp;
+  95   4                              }
+  96   3                      }
+  97   2              }         
+  98   1              sum=0;
+  99   1              for(i=LOST_VAL;i<READ_TIMES-LOST_VAL;i++)sum+=buf[i];
+ 100   1              temp=sum/(READ_TIMES-2*LOST_VAL);
+ 101   1              return temp;   
+ 102   1      } 
+ 103          //´øÂË²¨µÄ×ø±ê¶ÁÈ¡
+ 104          //×îÐ¡Öµ²»ÄÜÉÙÓÚ100.
+ 105          u8 Read_ADS(u16 *x,u16 *y)
+ 106          {
+ 107   1              u16 xtemp,ytemp;                                                  
+ 108   1              xtemp=ADS_Read_XY(CMD_RDX);
+ 109   1              ytemp=ADS_Read_XY(CMD_RDY);                                                                                
+ 110   1              if(xtemp<100||ytemp<100)return 0;//¶ÁÊýÊ§°Ü
+ 111   1              *x=xtemp;
+ 112   1              *y=ytemp;
+ 113   1              return 1;//¶ÁÊý³É¹¦
+ 114   1      }
+C51 COMPILER V9.01   TOUCH                                                                 06/20/2013 10:54:50 PAGE 3   
+
+ 115          //2´Î¶ÁÈ¡ADS7846,Á¬Ðø¶ÁÈ¡2´ÎÓÐÐ§µÄADÖµ,ÇÒÕâÁ½´ÎµÄÆ«²î²»ÄÜ³¬¹ý
+ 116          //50,Âú×ãÌõ¼þ,ÔòÈÏÎª¶ÁÊýÕýÈ·,·ñÔò¶ÁÊý´íÎó.         
+ 117          //¸Ãº¯ÊýÄÜ´ó´óÌá¸ß×¼È·¶È
+ 118          #define ERR_RANGE 20 //Îó²î·¶Î§ 
+ 119          u8 Read_ADS2(u16 *x,u16 *y) 
+ 120          {
+ 121   1              u16 x1,y1;
+ 122   1              u16 x2,y2;
+ 123   1              u8 flag;    
+ 124   1          flag=Read_ADS(&x1,&y1);   
+ 125   1          if(flag==0)return(0);
+ 126   1          flag=Read_ADS(&x2,&y2);     
+ 127   1          if(flag==0)return(0);   
+ 128   1          if(((x2<=x1&&x1<x2+ERR_RANGE)||(x1<=x2&&x2<x1+ERR_RANGE))//Ç°ºóÁ½´Î²ÉÑùÔÚ+-ERR_RANGEÄÚ
+ 129   1          &&((y2<=y1&&y1<y2+ERR_RANGE)||(y1<=y2&&y2<y1+ERR_RANGE)))
+ 130   1          {
+ 131   2              *x=(x1+x2)>>1;
+ 132   2              *y=(y1+y2)>>1;          
+ 133   2              return 1;
+ 134   2          }else return 0;       
+ 135   1      } 
+ 136          //¾«È·¶ÁÈ¡Ò»´Î×ø±ê,Ð£×¼µÄÊ±ºòÓÃµÄ          
+ 137          u8 Read_TP_Once(void)
+ 138          {
+ 139   1              u8 re=0;
+ 140   1              u16 x1,y1;
+ 141   1              while(re==0)
+ 142   1              {
+ 143   2                      while(!Read_ADS2(&tp_pixad.x,&tp_pixad.y));
+ 144   2                      delayms(10);
+ 145   2                      while(!Read_ADS2(&x1,&y1));
+ 146   2                      if(tp_pixad.x==x1&&tp_pixad.y==y1)
+ 147   2                      {
+ 148   3                              re=1; 
+ 149   3                      }
+ 150   2              } 
+ 151   1              return re;
+ 152   1      }
+ 153          //////////////////////////////////////////////////
+ 154          //ÓëLCD²¿·ÖÓÐ¹ØµÄº¯Êý  
+ 155          //»­Ò»¸ö´¥Ãþµã
+ 156          //ÓÃÀ´Ð£×¼ÓÃµÄ
+ 157          void Drow_Touch_Point(u16 x,u16 y)
+ 158          {
+ 159   1              LCD_DrawLine(x-12,y,x+13,y);//ºáÏß
+ 160   1              LCD_DrawLine(x,y-12,x,y+13);//ÊúÏß
+ 161   1              LCD_DrawPoint(x+1,y+1);
+ 162   1              LCD_DrawPoint(x-1,y+1);
+ 163   1              LCD_DrawPoint(x+1,y-1);
+ 164   1              LCD_DrawPoint(x-1,y-1);
+ 165   1      //      Draw_Circle(x,y,6);//»­ÖÐÐÄÈ¦
+ 166   1      }         
+ 167          //×ª»»½á¹û
+ 168          //¸ù¾Ý´¥ÃþÆÁµÄÐ£×¼²ÎÊýÀ´¾ö¶¨×ª»»ºóµÄ½á¹û,±£´æÔÚX0,Y0ÖÐ
+ 169          u8 Convert_Pos(void)
+ 170          {                        
+ 171   1              u8 l=0; 
+ 172   1              if(Read_ADS2(&tp_pixad.x,&tp_pixad.y))
+ 173   1              {
+ 174   2                      l=1;
+ 175   2                      tp_pixlcd.x=tp_pixad.x>chx?((u32)tp_pixad.x-(u32)chx)*1000/vx:((u32)chx-(u32)tp_pixad.x)*1000/vx;
+ 176   2                      tp_pixlcd.y=tp_pixad.y>chy?((u32)tp_pixad.y-(u32)chy)*1000/vy:((u32)chy-(u32)tp_pixad.y)*1000/vy;
+C51 COMPILER V9.01   TOUCH                                                                 06/20/2013 10:54:50 PAGE 4   
+
+ 177   2              }
+ 178   1              return l;
+ 179   1      }          
+ 180          //´¥ÃþÆÁÐ£×¼´úÂë
+ 181          //µÃµ½ËÄ¸öÐ£×¼²ÎÊý
+ 182          #define tp_pianyi 50   //Ð£×¼×ø±êÆ«ÒÆÁ¿ 
+ 183          #define tp_xiaozhun 1000   //Ð£×¼¾«¶È
+ 184          void Touch_Adjust(void)
+ 185          {       
+ 186   1              float vx1,vx2,vy1,vy2;  //±ÈÀýÒò×Ó£¬´ËÖµ³ýÒÔ1000Ö®ºó±íÊ¾¶àÉÙ¸öADÖµ´ú±íÒ»¸öÏñËØµã
+ 187   1              u16 chx1,chx2,chy1,chy2;//Ä¬ÈÏÏñËØµã×ø±êÎª0Ê±µÄADÆðÊ¼Öµ
+ 188   1              u16 lx,ly;                               
+ 189   1              struct tp_pixu32_ p[4];
+ 190   1              u8  cnt=0;       
+ 191   1              cnt=0;                          
+ 192   1              POINT_COLOR=BLUE;
+ 193   1              BACK_COLOR =WHITE;
+ 194   1              LCD_Clear(WHITE);//ÇåÆÁ   
+ 195   1              POINT_COLOR=RED;//ºìÉ« 
+ 196   1              LCD_Clear(WHITE);//ÇåÆÁ 
+ 197   1              Drow_Touch_Point(tp_pianyi,tp_pianyi);//»­µã1 
+ 198   1              while(1)
+ 199   1              {
+ 200   2                      if(Penirq==0)//°´¼ü°´ÏÂÁË
+ 201   2                      {
+ 202   3                              if(Read_TP_Once())//µÃµ½µ¥´Î°´¼üÖµ
+ 203   3                              {                                                                  
+ 204   4                                      p[cnt].x=tp_pixad.x;
+ 205   4                                      p[cnt].y=tp_pixad.y;
+ 206   4                                      cnt++; 
+ 207   4                              }                        
+ 208   3                              switch(cnt)
+ 209   3                              {                          
+ 210   4                                      case 1:
+ 211   4                                              LCD_Clear(WHITE);//ÇåÆÁ 
+ 212   4                                              while(!Penirq)  //µÈ´ýËÉÊÖ
+ 213   4                                              {
+ 214   5                                              }
+ 215   4                                              Drow_Touch_Point(LCD_W-tp_pianyi-1,tp_pianyi);//»­µã2
+ 216   4                                              break;
+ 217   4                                      case 2:
+ 218   4                                              LCD_Clear(WHITE);//ÇåÆÁ 
+ 219   4                                              while(!Penirq)  //µÈ´ýËÉÊÖ
+ 220   4                                              {
+ 221   5                                              }
+ 222   4                                              Drow_Touch_Point(tp_pianyi,LCD_H-tp_pianyi-1);//»­µã3
+ 223   4                                              break;
+ 224   4                                      case 3:
+ 225   4                                              LCD_Clear(WHITE);//ÇåÆÁ 
+ 226   4                                              while(!Penirq)  //µÈ´ýËÉÊÖ
+ 227   4                                              {
+ 228   5                                              }
+ 229   4                                              Drow_Touch_Point(LCD_W-tp_pianyi-1,LCD_H-tp_pianyi-1);//»­µã4
+ 230   4                                              break;
+ 231   4                                      case 4:  //È«²¿ËÄ¸öµãÒÑ¾­µÃµ½
+ 232   4                                      LCD_Clear(WHITE);//ÇåÆÁ 
+ 233   4                                              while(!Penirq)  //µÈ´ýËÉÊÖ
+ 234   4                                              {
+ 235   5                                              }
+ 236   4                                              vx1=p[1].x>p[0].x?(p[1].x-p[0].x+1)*1000/(LCD_W-tp_pianyi-tp_pianyi):(p[0].x-p[1].x-1)*1000/(LCD_W
+             --tp_pianyi-tp_pianyi);
+ 237   4                                              chx1=p[1].x>p[0].x?p[0].x-(vx1*tp_pianyi)/1000:p[0].x+(vx1*tp_pianyi)/1000;
+C51 COMPILER V9.01   TOUCH                                                                 06/20/2013 10:54:50 PAGE 5   
+
+ 238   4                                              vy1=p[2].y>p[0].y?(p[2].y-p[0].y-1)*1000/(LCD_H-tp_pianyi-tp_pianyi):(p[0].y-p[2].y-1)*1000/(LCD_H
+             --tp_pianyi-tp_pianyi);
+ 239   4                                              chy1=p[2].y>p[0].y?p[0].y-(vy1*tp_pianyi)/1000:p[0].y+(vy1*tp_pianyi)/1000; 
+ 240   4                                              
+ 241   4                                              vx2=p[3].x>p[2].x?(p[3].x-p[2].x+1)*1000/(LCD_W-tp_pianyi-tp_pianyi):(p[2].x-p[3].x-1)*1000/(LCD_W-tp
+             -_pianyi-tp_pianyi);
+ 242   4                                              chx2=p[3].x>p[2].x?p[2].x-(vx2*tp_pianyi)/1000:p[2].x+(vx2*tp_pianyi)/1000;
+ 243   4                                              vy2=p[3].y>p[1].y?(p[3].y-p[1].y-1)*1000/(LCD_H-tp_pianyi-tp_pianyi):(p[1].y-p[3].y-1)*1000/(LCD_H
+             --tp_pianyi-tp_pianyi);
+ 244   4                                              chy2=p[3].y>p[1].y?p[1].y-(vy2*tp_pianyi)/1000:p[1].y+(vy2*tp_pianyi)/1000; 
+ 245   4      
+ 246   4      
+ 247   4                                              if((vx1>vx2&&vx1>vx2+tp_xiaozhun)||(vx1<vx2&&vx1<vx2-tp_xiaozhun)||(vy1>vy2&&vy1>vy2+tp_xiaozhun)||(v
+             -y1<vy2&&vy1<vy2-tp_xiaozhun))
+ 248   4                                              {
+ 249   5                                                      cnt=0;
+ 250   5                                                      LCD_Clear(WHITE);//ÇåÆÁ 
+ 251   5                                                      Drow_Touch_Point(tp_pianyi,tp_pianyi);//»­µã1 
+ 252   5                                                      continue;
+ 253   5                                              }
+ 254   4                                              vx=(vx1+vx2)/2;vy=(vy1+vy2)/2;
+ 255   4                                              chx=(chx1+chx2)/2;chy=(chy1+chy2)/2;    
+ 256   4                                                                                                                                      
+ 257   4                                              //ÏÔÊ¾Ð£×¼ÐÅÏ¢
+ 258   4                                              LCD_Clear(WHITE);//ÇåÆÁ 
+ 259   4                                              POINT_COLOR=BLACK;
+ 260   4                                              BACK_COLOR=BLUE;        
+ 261   4                              
+ 262   4                                              lx=0;ly=50;                     
+ 263   4                                              LCD_ShowString(lx,ly,"VX1:");lx+=40;LCD_ShowNum(lx,ly,vx1,4);                                   
+ 264   4                                              lx=0;ly+=20;
+ 265   4                                              LCD_ShowString(lx,ly,"Vy1:");lx+=40;LCD_ShowNum(lx,ly,vy1,4);                                   
+ 266   4                                              lx=0;ly+=20; 
+ 267   4                                              LCD_ShowString(lx,ly,"CHX1:");lx+=40;LCD_ShowNum(lx,ly,chx1,4);                                 
+ 268   4                                          lx=0;ly+=20; 
+ 269   4                                              LCD_ShowString(lx,ly,"CHY1:");lx+=40;LCD_ShowNum(lx,ly,chy1,4);
+ 270   4      
+ 271   4                                              lx=100;ly=50;                   
+ 272   4                                              LCD_ShowString(lx,ly,"VX2:");lx+=40;LCD_ShowNum(lx,ly,vx2,4);                                   
+ 273   4                                              lx=100;ly+=20;
+ 274   4                                              LCD_ShowString(lx,ly,"Vy2:");lx+=40;LCD_ShowNum(lx,ly,vy2,4);                                   
+ 275   4                                              lx=100;ly+=20; 
+ 276   4                                              LCD_ShowString(lx,ly,"CHX2:");lx+=40;LCD_ShowNum(lx,ly,chx2,4);                                 
+ 277   4                                          lx=100;ly+=20; 
+ 278   4                                              LCD_ShowString(lx,ly,"CHY2:");lx+=40;LCD_ShowNum(lx,ly,chy2,4);
+ 279   4                                      
+ 280   4                                              lx=50;ly=150;                   
+ 281   4                                              LCD_ShowString(lx,ly,"VX:");lx+=40;LCD_ShowNum(lx,ly,vx,4);                                     
+ 282   4                                              lx=50;ly+=20;
+ 283   4                                              LCD_ShowString(lx,ly,"Vy:");lx+=40;LCD_ShowNum(lx,ly,vy,4);                                     
+ 284   4                                              lx=50;ly+=20; 
+ 285   4                                              LCD_ShowString(lx,ly,"CHX:");lx+=40;LCD_ShowNum(lx,ly,chx,4);                                   
+ 286   4                                          lx=50;ly+=20; 
+ 287   4                                              LCD_ShowString(lx,ly,"CHY:");lx+=40;LCD_ShowNum(lx,ly,chy,4);
+ 288   4      
+ 289   4                                              lx=30;ly+=30;
+ 290   4                                              LCD_ShowString(lx,ly,"Adjust OK!  Touch Anywhere To Continue");                                                                           
+ 291   4                                              Read_TP_Once(); //µÈ´ýÈÎÒâ¼üºó¼ÌÐø
+ 292   4      
+ 293   4                                              LCD_Clear(WHITE);//ÇåÆÁ
+ 294   4                                              return;//Ð£ÕýÍê³É                                
+ 295   4                              }
+C51 COMPILER V9.01   TOUCH                                                                 06/20/2013 10:54:50 PAGE 6   
+
+ 296   3                      }
+ 297   2              } 
+ 298   1      }
+ 299          void point(void) //»æÍ¼º¯Êý
+ 300          {
+ 301   1              double t=0;
+ 302   1              
+ 303   1          while(1)
+ 304   1              {       
+ 305   2                      if(Penirq==0)
+ 306   2                      {
+ 307   3                              t=0;
+ 308   3                              if(Convert_Pos())       //µÃµ½×ø±êÖµ
+ 309   3                              {
+ 310   4                              //      LCD_ShowString(10,250,"X:");LCD_ShowNum(30,250,(u32)tp_pixad.x,6);      
+ 311   4                                      //LCD_ShowString(180,250,"Y:");LCD_ShowNum(200,250,(u32)tp_pixad.y,6);  
+ 312   4                                      LCD_ShowString(10,250,"X:");LCD_ShowNum(30,250,tp_pixad.x,4);
+ 313   4                                      LCD_ShowString(180,250,"Y:");LCD_ShowNum(200,250,tp_pixad.y,4);                                 
+ 314   4                                      LCD_DrawPoint_big(tp_pixlcd.x,tp_pixlcd.y);   
+ 315   4                               }
+ 316   3                              
+ 317   3                      }
+ 318   2                      else
+ 319   2                      {       
+ 320   3                              t++;            
+ 321   3                              if(t>65000)
+ 322   3                              {
+ 323   4                                      return;
+ 324   4                              }
+ 325   3                      }               
+ 326   2      
+ 327   2                      }
+ 328   1      }               
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   4909    ----
+   CONSTANT SIZE    =    107    ----
+   XDATA SIZE       =     16     133
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

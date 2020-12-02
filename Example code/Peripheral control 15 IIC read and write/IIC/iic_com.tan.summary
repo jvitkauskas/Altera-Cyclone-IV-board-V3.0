@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.945 ns
+From           : sda
+To             : iic_com:inst|read_data[2]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.688 ns
+From           : uart_txd:inst5|tram_shiftreg[0]
+To             : serial_out
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.837 ns
+From           : host_ready
+To             : uart_txd:inst5|next_state.waiting
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 164.93 MHz ( period = 6.063 ns )
+From           : iic_com:inst|cnt_20ms[11]
+To             : iic_com:inst|sw1_r
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : iic_com:inst|read_data[3]
+To             : uart_txd:inst5|tram_datareg[3]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 8
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 8
+
+--------------------------------------------------------------------------------------
+

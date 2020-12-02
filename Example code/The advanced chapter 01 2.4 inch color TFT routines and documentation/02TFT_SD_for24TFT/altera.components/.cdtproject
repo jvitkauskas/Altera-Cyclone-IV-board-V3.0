@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse-cdt version="2.0"?>
+
+<cdtproject>
+<data>
+<item id="org.eclipse.cdt.core.pathentry">
+<pathentry kind="src" path=""/>
+<pathentry kind="out" path="bin"/>
+</item>
+</data>
+</cdtproject>

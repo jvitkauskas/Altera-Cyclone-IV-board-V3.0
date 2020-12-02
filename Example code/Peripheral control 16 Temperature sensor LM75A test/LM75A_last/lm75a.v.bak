@@ -1,0 +1,356 @@
+module lm75a(clk,rst_n,scl,sda,cs,seg);
+input clk,rst_n; //fu复位信号低电平有效，时钟50MHz;
+output scl;  //I2C时钟，250KHz；时钟周期为4us;
+inout sda;   //I2C数据端；
+output[3:0] cs;  //数码管片选；
+output[7:0] seg;  //数码管段选；
+wire done;    // I2C读取一个数据完毕，更新数码管段选寄存器；
+wire[15:0] data;//温度数据；
+I2C_READ I2C_READ(
+        .clk(clk),
+		  .rst_n(rst_n),
+		  .scl(scl),
+		  .sda(sda),
+		  .data(data)
+              );
+SEG_D  SEG_D(
+       .clk(clk),
+		 .rst_n(rst_n),
+		 .cs(cs),
+		 .seg(seg),
+		 .data(data)
+         );
+endmodule 
+//----------------------------------------------------//
+//-----------------------I2C读温度数据-----------------//
+//----------------------------------------------------//
+module I2C_READ(
+       clk,
+		 rst_n,
+		scl,sda,data
+              );
+				  
+			  
+input clk;		// 50MHz
+input rst_n;	//复位信号，低有效
+output scl;		// lm75的时钟端口
+inout sda;		// lm75的数据端口
+output[15:0] data;	//数码管显示的数据
+
+//--------------------------------------------
+		
+reg[2:0] cnt;	// cnt=0:scl上升沿，cnt=1:scl高电平中间，cnt=2:scl下降沿，cnt=3:scl低电平中间
+reg[7:0] cnt_delay;	//200循环计数，产生iic所需要的时钟,250Khz
+reg scl_r;		//时钟脉冲寄存器
+
+always @ (posedge clk or negedge rst_n)
+	if(!rst_n) cnt_delay <= 8'd0;
+	else if(cnt_delay == 8'd199) cnt_delay <= 8'd0;	//计数到4us为scl的周期，即250KHz
+	else cnt_delay <= cnt_delay+1'b1;	//时钟计数
+
+always @ (posedge clk or negedge rst_n) begin
+	if(!rst_n) cnt <= 3'd5;
+	else begin
+		case (cnt_delay)
+			9'd49:	cnt <= 3'd1;	//cnt=1:scl高电平中间,用于数据采样
+			9'd99:	cnt <= 3'd2;	//cnt=2:scl下降沿
+			9'd149:	cnt <= 3'd3;	//cnt=3:scl低电平中间,用于数据变化
+			9'd199:	cnt <= 3'd0;	//cnt=0:scl上升沿
+			default: cnt <= 3'd5;
+			endcase
+		end
+end
+
+
+`define SCL_POS		(cnt==3'd0)		//cnt=0:scl上升沿‘、|
+`define SCL_HIG		(cnt==3'd1)		//cnt=1:scl高电平中间,用于数据采样
+`define SCL_NEG		(cnt==3'd2)		//cnt=2:scl下降沿
+`define SCL_LOW		(cnt==3'd3)		//cnt=3:scl低电平中间,用于数据变化
+//`define `是非下边的按键
+
+always @ (posedge clk or negedge rst_n)
+	if(!rst_n) scl_r <= 1'b0;
+	else if(cnt==3'd0) scl_r <= 1'b1;	//scl信号上升沿
+   	else if(cnt==3'd2) scl_r <= 1'b0;	//scl信号下降沿
+
+assign scl = scl_r;	//产生iic所需要的时钟
+//---------------------------------------------
+		//需要写入24C02的地址和数据
+				
+`define	DEVICE_READ		8'b1001_0001	//被寻址器件地址（读操作）
+//`define DEVICE_WRITE	   8'b1001_0000	//被寻址器件地址（写操作）
+reg[7:0] db_r;		//在IIC上传送的数据寄存器
+reg[15:0] read_data;	//读出LM75温度的数据寄存器
+
+//---------------------------------------------
+		//读、写时序
+parameter 	IDLE 	 = 4'd0;
+parameter 	START1 = 4'd1;
+parameter 	ADD1 	 = 4'd2;
+parameter 	ACK1 	 = 4'd3;
+parameter 	DATA1  = 4'd4;
+parameter 	ACK2 	 = 4'd5;
+parameter 	DATA2	 = 4'd6;
+parameter 	NACK 	 = 4'd7;
+parameter 	STOP	 = 4'd8;
+
+reg[3:0] cstate;	//状态寄存器
+reg sda_r;		//输出数据寄存器
+reg sda_link;	//输出数据sda信号inout方向控制位		
+reg[3:0] num;	//
+reg[25:0] ti1;//每1.35s读一次温度值
+always @ (posedge clk or negedge rst_n) 
+	if(!rst_n) ti1<=26'd0;
+	else ti1<=ti1+1'b1;
+
+always @ (posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
+			cstate <= IDLE;
+			sda_r <= 1'b1;
+			sda_link <= 1'b0;
+			num <= 4'd0;
+			read_data <= 16'd0;
+		end
+	else 	  
+		case (cstate)
+			IDLE:	begin
+					sda_link <= 1'b1;			//数据线sda为output
+					sda_r <= 1'b1;
+					if(ti1[25]) begin	//计时时间到，读数据			
+						db_r <= `DEVICE_READ;	//送器件地址（读操作）
+						cstate <= START1;		
+						end
+					else cstate <= IDLE;	//时间没到
+				end
+			START1: begin
+					if(`SCL_HIG) begin		//scl为高电平期间
+						sda_link <= 1'b1;	//数据线sda为output
+						sda_r <= 1'b0;		//拉低数据线sda，产生起始位信号
+						cstate <= ADD1;
+						num <= 4'd0;		//num计数清零
+						end
+					else cstate <= START1; //等待scl高电平中间位置到来
+				end
+			ADD1:	begin
+					if(`SCL_LOW) begin
+							if(num == 4'd8) begin	
+									num <= 4'd0;			//num计数清零
+									sda_r <= 1'b1;
+									sda_link <= 1'b0;		//sda置为高阻态(input)
+									cstate <= ACK1;
+								end
+							else begin
+									cstate <= ADD1;
+									num <= num+1'b1;
+									case (num)
+										4'd0: sda_r <= db_r[7];
+										4'd1: sda_r <= db_r[6];
+										4'd2: sda_r <= db_r[5];
+										4'd3: sda_r <= db_r[4];
+										4'd4: sda_r <= db_r[3];
+										4'd5: sda_r <= db_r[2];
+										4'd6: sda_r <= db_r[1];
+										4'd7: sda_r <= db_r[0];
+										default: ;
+										endcase
+								//送器件地址，从高位开始
+								end
+						end
+					else cstate <= ADD1;
+				end
+			ACK1:	begin
+					if(!sda_r && `SCL_HIG) begin	//LM75产生应答信号
+							
+							cstate <= DATA1;	//dushuju 读数据	
+						   	
+						end
+					else if(`SCL_NEG)begin   //未产生应答信号，则忽略
+							cstate <= DATA1;	//读数据
+						   end		
+					else cstate <= ACK1;		//等待从机响应
+				end
+			
+			DATA1:	begin
+							if(`SCL_HIG) begin	
+									num <= num+1'b1;	
+									case (num)
+										4'd0: read_data[15] <= sda;
+										4'd1: read_data[14] <= sda;  
+										4'd2: read_data[13] <= sda; 
+										4'd3: read_data[12] <= sda; 
+										4'd4: read_data[11] <= sda; 
+										4'd5: read_data[10] <= sda; 
+										4'd6: read_data[9]  <= sda; 
+										4'd7: read_data[8]  <= sda; 
+										default: ;
+										endcase		//du读高字节																
+									end
+						
+							else if((`SCL_NEG) && (num==4'd8)) begin
+								num <= 4'd0;			//num计数清零
+								sda_link <= 1'b1;			//数据线sda为output
+								sda_r<=1'b1;// sda拉高，以便产生低电平
+								cstate <= ACK2;
+								end
+							else cstate <= DATA1;
+					end	
+			  ACK2: begin
+					if(`SCL_LOW) begin
+					sda_r <= 1'b0; // 主机应答				
+						end
+					else if(`SCL_NEG)begin 
+					   cstate <= DATA2;
+						sda_link <= 1'b0;		//sda置为高阻态(input)
+					   sda_r<=1'b1;	
+				   end	
+					else cstate <= ACK2;
+				end
+			DATA2:	begin
+			            				
+							if(`SCL_HIG) begin	
+									num <= num+1'b1;	
+									case (num)
+										4'd0: read_data[7] <= sda;
+										4'd1: read_data[6] <= sda;  
+										4'd2: read_data[5] <= sda; 
+										4'd3: read_data[4] <= sda; 
+										4'd4: read_data[3] <= sda; 
+										4'd5: read_data[2] <= sda; 
+										4'd6: read_data[1] <= sda; 
+										4'd7: read_data[0] <= sda; 
+										default: ;
+										endcase		//du读di字节																
+								end
+							else if((`SCL_LOW) && (num==4'd8)) begin
+								num <= 4'd0;			//num计数清零
+								sda_link <= 1'b1;			//数据线sda为output
+								sda_r<=1'b1;           //产生非应答信号
+								cstate <= NACK;
+								end
+							else cstate <= DATA2;
+			end	
+			
+			NACK: begin
+					if(`SCL_LOW) begin
+					sda_r <= 1'b0; // 主机fei应答
+					 cstate <= STOP;					
+						end
+					else cstate <= NACK;
+				end				
+			STOP:	begin
+			      
+					if(`SCL_HIG) begin
+					sda_r <= 1'b1;
+				   cstate <= IDLE;
+					end
+					else cstate <= STOP;
+				end
+			default: cstate <= IDLE;
+			endcase
+end
+
+assign sda = sda_link ? sda_r:1'bz;
+assign data = read_data;
+
+endmodule
+//--------------------------------------------------///
+//------------------ 数码管显示----------------------///
+//--------------------------------------------------///
+module SEG_D(
+			clk,rst_n,
+			data,
+			cs,seg
+		);
+
+input clk;		// 50MHz
+input rst_n;	// 复位信号，低有效
+
+input[15:0] data;	//显示数据	
+output[3:0] cs;	//数码管片选信号，低有效
+output[7:0] seg;	//8段数码管（包括小数点）
+
+ reg[5:0] cnt;
+always @ (posedge clk or negedge rst_n)
+	if(!rst_n) cnt <= 6'd0;
+	else if (cnt==6'd59) cnt <= 6'd0;
+	else cnt <= cnt+1'b1;
+
+	
+//-------------------------------------------------------------------------------
+/*	共阳极 :不带小数点
+              由0到f的编码为:
+{
+0xc0,0xf9,0xa4,0xb0,
+0x99,0x92,0x82,0xf8,
+0x80,0x90,0x88,0x83,
+0xc6,0xa1,0x86,0x8e};
+*/
+parameter seg0	= 7'hc0,
+			 seg1	= 7'hf9,
+			 seg2	= 7'ha4,
+			 seg3	= 7'hb0,
+			 seg4	= 7'h99,
+			 seg5	= 7'h92,
+			 seg6	= 7'h82,
+			 seg7	= 7'hf8,
+			 seg8	= 7'h80,
+			 seg9	= 7'h90,
+			 sega	= 7'h88,
+			 segb	= 7'h83,
+			 segc	= 7'hc6,
+			 segd	= 7'ha1,
+			 sege	= 7'h86,
+			 segf	= 7'h8e;
+
+reg[7:0] sm_dbr;		//7段数码管（不包括小数点）
+reg[3:0] cs_r;       //片选寄存器
+reg[3:0] num;		//显示数据
+always @ (posedge clk or negedge rst_n)
+	if(!rst_n) begin 
+	  num<=4'd0;
+	  cs_r<=4'b1111;
+	  end
+	else begin
+    case (cnt)
+	    8'd59: begin
+	         cs_r<=4'b1110;
+				num<={data[8:5]};
+     	    end
+       8'd19: begin
+	         cs_r<=4'b1101;
+				num<={data[12:9]};
+     	    end
+		8'd39: begin
+	         cs_r<=4'b1011;
+				num<={1'b0,data[15:13]};
+				end
+		default : ;		
+			 endcase		
+		end	 
+assign cs=cs_r;	
+always @ (posedge clk or negedge rst_n)
+    if(!rst_n) sm_dbr<=8'd0;
+	 else begin
+		case (num)	//温度值值显示在3个数码管上
+			4'h0: sm_dbr <= seg0;
+			4'h1: sm_dbr <= seg1;
+			4'h2: sm_dbr <= seg2;
+			4'h3: sm_dbr <= seg3;
+			4'h4: sm_dbr <= seg4;
+			4'h5: sm_dbr <= seg5;
+			4'h6: sm_dbr <= seg6;
+			4'h7: sm_dbr <= seg7;
+			4'h8: sm_dbr <= seg8;
+			4'h9: sm_dbr <= seg9;
+			4'ha: sm_dbr <= sega;
+			4'hb: sm_dbr <= segb;
+			4'hc: sm_dbr <= segc;
+			4'hd: sm_dbr <= segd;
+			4'he: sm_dbr <= sege;
+			4'hf: sm_dbr <= segf;
+			default: ;
+			endcase
+     end
+assign seg = sm_dbr;
+ 
+endmodule			  

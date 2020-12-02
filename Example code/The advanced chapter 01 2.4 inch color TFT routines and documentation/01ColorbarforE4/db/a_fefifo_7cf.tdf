@@ -1,0 +1,90 @@
+--a_fefifo ALLOW_RWCYCLE_WHEN_FULL="OFF" LPM_NUMWORDS=64 lpm_widthad=6 OVERFLOW_CHECKING="OFF" UNDERFLOW_CHECKING="OFF" aclr clock empty full rreq sclr usedw_out wreq
+--VERSION_BEGIN 11.1SP2 cbx_cycloneii 2012:01:25:21:14:56:SJ cbx_fifo_common 2012:01:25:21:14:55:SJ cbx_lpm_add_sub 2012:01:25:21:14:56:SJ cbx_lpm_compare 2012:01:25:21:14:56:SJ cbx_lpm_counter 2012:01:25:21:14:56:SJ cbx_lpm_decode 2012:01:25:21:14:56:SJ cbx_mgl 2012:01:25:21:17:49:SJ cbx_stratix 2012:01:25:21:14:56:SJ cbx_stratixii 2012:01:25:21:14:56:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cntr_do7 (aclr, clock, cnt_en, sclr, updown)
+RETURNS ( q[5..0]);
+
+--synthesis_resources = lut 6 reg 8 
+SUBDESIGN a_fefifo_7cf
+( 
+	aclr	:	input;
+	clock	:	input;
+	empty	:	output;
+	full	:	output;
+	rreq	:	input;
+	sclr	:	input;
+	usedw_out[5..0]	:	output;
+	wreq	:	input;
+) 
+VARIABLE 
+	b_full : dffe;
+	b_non_empty : dffe;
+	count_usedw : cntr_do7;
+	equal_af1w[5..0]	: WIRE;
+	equal_one[5..0]	: WIRE;
+	is_almost_empty0	: WIRE;
+	is_almost_empty1	: WIRE;
+	is_almost_empty2	: WIRE;
+	is_almost_empty3	: WIRE;
+	is_almost_empty4	: WIRE;
+	is_almost_empty5	: WIRE;
+	is_almost_full0	: WIRE;
+	is_almost_full1	: WIRE;
+	is_almost_full2	: WIRE;
+	is_almost_full3	: WIRE;
+	is_almost_full4	: WIRE;
+	is_almost_full5	: WIRE;
+	usedw[5..0]	: WIRE;
+	valid_rreq	: WIRE;
+	valid_wreq	: WIRE;
+
+BEGIN 
+	b_full.clk = clock;
+	b_full.clrn = (! aclr);
+	b_full.d = ((b_full.q & (b_full.q $ (sclr # rreq))) # (((! b_full.q) & b_non_empty.q) & ((! sclr) & ((is_almost_full5 & wreq) & (! rreq)))));
+	b_non_empty.clk = clock;
+	b_non_empty.clrn = (! aclr);
+	b_non_empty.d = (((b_full.q & (b_full.q $ sclr)) # (((! b_non_empty.q) & wreq) & (! sclr))) # (((! b_full.q) & b_non_empty.q) & (((! b_full.q) & b_non_empty.q) $ (sclr # ((is_almost_empty5 & rreq) & (! wreq))))));
+	count_usedw.aclr = aclr;
+	count_usedw.clock = clock;
+	count_usedw.cnt_en = (valid_wreq $ valid_rreq);
+	count_usedw.sclr = sclr;
+	count_usedw.updown = valid_wreq;
+	empty = (! b_non_empty.q);
+	equal_af1w[] = ( B"0", B"0", B"0", B"0", B"0", B"0");
+	equal_one[] = ( B"1", B"1", B"1", B"1", B"1", B"0");
+	full = b_full.q;
+	is_almost_empty0 = (usedw[0..0] $ equal_one[0..0]);
+	is_almost_empty1 = ((usedw[1..1] $ equal_one[1..1]) & is_almost_empty0);
+	is_almost_empty2 = ((usedw[2..2] $ equal_one[2..2]) & is_almost_empty1);
+	is_almost_empty3 = ((usedw[3..3] $ equal_one[3..3]) & is_almost_empty2);
+	is_almost_empty4 = ((usedw[4..4] $ equal_one[4..4]) & is_almost_empty3);
+	is_almost_empty5 = ((usedw[5..5] $ equal_one[5..5]) & is_almost_empty4);
+	is_almost_full0 = (usedw[0..0] $ equal_af1w[0..0]);
+	is_almost_full1 = ((usedw[1..1] $ equal_af1w[1..1]) & is_almost_full0);
+	is_almost_full2 = ((usedw[2..2] $ equal_af1w[2..2]) & is_almost_full1);
+	is_almost_full3 = ((usedw[3..3] $ equal_af1w[3..3]) & is_almost_full2);
+	is_almost_full4 = ((usedw[4..4] $ equal_af1w[4..4]) & is_almost_full3);
+	is_almost_full5 = ((usedw[5..5] $ equal_af1w[5..5]) & is_almost_full4);
+	usedw[] = count_usedw.q[];
+	usedw_out[] = usedw[];
+	valid_rreq = rreq;
+	valid_wreq = wreq;
+END;
+--VALID FILE

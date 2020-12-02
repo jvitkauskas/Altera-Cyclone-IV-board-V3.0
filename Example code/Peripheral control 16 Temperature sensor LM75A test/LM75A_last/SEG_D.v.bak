@@ -1,0 +1,102 @@
+//--------------------------------------------------///
+//------------------ 数码管显示----------------------///
+//--------------------------------------------------///
+module SEG_D(
+			clk,rst_n,
+			data,
+			cs,seg
+		);
+
+input clk;		// 50MHz
+input rst_n;	// 复位信号，低有效
+
+input[15:0] data;	//显示数据	
+output[3:0] cs;	//数码管片选信号，低有效
+output[7:0] seg;	//8段数码管（包括小数点）
+
+ reg[5:0] cnt;
+always @ (posedge clk or negedge rst_n)
+	if(!rst_n) cnt <= 6'd0;
+	else if (cnt==6'd59) cnt <= 6'd0;
+	else cnt <= cnt+1'b1;
+
+	
+//-------------------------------------------------------------------------------
+/*	共阳极 :不带小数点
+              由0到f的编码为:
+{
+0xc0,0xf9,0xa4,0xb0,
+0x99,0x92,0x82,0xf8,
+0x80,0x90,0x88,0x83,
+0xc6,0xa1,0x86,0x8e};
+*/
+parameter seg0	= 7'hc0,
+			 seg1	= 7'hf9,
+			 seg2	= 7'ha4,
+			 seg3	= 7'hb0,
+			 seg4	= 7'h99,
+			 seg5	= 7'h92,
+			 seg6	= 7'h82,
+			 seg7	= 7'hf8,
+			 seg8	= 7'h80,
+			 seg9	= 7'h90,
+			 sega	= 7'h88,
+			 segb	= 7'h83,
+			 segc	= 7'hc6,
+			 segd	= 7'ha1,
+			 sege	= 7'h86,
+			 segf	= 7'h8e;
+
+reg[7:0] sm_dbr;		//7段数码管（不包括小数点）
+reg[3:0] cs_r;       //片选寄存器
+reg[3:0] num;		//显示数据
+always @ (posedge clk or negedge rst_n)
+	if(!rst_n) begin 
+	  num<=4'd0;
+	  cs_r<=4'b1111;
+	  end
+	else begin
+    case (cnt)
+	    8'd59: begin
+	         cs_r<=4'b1110;
+				num<={data[8:5]};
+     	    end
+       8'd19: begin
+	         cs_r<=4'b1101;
+				num<={data[12:9]};
+     	    end
+		8'd39: begin
+	         cs_r<=4'b1011;
+				num<={1'b0,data[15:13]};
+				end
+		default : ;		
+			 endcase		
+		end	 
+assign cs=cs_r;	
+always @ (posedge clk or negedge rst_n)
+    if(!rst_n) sm_dbr<=8'd0;
+	 else begin
+		case (num)	//温度值值显示在3个数码管上
+			4'h0: sm_dbr <= seg0;
+			4'h1: sm_dbr <= seg1;
+			4'h2: sm_dbr <= seg2;
+			4'h3: sm_dbr <= seg3;
+			4'h4: sm_dbr <= seg4;
+			4'h5: sm_dbr <= seg5;
+			4'h6: sm_dbr <= seg6;
+			4'h7: sm_dbr <= seg7;
+			4'h8: sm_dbr <= seg8;
+			4'h9: sm_dbr <= seg9;
+			4'ha: sm_dbr <= sega;
+			4'hb: sm_dbr <= segb;
+			4'hc: sm_dbr <= segc;
+			4'hd: sm_dbr <= segd;
+			4'he: sm_dbr <= sege;
+			4'hf: sm_dbr <= segf;
+			default: ;
+			endcase
+     end
+assign seg = sm_dbr;
+ 
+endmodule			  
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lcd_at_nios">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|epcs:the_epcs|altsyncram:the_boot_copier_rom" CBX_FILE_NAME="altsyncram_sc31.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_r:the_jtag_uart_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_mult_cell:the_nios_f_mult_cell|altmult_add:the_altmult_add_part_1" CBX_FILE_NAME="mult_add_mgr2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|pll:pll_inst|altpll:altpll_component" CBX_FILE_NAME="pll_altpll1.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_ic_data_module:nios_f_ic_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_cjd1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_ic_tag_module:nios_f_ic_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_8fg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_mult_cell:the_nios_f_mult_cell|altmult_add:the_altmult_add_part_2" CBX_FILE_NAME="mult_add_ogr2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_register_bank_b_module:nios_f_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_2hf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|lpm_add_sub:Add10" CBX_FILE_NAME="add_sub_qvi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_bht_module:nios_f_bht|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_13g1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_nios2_oci:the_nios_f_nios2_oci|nios_f_nios2_oci_im:the_nios_f_nios2_oci_im|nios_f_traceram_lpm_dram_bdp_component_module:nios_f_traceram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_0a02.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_nios2_oci:the_nios_f_nios2_oci|nios_f_nios2_ocimem:the_nios_f_nios2_ocimem|nios_f_ociram_lpm_dram_bdp_component_module:nios_f_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_5f72.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_at_nios|nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_register_bank_a_module:nios_f_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_1hf1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

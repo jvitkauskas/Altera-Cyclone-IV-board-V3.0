@@ -1,0 +1,453 @@
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN LCD.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE LCD\LCD.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\LCD.lst) OBJECT(LCD.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <intrins.h>
+   3          #include <font\font.h>
+   4          #include <sys\sys.h>
+   5          #include <lcd\lcd.h>
+   6          /* 
+   7          代码测试环境:单片机STC12LE5A60S2,晶振33M  单片机工作电压3.3V
+   8          程序默认IO连接方式：
+   9          控制线：RS-P3^5;    WR-P3^6;   RD-P3^7;   CS-P1^0;   REST-P1^2;
+  10          数据线: DB0-DB7依次连接P0^0-P0^7;  DB8-DB15依次连接P2^0-P2^7;（8位模式下DB0-DB7可以不连接）
+  11          触摸功能连接方式：(不使用触摸可不连接)
+  12          T_CLK-P1^7;  T_CS-P1^4;  T_DIN-P3^0;  T_OUT-P3^1;  T_IRQ-P3^4;
+  13          */      
+  14          u16 BACK_COLOR, POINT_COLOR;   //背景色，画笔色
+  15          
+  16          #ifdef  Bus_16    //条件编译-16位数据模式   
+              void LCD_Writ_Bus(char VH,char VL)   //并行数据写入函数
+              {
+                  LCD_DataPortH=VH;   
+                      LCD_DataPortL=VL;               
+                      LCD_WR=0;
+                      LCD_WR=1; 
+              }
+              #else                   //条件编译-8位数据模式 
+  25          void LCD_Writ_Bus(char VH,char VL)   //并行数据写入函数
+  26          {       
+  27   1          LCD_DataPortH=VH;   
+  28   1              LCD_WR=0;
+  29   1              LCD_WR=1;
+  30   1              LCD_DataPortH=VL;               
+  31   1              LCD_WR=0;
+  32   1              LCD_WR=1;
+  33   1      }
+  34          #endif
+  35          void LCD_WR_DATA8(char VH,char VL) //发送数据-8位参数
+  36          {
+  37   1          LCD_RS=1;
+  38   1              LCD_Writ_Bus(VH,VL);
+  39   1      }  
+  40           void LCD_WR_DATA(int da)
+  41          {
+  42   1          LCD_RS=1;
+  43   1              LCD_Writ_Bus(da>>8,da);
+  44   1      }         
+  45          void LCD_WR_REG(int da)  
+  46          {       
+  47   1          LCD_RS=0;
+  48   1              LCD_Writ_Bus(da>>8,da);
+  49   1      }
+  50           void LCD_WR_REG_DATA(int reg,int da)
+  51          {
+  52   1          LCD_WR_REG(reg);
+  53   1              LCD_WR_DATA(da);
+  54   1      }
+  55          void Address_set(unsigned int x1,unsigned int y1,unsigned int x2,unsigned int y2)
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 2   
+
+  56          { 
+  57   1              LCD_WR_REG(0x0020);LCD_WR_DATA8(x1>>8,x1);        //设置X坐标位置
+  58   1          LCD_WR_REG(0x0021);LCD_WR_DATA8(y1>>8,y1);   //设置Y坐标位置
+  59   1          LCD_WR_REG(0x0050);LCD_WR_DATA8(x1>>8,x1);   //开始X
+  60   1              LCD_WR_REG(0x0052);LCD_WR_DATA8(y1>>8,y1);        //开始Y
+  61   1          LCD_WR_REG(0x0051);LCD_WR_DATA8(x2>>8,x2);   //结束X
+  62   1              LCD_WR_REG(0x0053);LCD_WR_DATA8(y2>>8,y2);   //结束Y
+  63   1          LCD_WR_REG(0x0022);                                                                                                  
+  64   1      }
+  65          void Lcd_Init(void)
+  66          {
+  67   1      
+  68   1      //调用一次这些函数，免得编译的时候提示警告
+  69   1              LCD_CS =1;
+  70   1              if(LCD_CS==0)
+  71   1              {
+  72   2                 LCD_WR_REG_DATA(0,0);
+  73   2                 LCD_ShowString(0,0," ");
+  74   2                 LCD_ShowNum(0,0,0,0);
+  75   2                 LCD_Show2Num(0,0,0,0);
+  76   2                 LCD_DrawPoint_big(0,0);
+  77   2                 LCD_DrawRectangle(0,0,0,0);
+  78   2                 Draw_Circle(0,0,0);
+  79   2               }
+  80   1              LCD_RD=1;
+  81   1              LCD_WR=1;
+  82   1              LCD_REST=0;
+  83   1              delayms(20);    //此处保证要有5ms以上才能保证复位稳定,推荐20ms
+  84   1              LCD_REST=1;     
+  85   1              delayms(20);    //此处保证要有5ms以上才能保证复位稳定,推荐20ms          
+  86   1              LCD_CS =0;  //打开片选使能
+  87   1      
+  88   1      LCD_WR_REG_DATA(0x0001,0x0100); 
+  89   1       LCD_WR_REG_DATA(0x0002,0x0700); 
+  90   1       LCD_WR_REG_DATA(0x0003,0x1030); 
+  91   1       LCD_WR_REG_DATA(0x0004,0x0000); 
+  92   1       LCD_WR_REG_DATA(0x0008,0x0207);  
+  93   1       LCD_WR_REG_DATA(0x0009,0x0000);
+  94   1       LCD_WR_REG_DATA(0x000A,0x0000); 
+  95   1       LCD_WR_REG_DATA(0x000C,0x0000); 
+  96   1       LCD_WR_REG_DATA(0x000D,0x0000);
+  97   1       LCD_WR_REG_DATA(0x000F,0x0000);
+  98   1      //power on sequence VGHVGL
+  99   1       LCD_WR_REG_DATA(0x0010,0x0000);   
+ 100   1       LCD_WR_REG_DATA(0x0011,0x0007);  
+ 101   1       LCD_WR_REG_DATA(0x0012,0x0000);  
+ 102   1       LCD_WR_REG_DATA(0x0013,0x0000); 
+ 103   1      //vgh 
+ 104   1       LCD_WR_REG_DATA(0x0010,0x1290);   
+ 105   1       LCD_WR_REG_DATA(0x0011,0x0227);
+ 106   1       //delayms(100);
+ 107   1       //vregiout 
+ 108   1       LCD_WR_REG_DATA(0x0012,0x001d); //0x001b
+ 109   1       //delayms(100); 
+ 110   1       //vom amplitude
+ 111   1       LCD_WR_REG_DATA(0x0013,0x1500);
+ 112   1       //delayms(100); 
+ 113   1       //vom H
+ 114   1       LCD_WR_REG_DATA(0x0029,0x0018); 
+ 115   1       LCD_WR_REG_DATA(0x002B,0x000D); 
+ 116   1      
+ 117   1      //gamma
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 3   
+
+ 118   1       LCD_WR_REG_DATA(0x0030,0x0004);
+ 119   1       LCD_WR_REG_DATA(0x0031,0x0307);
+ 120   1       LCD_WR_REG_DATA(0x0032,0x0002);// 0006
+ 121   1       LCD_WR_REG_DATA(0x0035,0x0206);
+ 122   1       LCD_WR_REG_DATA(0x0036,0x0408);
+ 123   1       LCD_WR_REG_DATA(0x0037,0x0507); 
+ 124   1       LCD_WR_REG_DATA(0x0038,0x0204);//0200
+ 125   1       LCD_WR_REG_DATA(0x0039,0x0707); 
+ 126   1       LCD_WR_REG_DATA(0x003C,0x0405);// 0504
+ 127   1       LCD_WR_REG_DATA(0x003D,0x0F02); 
+ 128   1       //ram
+ 129   1       LCD_WR_REG_DATA(0x0050,0x0000); 
+ 130   1       LCD_WR_REG_DATA(0x0051,0x00EF);
+ 131   1       LCD_WR_REG_DATA(0x0052,0x0000); 
+ 132   1       LCD_WR_REG_DATA(0x0053,0x013F);  
+ 133   1       LCD_WR_REG_DATA(0x0060,0xA700); 
+ 134   1       LCD_WR_REG_DATA(0x0061,0x0001); 
+ 135   1       LCD_WR_REG_DATA(0x006A,0x0000); 
+ 136   1       //
+ 137   1       LCD_WR_REG_DATA(0x0080,0x0000); 
+ 138   1       LCD_WR_REG_DATA(0x0081,0x0000); 
+ 139   1       LCD_WR_REG_DATA(0x0082,0x0000); 
+ 140   1       LCD_WR_REG_DATA(0x0083,0x0000); 
+ 141   1       LCD_WR_REG_DATA(0x0084,0x0000); 
+ 142   1       LCD_WR_REG_DATA(0x0085,0x0000); 
+ 143   1       //
+ 144   1       LCD_WR_REG_DATA(0x0090,0x0010); 
+ 145   1       LCD_WR_REG_DATA(0x0092,0x0600); 
+ 146   1       LCD_WR_REG_DATA(0x0093,0x0003); 
+ 147   1       LCD_WR_REG_DATA(0x0095,0x0110); 
+ 148   1       LCD_WR_REG_DATA(0x0097,0x0000); 
+ 149   1       LCD_WR_REG_DATA(0x0098,0x0000);
+ 150   1       LCD_WR_REG_DATA(0x0007,0x0133);
+ 151   1      
+ 152   1      }
+ 153          //清屏函数
+ 154          //Color:要清屏的填充色
+ 155          void LCD_Clear(u16 Color)
+ 156          {
+ 157   1              u8 VH,VL;
+ 158   1              u16 i,j;
+ 159   1              VH=Color>>8;
+ 160   1              VL=Color;       
+ 161   1              Address_set(0,0,LCD_W-1,LCD_H-1);
+ 162   1          for(i=0;i<LCD_W;i++)
+ 163   1               {
+ 164   2                for (j=0;j<LCD_H;j++)
+ 165   2                      {
+ 166   3                       LCD_WR_DATA8(VH,VL);
+ 167   3                  }
+ 168   2      
+ 169   2                }
+ 170   1      }
+ 171          //在指定位置显示一个汉字(32*33大小)
+ 172          //dcolor为内容颜色，gbcolor为背静颜色
+ 173          void showhanzi(unsigned int x,unsigned int y,unsigned char index)       
+ 174          {  
+ 175   1              unsigned char i,j;
+ 176   1              unsigned char *temp=hanzi;    
+ 177   1          Address_set(x,y,x+31,y+31); //设置区域      
+ 178   1              temp+=index*128;        
+ 179   1              for(j=0;j<128;j++)
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 4   
+
+ 180   1              {
+ 181   2                      for(i=0;i<8;i++)
+ 182   2                      {                    
+ 183   3                              if((*temp&(1<<i))!=0)
+ 184   3                              {
+ 185   4                                      LCD_WR_DATA(POINT_COLOR);
+ 186   4                              } 
+ 187   3                              else
+ 188   3                              {
+ 189   4                                      LCD_WR_DATA(BACK_COLOR);
+ 190   4                              }   
+ 191   3                      }
+ 192   2                      temp++;
+ 193   2               }
+ 194   1      }
+ 195          //画点
+ 196          //POINT_COLOR:此点的颜色
+ 197          void LCD_DrawPoint(u16 x,u16 y)
+ 198          {
+ 199   1              Address_set(x,y,x,y);//设置光标位置 
+ 200   1              LCD_WR_DATA(POINT_COLOR);           
+ 201   1      }        
+ 202          //画一个大点
+ 203          //POINT_COLOR:此点的颜色
+ 204          void LCD_DrawPoint_big(u16 x,u16 y)
+ 205          {
+ 206   1              LCD_Fill(x-1,y-1,x+1,y+1,POINT_COLOR);
+ 207   1      } 
+ 208          //在指定区域内填充指定颜色
+ 209          //区域大小:
+ 210          //  (xend-xsta)*(yend-ysta)
+ 211          void LCD_Fill(u16 xsta,u16 ysta,u16 xend,u16 yend,u16 color)
+ 212          {          
+ 213   1              u16 i,j; 
+ 214   1              Address_set(xsta,ysta,xend,yend);      //设置光标位置 
+ 215   1              for(i=ysta;i<=yend;i++)
+ 216   1              {                                                                                                                       
+ 217   2                      for(j=xsta;j<=xend;j++)LCD_WR_DATA(color);//设置光标位置            
+ 218   2              }                                                   
+ 219   1      }  
+ 220          //画线
+ 221          //x1,y1:起点坐标
+ 222          //x2,y2:终点坐标  
+ 223          void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2)
+ 224          {
+ 225   1              u16 t; 
+ 226   1              int xerr=0,yerr=0,delta_x,delta_y,distance; 
+ 227   1              int incx,incy,uRow,uCol; 
+ 228   1      
+ 229   1              delta_x=x2-x1; //计算坐标增量 
+ 230   1              delta_y=y2-y1; 
+ 231   1              uRow=x1; 
+ 232   1              uCol=y1; 
+ 233   1              if(delta_x>0)incx=1; //设置单步方向 
+ 234   1              else if(delta_x==0)incx=0;//垂直线 
+ 235   1              else {incx=-1;delta_x=-delta_x;} 
+ 236   1              if(delta_y>0)incy=1; 
+ 237   1              else if(delta_y==0)incy=0;//水平线 
+ 238   1              else{incy=-1;delta_y=-delta_y;} 
+ 239   1              if( delta_x>delta_y)distance=delta_x; //选取基本增量坐标轴 
+ 240   1              else distance=delta_y; 
+ 241   1              for(t=0;t<=distance+1;t++ )//画线输出 
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 5   
+
+ 242   1              {  
+ 243   2                      LCD_DrawPoint(uRow,uCol);//画点 
+ 244   2                      xerr+=delta_x ; 
+ 245   2                      yerr+=delta_y ; 
+ 246   2                      if(xerr>distance) 
+ 247   2                      { 
+ 248   3                              xerr-=distance; 
+ 249   3                              uRow+=incx; 
+ 250   3                      } 
+ 251   2                      if(yerr>distance) 
+ 252   2                      { 
+ 253   3                              yerr-=distance; 
+ 254   3                              uCol+=incy; 
+ 255   3                      } 
+ 256   2              }  
+ 257   1      }    
+ 258          //画矩形
+ 259          void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2)
+ 260          {
+ 261   1              LCD_DrawLine(x1,y1,x2,y1);
+ 262   1              LCD_DrawLine(x1,y1,x1,y2);
+ 263   1              LCD_DrawLine(x1,y2,x2,y2);
+ 264   1              LCD_DrawLine(x2,y1,x2,y2);
+ 265   1      }
+ 266          //在指定位置画一个指定大小的圆
+ 267          //(x,y):中心点
+ 268          //r    :半径
+ 269          void Draw_Circle(u16 x0,u16 y0,u8 r)
+ 270          {
+ 271   1              int a,b;
+ 272   1              int di;
+ 273   1              a=0;b=r;          
+ 274   1              di=3-(r<<1);             //判断下个点位置的标志
+ 275   1              while(a<=b)
+ 276   1              {
+ 277   2                      LCD_DrawPoint(x0-b,y0-a);             //3           
+ 278   2                      LCD_DrawPoint(x0+b,y0-a);             //0           
+ 279   2                      LCD_DrawPoint(x0-a,y0+b);             //1       
+ 280   2                      LCD_DrawPoint(x0-b,y0-a);             //7           
+ 281   2                      LCD_DrawPoint(x0-a,y0-b);             //2             
+ 282   2                      LCD_DrawPoint(x0+b,y0+a);             //4               
+ 283   2                      LCD_DrawPoint(x0+a,y0-b);             //5
+ 284   2                      LCD_DrawPoint(x0+a,y0+b);             //6 
+ 285   2                      LCD_DrawPoint(x0-b,y0+a);             
+ 286   2                      a++;
+ 287   2                      //使用Bresenham算法画圆     
+ 288   2                      if(di<0)di +=4*a+6;       
+ 289   2                      else
+ 290   2                      {
+ 291   3                              di+=10+4*(a-b);   
+ 292   3                              b--;
+ 293   3                      } 
+ 294   2                      LCD_DrawPoint(x0+a,y0+b);
+ 295   2              }
+ 296   1      } 
+ 297          //在指定位置显示一个字符
+ 298          
+ 299          //num:要显示的字符:" "--->"~"
+ 300          //mode:叠加方式(1)还是非叠加方式(0)
+ 301          //在指定位置显示一个字符
+ 302          
+ 303          //num:要显示的字符:" "--->"~"
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 6   
+
+ 304          
+ 305          //mode:叠加方式(1)还是非叠加方式(0)
+ 306          void LCD_ShowChar(u16 x,u16 y,u8 num,u8 mode)
+ 307          {
+ 308   1          u8 temp;
+ 309   1          u8 pos,t;
+ 310   1              u16 x0=x;
+ 311   1              u16 colortemp=POINT_COLOR;      
+ 312   1          if(x>LCD_W-16||y>LCD_H-16)return;       
+ 313   1              //设置窗口                 
+ 314   1              num=num-' ';//得到偏移后的值
+ 315   1              Address_set(x,y,x+8-1,y+16-1);      //设置光标位置 
+ 316   1              if(!mode) //非叠加方式
+ 317   1              {
+ 318   2                      for(pos=0;pos<16;pos++)
+ 319   2                      { 
+ 320   3                              temp=asc2_1608[(u16)num*16+pos];                 //调用1608字体
+ 321   3                              for(t=0;t<8;t++)
+ 322   3                          {                 
+ 323   4                              if(temp&0x01)POINT_COLOR=colortemp;
+ 324   4                                      else POINT_COLOR=BACK_COLOR;
+ 325   4                                      LCD_WR_DATA(POINT_COLOR);       
+ 326   4                                      temp>>=1; 
+ 327   4                                      x++;
+ 328   4                          }
+ 329   3                              x=x0;
+ 330   3                              y++;
+ 331   3                      }       
+ 332   2              }else//叠加方式
+ 333   1              {
+ 334   2                      for(pos=0;pos<16;pos++)
+ 335   2                      {
+ 336   3                          temp=asc2_1608[(u16)num*16+pos];             //调用1608字体
+ 337   3                              for(t=0;t<8;t++)
+ 338   3                          {                 
+ 339   4                              if(temp&0x01)LCD_DrawPoint(x+t,y+pos);//画一个点     
+ 340   4                              temp>>=1; 
+ 341   4                          }
+ 342   3                      }
+ 343   2              }
+ 344   1              POINT_COLOR=colortemp;                            
+ 345   1      }   
+ 346          //m^n函数
+ 347          u32 mypow(u8 m,u8 n)
+ 348          {
+ 349   1              u32 result=1;    
+ 350   1              while(n--)result*=m;    
+ 351   1              return result;
+ 352   1      }                        
+ 353          //显示2个数字
+ 354          //x,y :起点坐标  
+ 355          //len :数字的位数
+ 356          //color:颜色
+ 357          //num:数值(0~4294967295);       
+ 358          void LCD_ShowNum(u16 x,u16 y,u32 num,u8 len)
+ 359          {               
+ 360   1              u8 t,temp;
+ 361   1              u8 enshow=0;
+ 362   1              num=(u16)num;
+ 363   1              for(t=0;t<len;t++)
+ 364   1              {
+ 365   2                      temp=(num/mypow(10,len-t-1))%10;
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 7   
+
+ 366   2                      if(enshow==0&&t<(len-1))
+ 367   2                      {
+ 368   3                              if(temp==0)
+ 369   3                              {
+ 370   4                                      LCD_ShowChar(x+8*t,y,' ',0);
+ 371   4                                      continue;
+ 372   4                              }else enshow=1; 
+ 373   3                               
+ 374   3                      }
+ 375   2                      LCD_ShowChar(x+8*t,y,temp+48,0); 
+ 376   2              }
+ 377   1      } 
+ 378          //显示2个数字
+ 379          //x,y:起点坐标
+ 380          //num:数值(0~99);        
+ 381          void LCD_Show2Num(u16 x,u16 y,u16 num,u8 len)
+ 382          {               
+ 383   1              u8 t,temp;                                                 
+ 384   1              for(t=0;t<len;t++)
+ 385   1              {
+ 386   2                      temp=(num/mypow(10,len-t-1))%10;
+ 387   2                      LCD_ShowChar(x+8*t,y,temp+'0',0); 
+ 388   2              }
+ 389   1      } 
+ 390          //显示字符串
+ 391          //x,y:起点坐标  
+ 392          //*p:字符串起始地址
+ 393          //用16字体
+ 394          void LCD_ShowString(u16 x,u16 y,const u8 *p)
+ 395          {         
+ 396   1          while(*p!='\0')
+ 397   1          {       
+ 398   2              if(x>LCD_W-16){x=0;y+=16;}
+ 399   2              if(y>LCD_H-16){y=x=0;LCD_Clear(RED);}
+ 400   2              LCD_ShowChar(x,y,*p,0);
+ 401   2              x+=8;
+ 402   2              p++;
+ 403   2          }  
+ 404   1      }
+ 405          
+ 406          
+ 407          
+ 408          
+ 409          
+ 410          
+ 411          
+ 412          
+ 413          
+ 414          
+ 415          
+ 416          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   3515    ----
+   CONSTANT SIZE    =      2    ----
+   XDATA SIZE       =      4     125
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.01   LCD                                                                   04/22/2014 09:57:08 PAGE 8   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

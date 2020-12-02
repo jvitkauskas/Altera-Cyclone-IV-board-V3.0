@@ -1,0 +1,142 @@
+<sld_project_info>
+  <file_info>
+    <file checksum="0x0034E898" device="EP4CE6E22C8" path="lcd_at_nios.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x0290C536" device="EPCS4" path="lcd_at_nios.pof" usercode="0x00000000"/>
+  </file_info>
+  <hub_info ir_width="2" node_count="2"/>
+  <node_info>
+    <node hpath="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|alt_jtag_atlantic:jtag_uart_alt_jtag_atlantic" instance_id="0" mfg_id="110" node_id="128" sld_node_info="0xC006E00" version="1">
+      <parameters>
+        <parameter name="INSTANCE_ID" type="dec" value="0"/>
+        <parameter name="SLD_NODE_INFO" type="ubin" value="00001100000000000110111000000000"/>
+        <parameter name="SLD_AUTO_INSTANCE_INDEX" type="string" value="YES"/>
+        <parameter name="LOG2_TXFIFO_DEPTH" type="dec" value="6"/>
+        <parameter name="LOG2_RXFIFO_DEPTH" type="dec" value="6"/>
+        <parameter name="RESERVED" type="dec" value="0"/>
+        <parameter name="DATA_WIDTH" type="dec" value="8"/>
+        <parameter name="NODE_IR_WIDTH" type="dec" value="1"/>
+        <parameter name="SCAN_LENGTH" type="dec" value="11"/>
+      </parameters>
+      <inputs>
+        <port name="clk" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|clk"/>
+        <port name="rst_n" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|rst_n"/>
+        <port name="r_val" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|r_val"/>
+        <port name="r_dat[0]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[0]"/>
+        <port name="r_dat[1]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[1]"/>
+        <port name="r_dat[2]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[2]"/>
+        <port name="r_dat[3]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[3]"/>
+        <port name="r_dat[4]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[4]"/>
+        <port name="r_dat[5]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[5]"/>
+        <port name="r_dat[6]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[6]"/>
+        <port name="r_dat[7]" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|r_dat[7]"/>
+        <port name="t_dav" source="nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|t_dav"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_raw_tck" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_raw_tck"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_tck" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_tck"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_tdi" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_tdi"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_rti" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_rti"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_shift" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_shift"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_update" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_update"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_usr1" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_usr1"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_clr" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_clr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_ena" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_ena"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_ir_in_0_" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_ir_in_0_"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_jtag_state_cdr" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_jtag_state_cdr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_jtag_state_sdr" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_jtag_state_sdr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_jtag_state_udr" source="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_jtag_state_udr"/>
+      </inputs>
+      <outputs>
+        <port name="r_ena"/>
+        <port name="r_ena"/>
+        <port name="t_ena"/>
+        <port name="t_ena"/>
+        <port name="t_dat[0]"/>
+        <port name="t_dat[1]"/>
+        <port name="t_dat[2]"/>
+        <port name="t_dat[3]"/>
+        <port name="t_dat[4]"/>
+        <port name="t_dat[5]"/>
+        <port name="t_dat[6]"/>
+        <port name="t_dat[7]"/>
+        <port name="t_pause"/>
+        <port name="t_pause"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_tdo"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_irq"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_jtag_uart_jtag_uart_alt_jtag_atlantic_ir_out_0_"/>
+      </outputs>
+    </node>
+    <node hpath="nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_nios2_oci:the_nios_f_nios2_oci|nios_f_jtag_debug_module_wrapper:the_nios_f_jtag_debug_module_wrapper|sld_virtual_jtag_basic:nios_f_jtag_debug_module_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst" instance_id="0" mfg_id="70" node_id="34" sld_node_info="0x19104600" version="3">
+      <parameters>
+        <parameter name="sld_mfg_id" type="dec" value="70"/>
+        <parameter name="sld_type_id" type="dec" value="34"/>
+        <parameter name="sld_version" type="dec" value="3"/>
+        <parameter name="sld_instance_index" type="dec" value="0"/>
+        <parameter name="sld_auto_instance_index" type="string" value="YES"/>
+        <parameter name="sld_ir_width" type="dec" value="2"/>
+        <parameter name="SLD_NODE_INFO" type="dec" value="420496896"/>
+      </parameters>
+      <inputs>
+        <port name="usr_tdo" source="nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_nios2_oci:the_nios_f_nios2_oci|nios_f_jtag_debug_module_wrapper:the_nios_f_jtag_debug_module_wrapper|sld_virtual_jtag_basic:nios_f_jtag_debug_module_phy|tdo"/>
+        <port name="usr_ir_out[0]" source="nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_nios2_oci:the_nios_f_nios2_oci|nios_f_jtag_debug_module_wrapper:the_nios_f_jtag_debug_module_wrapper|sld_virtual_jtag_basic:nios_f_jtag_debug_module_phy|ir_out[0]"/>
+        <port name="usr_ir_out[1]" source="nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|nios_f_nios2_oci:the_nios_f_nios2_oci|nios_f_jtag_debug_module_wrapper:the_nios_f_jtag_debug_module_wrapper|sld_virtual_jtag_basic:nios_f_jtag_debug_module_phy|ir_out[1]"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_raw_tck" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_raw_tck"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_raw_tms" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_raw_tms"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_tdi" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_tdi"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_tlr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_tlr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_rti" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_rti"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sdrs" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sdrs"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_cdr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_cdr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sdr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sdr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e1dr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e1dr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_pdr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_pdr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e2dr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e2dr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_udr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_udr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sirs" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sirs"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_cir" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_cir"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sir" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sir"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e1ir" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e1ir"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_pir" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_pir"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e2ir" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e2ir"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_uir" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_uir"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_usr1" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_usr1"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_clr" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_clr"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ena" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ena"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_in_0_" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_in_0_"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_in_1_" source="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_in_1_"/>
+      </inputs>
+      <outputs>
+        <port name="usr_tck"/>
+        <port name="usr_tdi"/>
+        <port name="usr_ir_in[0]"/>
+        <port name="usr_ir_in[1]"/>
+        <port name="usr_virtual_state_cdr"/>
+        <port name="usr_virtual_state_sdr"/>
+        <port name="usr_virtual_state_e1dr"/>
+        <port name="usr_virtual_state_pdr"/>
+        <port name="usr_virtual_state_e2dr"/>
+        <port name="usr_virtual_state_udr"/>
+        <port name="usr_virtual_state_cir"/>
+        <port name="usr_virtual_state_uir"/>
+        <port name="usr_tms"/>
+        <port name="usr_jtag_state_tlr"/>
+        <port name="usr_jtag_state_rti"/>
+        <port name="usr_jtag_state_sdrs"/>
+        <port name="usr_jtag_state_cdr"/>
+        <port name="usr_jtag_state_sdr"/>
+        <port name="usr_jtag_state_e1dr"/>
+        <port name="usr_jtag_state_pdr"/>
+        <port name="usr_jtag_state_e2dr"/>
+        <port name="usr_jtag_state_udr"/>
+        <port name="usr_jtag_state_sirs"/>
+        <port name="usr_jtag_state_cir"/>
+        <port name="usr_jtag_state_sir"/>
+        <port name="usr_jtag_state_e1ir"/>
+        <port name="usr_jtag_state_pir"/>
+        <port name="usr_jtag_state_e2ir"/>
+        <port name="usr_jtag_state_uir"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_tdo"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_out_0_"/>
+        <port name="jtag.bp.nios_ii_sys_inst_the_nios_f_the_nios_f_nios2_oci_the_nios_f_jtag_debug_module_wrapper_nios_f_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_out_1_"/>
+      </outputs>
+    </node>
+  </node_info>
+</sld_project_info>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.nj.launch.FlashLaunch">
+<stringAttribute key="com.altera.nj.launch.FLASH_SOF_FILENAME" value="E:\AA_IO_BD\new\TFT_SD_for24TFT\lcd_at_nios_qii_part\lcd_at_nios.sof"/>
+<booleanAttribute key="com.altera.nj.launch.VALIDATE_HW_SYSID" value="true"/>
+<intAttribute key="com.altera.nj.launch.DEBUG_TARGET" value="1"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_SOF" value="1"/>
+<intAttribute key="com.altera.nj.launch.DEVICE_INDEX" value="-1"/>
+<stringAttribute key="com.altera.nj.launch.PTF_CPU" value="nios_f"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_SOF_OFFSET" value="0x0"/>
+<stringAttribute key="com.altera.nj.launch.DOWNLOAD_ARGS" value=""/>
+<stringAttribute key="com.altera.nj.launch.CABLE_NAME" value="automatic"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_DATAFILE_MEMORY_61" value="epcs"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_DATAFILE_OFFSET" value="0x0"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_DATAFILE_MEMORY_60" value=""/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/lcd.elf"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_DATAFILE_FILENAME" value=""/>
+<stringAttribute key="com.altera.nj.launch.PTF_NAME" value="E:\AA_IO_BD\new\TFT_SD_for24TFT\lcd_at_nios_qii_part\nios_ii_sys.ptf"/>
+<stringAttribute key="com.altera.nj.launch.SOF2FLASH_ARGS" value=""/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="lcd"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_SOF_FLASHCONFIG_61" value="Custom"/>
+<stringAttribute key="com.altera.nj.launch.FLASH_SOF_MEMORY" value="epcs"/>
+<booleanAttribute key="com.altera.nj.launch.ACTIVE_PARALLEL" value="false"/>
+</launchConfiguration>

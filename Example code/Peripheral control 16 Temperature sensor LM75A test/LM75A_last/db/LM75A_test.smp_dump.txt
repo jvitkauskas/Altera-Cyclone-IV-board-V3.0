@@ -1,0 +1,20 @@
+
+State Machine - |LM75A_test|I2C_READ:I2C_READ|state
+Name state.IDLE state.STOP state.NACK state.READ2 state.ACK2 state.READ1 state.ACK1 state.ADDRESS state.START 
+state.IDLE 0 0 0 0 0 0 0 0 0 
+state.START 1 0 0 0 0 0 0 0 1 
+state.ADDRESS 1 0 0 0 0 0 0 1 0 
+state.ACK1 1 0 0 0 0 0 1 0 0 
+state.READ1 1 0 0 0 0 1 0 0 0 
+state.ACK2 1 0 0 0 1 0 0 0 0 
+state.READ2 1 0 0 1 0 0 0 0 0 
+state.NACK 1 0 1 0 0 0 0 0 0 
+state.STOP 1 1 0 0 0 0 0 0 0 
+
+State Machine - |LM75A_test|I2C_READ:I2C_READ|cnt
+Name cnt.000 cnt.011 cnt.010 cnt.001 cnt.101 
+cnt.101 0 0 0 0 0 
+cnt.001 0 0 0 1 1 
+cnt.010 0 0 1 0 1 
+cnt.011 0 1 0 0 1 
+cnt.000 1 0 0 0 1 

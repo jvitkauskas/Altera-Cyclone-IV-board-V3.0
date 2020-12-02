@@ -1,0 +1,169 @@
+Quartus II 64-Bit
+Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+15
+1165
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+LM75A_test
+# storage
+db|LM75A_test.(0).cnf
+db|LM75A_test.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+lm75a.v
+8b30c8bb9df85b1f37feaea6be55d0c8
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+SEG_D
+# storage
+db|LM75A_test.(2).cnf
+db|LM75A_test.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+seg_d.v
+4ed2b1fc3d4fb65ca62f10dee2691f39
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+SEG_D:SEG_D
+}
+# macro_sequence
+
+# end
+# entity
+I2C_READ
+# storage
+db|LM75A_test.(1).cnf
+db|LM75A_test.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+i2c_read.v
+525ac2ce29394d2ae0f27c31b2aa85ba
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+IDLE
+000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+START
+000000010
+PARAMETER_UNSIGNED_BIN
+DEF
+ADDRESS
+000000100
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK1
+000001000
+PARAMETER_UNSIGNED_BIN
+DEF
+READ1
+000010000
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK2
+000100000
+PARAMETER_UNSIGNED_BIN
+DEF
+READ2
+001000000
+PARAMETER_UNSIGNED_BIN
+DEF
+NACK
+010000000
+PARAMETER_UNSIGNED_BIN
+DEF
+STOP
+100000000
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+I2C_READ:I2C_READ
+}
+# macro_sequence
+SCL_POS(cnt == 3'd0)  SCL_NEG(cnt == 3'd2)  SCL_HIG(cnt == 3'd1)  DEVICE_ADDRESS8'b1001_0001SCL_LOW(cnt == 3'd3)  SCL_HIG(cnt == 3'd1)  SCL_NEG(cnt == 3'd2)  SCL_LOW(cnt == 3'd3)  SCL_HIG(cnt == 3'd1)  SCL_LOW(cnt == 3'd3)  SCL_NEG(cnt == 3'd2)  SCL_LOW(cnt == 3'd3)  SCL_HIG(cnt == 3'd1)  SCL_LOW(cnt == 3'd3)  SCL_HIG(cnt == 3'd1)  
+# end
+# complete
+

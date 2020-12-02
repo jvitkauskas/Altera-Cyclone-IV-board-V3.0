@@ -1,0 +1,8 @@
+#Mon Jan 24 12:05:02 CST 2011
+eclipse.preferences.version=1
+environment/project=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<environment/>\r\n
+environment/project/nios2.lib.debug.1800718783=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<environment/>\r\n
+nios2.lib.debug.1800718783/internalBuilder/enabled=false
+nios2.lib.debug.1800718783/internalBuilder/ignoreErr=true
+nios2.lib.release.1141224906/internalBuilder/enabled=false
+nios2.lib.release.1141224906/internalBuilder/ignoreErr=true

@@ -1,0 +1,83 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C5 (0x020B10DD)" sof_file="nios2.sof" top_level_entity="nios2">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="window position" size="9" value="1276,710,398,124,0,50,124,0,1"/>
+  </global_info>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="data horizontal scroll position" value="3"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="65472"/>
+      <single attribute="zoom offset denominator" value="1"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2011/08/09 11:31:34  #0">
+      <clock name="clk" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="128" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="in_port_to_the_ads_nirq" tap_mode="classic" type="input pin"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="in_port_to_the_ads_nirq" tap_mode="classic" type="input pin"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="in_port_to_the_ads_nirq" tap_mode="classic" type="input pin"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="in_port_to_the_ads_nirq"/>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="in_port_to_the_ads_nirq"/>
+        </setup_view>
+      </presentation>
+      <trigger CRC="352A6B20" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2011/08/09 11:43:00  #0" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'in_port_to_the_ads_nirq' == rising edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>0
+            <pwr_up_transitional>0
+            </pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+        <log>
+          <data global_temp="1" name="log: 2011/08/09 11:43:00  #1" power_up_mode="false" sample_depth="127" trigger_position="-1">11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</data>
+          <extradata>11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
+        </log>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+</session>

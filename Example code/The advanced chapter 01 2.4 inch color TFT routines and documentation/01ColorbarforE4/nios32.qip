@@ -1,0 +1,29 @@
+# clk
+# cpu
+set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) cpu.sdc]
+set_global_assignment -name SOURCE_FILE [file join $::quartus(qip_path) cpu.ocp]
+# sdram
+# jtag_uart
+# pipeline_bridge
+# ili_db
+# ili_nrst
+# ili_ncs
+# ili_nrd
+# ili_rs
+# ads_busy
+# ads_nirq
+# ads_clk
+# ads_dout
+# ads_din
+# ads_ncs
+# sd_ncs
+# sd_clk
+# sd_din
+# sd_dout
+# epcs_flash_controller
+# ili_nwr
+# null
+set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID "60A44CCE57280000014CC7068A79"
+set_global_assignment -entity "nios32" -name IP_TOOL_NAME "sopc"
+set_global_assignment -entity "nios32" -name IP_TOOL_VERSION "11.1sp2"
+set_global_assignment -entity "nios32" -name IP_TOOL_ENV "sopc"

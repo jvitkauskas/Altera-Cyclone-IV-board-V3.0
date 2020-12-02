@@ -1,0 +1,216 @@
+Flow report for sdram_ov7670_vga
+Sat Feb 28 09:30:30 2015
+Quartus II 64-Bit Version 11.1 Build 259 01/25/2012 Service Pack 2.11 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; Flow Summary                                                                           ;
++------------------------------------+---------------------------------------------------+
+; Flow Status                        ; Successful - Sat Feb 28 09:30:25 2015             ;
+; Quartus II 64-Bit Version          ; 11.1 Build 259 01/25/2012 SP 2.11 SJ Full Version ;
+; Revision Name                      ; sdram_ov7670_vga                                  ;
+; Top-level Entity Name              ; sdram_ov7670_vga                                  ;
+; Family                             ; Cyclone IV E                                      ;
+; Device                             ; EP4CE6E22C8                                       ;
+; Timing Models                      ; Final                                             ;
+; Total logic elements               ; 1,065 / 6,272 ( 17 % )                            ;
+;     Total combinational functions  ; 976 / 6,272 ( 16 % )                              ;
+;     Dedicated logic registers      ; 475 / 6,272 ( 8 % )                               ;
+; Total registers                    ; 475                                               ;
+; Total pins                         ; 75 / 92 ( 82 % )                                  ;
+; Total virtual pins                 ; 0                                                 ;
+; Total memory bits                  ; 16,384 / 276,480 ( 6 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                                    ;
+; Total PLLs                         ; 1 / 2 ( 50 % )                                    ;
++------------------------------------+---------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/27/2015 23:09:14 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; sdram_ov7670_vga    ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                                                            ;
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                                  ; Value                                                                                                                                     ; Default Value ; Entity Name ; Section Id     ;
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                            ; 106258779494184.142504975409528                                                                                                           ; --            ; --          ; --             ;
+; ENABLE_CLOCK_LATENCY                             ; On                                                                                                                                        ; Off           ; --          ; --             ;
+; MAX_CONSECUTIVE_OUTPUTS_FOR_ELECTROMIGRATION     ; 12                                                                                                                                        ; --            ; --          ; --             ;
+; MAX_CONSECUTIVE_VIO_OUTPUTS_FOR_ELECTROMIGRATION ; 8                                                                                                                                         ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP                           ; 85                                                                                                                                        ; --            ; --          ; --             ;
+; MAX_CURRENT_FOR_ELECTROMIGRATION                 ; 240                                                                                                                                       ; --            ; --          ; --             ;
+; MAX_CURRENT_FOR_VIO_ELECTROMIGRATION             ; 240                                                                                                                                       ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                           ; 0                                                                                                                                         ; --            ; --          ; --             ;
+; MISC_FILE                                        ; D:/fpga_project/de2_project/camera_design/sdram_ov7670_vga/dev/sdram_ov7670_vga.dpf                                                       ; --            ; --          ; --             ;
+; MISC_FILE                                        ; D:/fpga_project/vip_deveop_design/sdram_ov7670_vga/dev/sdram_ov7670_vga.dpf                                                               ; --            ; --          ; --             ;
+; MISC_FILE                                        ; D:/fpga_project/VIP_design/sdram_ov7670_vga/dev/sdram_ov7670_vga.dpf                                                                      ; --            ; --          ; --             ;
+; MISC_FILE                                        ; D:/fpga_project/VIP_design/sdram_ov7670_vga_v1/dev/sdram_ov7670_vga.dpf                                                                   ; --            ; --          ; --             ;
+; MISC_FILE                                        ; D:/fpga_project/VIP_design/sdram_ov7670_rgb/dev/sdram_ov7670_vga.dpf                                                                      ; --            ; --          ; --             ;
+; MISC_FILE                                        ; D:/Altera_Project/VIP_design/sdram_ov7670_rgb/dev/sdram_ov7670_vga.dpf                                                                    ; --            ; --          ; --             ;
+; MISC_FILE                                        ; C:/Documents and Settings/Administrator/桌面/VIP_Board_Information_Rev1.3/vip_example/06_sdram_ov7670_rgb_640480/dev/sdram_ov7670_vga.dpf ; --            ; --          ; --             ;
+; MISC_FILE                                        ; F:/图像处理电路板/图像开发板程序/vip_example/06_sdram_ov7670_rgb_640480/dev/sdram_ov7670_vga.dpf                                          ; --            ; --          ; --             ;
+; MISC_FILE                                        ; C:/06_sdram_ov7670_rgb_640480/dev/sdram_ov7670_vga.dpf                                                                                    ; --            ; --          ; --             ;
+; MISC_FILE                                        ; F:/图像处理电路板/图像开发板程序/已测试例程/9VGA_OV7670摄像头采集显示/09_sdram_ov7670_rgb_640480/dev/sdram_ov7670_vga.dpf                 ; --            ; --          ; --             ;
+; NUM_PARALLEL_PROCESSORS                          ; 2                                                                                                                                         ; --            ; --          ; --             ;
+; OPTIMIZE_MULTI_CORNER_TIMING                     ; On                                                                                                                                        ; Off           ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS                   ; Half Signal Swing                                                                                                                         ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS                   ; Half Signal Swing                                                                                                                         ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS                  ; Half Vccio                                                                                                                                ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS                  ; Half Vccio                                                                                                                                ; --            ; --          ; --             ;
+; PARTITION_COLOR                                  ; 16764057                                                                                                                                  ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL              ; PLACEMENT_AND_ROUTING                                                                                                                     ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE                           ; POST_FIT                                                                                                                                  ; --            ; --          ; Top            ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS               ; Off                                                                                                                                       ; --            ; --          ; eda_blast_fpga ;
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 400 MB              ; 00:00:12                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 368 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:16     ; 1.3                     ; 543 MB              ; 00:00:16                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 351 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 417 MB              ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 383 MB              ; 00:00:03                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 376 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 410 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 383 MB              ; 00:00:03                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 376 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:01     ; 1.0                     ; 410 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 383 MB              ; 00:00:03                           ;
+; Partition Merge           ; 00:00:00     ; 1.0                     ; 376 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 410 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 408 MB              ; 00:00:13                           ;
+; Partition Merge           ; 00:00:00     ; 1.0                     ; 376 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 429 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 394 MB              ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 382 MB              ; 00:00:03                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 368 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 409 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 383 MB              ; 00:00:03                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 368 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 410 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 383 MB              ; 00:00:03                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 368 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 522 MB              ; 00:00:08                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 351 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.4                     ; 418 MB              ; 00:00:07                           ;
+; Total                     ; 00:01:56     ; --                      ; --                  ; 00:01:50                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_asm --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_sta sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_map --read_settings_files=on --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_cdb --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_asm --read_settings_files=off --write_settings_files=off sdram_ov7670_vga -c sdram_ov7670_vga
+quartus_sta sdram_ov7670_vga -c sdram_ov7670_vga
+
+
+

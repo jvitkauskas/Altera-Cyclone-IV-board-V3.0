@@ -1,0 +1,17 @@
+
+
+module led_twinkle(led,clk);
+	output [7:0] led;
+	input clk;
+	reg[7:0] led;
+	reg[24:0] counter;   //25λ
+	
+	always@(posedge clk)
+		begain 
+			counter<=counter+1;
+			if(counter=25'b1011111010111100001000000)
+				led=~led;
+				counter<=0;
+		begainend
+endmodule
+	

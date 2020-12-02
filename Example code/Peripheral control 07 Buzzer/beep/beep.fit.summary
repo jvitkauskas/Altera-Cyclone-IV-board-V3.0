@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Feb 03 12:39:46 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : beep
+Top-level Entity Name : beep
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 29 / 6,272 ( < 1 % )
+    Total combinational functions : 29 / 6,272 ( < 1 % )
+    Dedicated logic registers : 28 / 6,272 ( < 1 % )
+Total registers : 28
+Total pins : 2 / 92 ( 2 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

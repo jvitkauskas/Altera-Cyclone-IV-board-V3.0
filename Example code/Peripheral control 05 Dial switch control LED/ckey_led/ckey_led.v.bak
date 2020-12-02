@@ -1,0 +1,11 @@
+
+module ckey_led(ckey,LED);
+  input  [4:1] ckey;                      // ckey[1]  ~ ckey[4]
+  output [4:1] LED;                    // LED[1] ~ LED[4]
+   
+
+// 开发板上LED[1]在左，LED[8]在右；送1灭，送0亮
+// 拨动开关ckey打开为0，关闭为1
+assign LED = ckey;
+
+endmodule

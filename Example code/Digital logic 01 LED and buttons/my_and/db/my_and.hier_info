@@ -1,0 +1,6 @@
+|my_and
+s1 => led1.IN0
+s2 => led1.IN1
+led1 <= led1.DB_MAX_OUTPUT_PORT_TYPE
+
+

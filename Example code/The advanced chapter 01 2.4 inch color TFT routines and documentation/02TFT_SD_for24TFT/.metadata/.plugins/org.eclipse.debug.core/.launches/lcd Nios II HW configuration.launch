@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.nj.launch.HWLaunch">
+<stringAttribute key="com.altera.nj.launch.HW_UART_LOCAL_DEVICE_NAME" value=""/>
+<booleanAttribute key="com.altera.nj.launch.VALIDATE_HW_SYSID" value="true"/>
+<booleanAttribute key="org.eclipse.cdt.debug.mi.core.verboseMode" value="false"/>
+<booleanAttribute key="com.altera.nj.launch.USE_ALTERA_GENERATED_GDB_SCRIPT" value="true"/>
+<intAttribute key="com.altera.nj.launch.DEBUG_TARGET" value="1"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.GDB_INIT" value="E:\AA_IO_BD\TFT_SD_for24TFT\lcd_at_nios_qii_part\software\lcd_syslib\Debug\system_description\generated.gdb"/>
+<intAttribute key="com.altera.nj.launch.DEVICE_INDEX" value="-1"/>
+<stringAttribute key="com.altera.nj.launch.PTF_CPU" value="nios_f"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.altera.nj.debug.core.NJGDBDebugger"/>
+<booleanAttribute key="com.altera.nj.launch.STOP_AT_ENTRY" value="false"/>
+<stringAttribute key="com.altera.nj.launch.CABLE_NAME" value="automatic"/>
+<intAttribute key="com.altera.nj.launch.TERMINAL_BY_WHAT" value="1"/>
+<stringAttribute key="com.altera.nj.launch.EXTRA_ARGS" value="--instance=0"/>
+<stringAttribute key="com.altera.nj.launch.DOWNLOAD_ARGS" value=""/>
+<booleanAttribute key="com.altera.nj.launch.RESET_TARGET" value="false"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="com.altera.nj.launch.STOP_AT_ALTMAIN" value="false"/>
+<stringAttribute key="com.altera.nj.launch.TERMINAL_TO_WHAT" value="stdout"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/lcd.elf"/>
+<booleanAttribute key="com.altera.nj.launch.LAUNCH_FS2" value="false"/>
+<stringAttribute key="com.altera.nj.launch.PTF_NAME" value="E:\AA_IO_BD\TFT_SD_for24TFT\lcd_at_nios_qii_part\nios_ii_sys.ptf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="lcd"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+</launchConfiguration>

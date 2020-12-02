@@ -1,0 +1,71 @@
+module	sdbank_switch
+(
+	input	clk,
+	input	rst_n,
+	input	bank_valid,
+	input	write_done,
+	
+	output	reg	[1:0]	wr_bank,
+	output	reg	[1:0]	rd_bank,
+	output	reg			wr_load,
+	output	reg			rd_load
+);
+
+//-----------------------------------
+reg	bank_valid_r0, bank_valid_r1;
+always@(posedge clk or negedge rst_n)
+begin
+	if(!rst_n)
+		begin
+		bank_valid_r0 <= 0;
+		bank_valid_r1 <= 0;
+		end
+	else
+		begin
+		bank_valid_r0 <= bank_valid;
+		bank_valid_r1 <= bank_valid_r0;
+		end
+end
+wire	bank_switch_flag = (bank_valid_r1 & ~bank_valid_r0) ? 1'b1 : 1'b0;	//negedge
+
+//----------------------------------------
+//switch banks--ping pang opera
+reg	[2:0]	state;
+always@(posedge clk or negedge rst_n)
+begin
+	if(!rst_n)
+		begin
+		wr_bank <= 2'b00;	//2'b11;
+		rd_bank <= 2'b00;	//2'b00;
+		end
+	else
+		begin
+		case(state)
+		3'd0:	begin	wr_load <= 1'b0; rd_load <= 1'b0; 	state <= 3'd1;	end
+		3'd1:	begin	wr_load <= 1'b1; rd_load <= 1'b1;	state <= 3'd2;	end
+		3'd2:	begin	wr_load <= 1'b0; rd_load <= 1'b0;	state <= 3'd3;	end
+		3'd3:	begin
+				if(bank_switch_flag)
+					state <= 3'd4;
+				else
+					state <= 3'd3;
+				end
+		3'd4:	begin	
+				if(write_done)
+					begin
+					wr_bank <= wr_bank;
+					rd_bank <= rd_bank;
+					state <= 3'd0;
+					end
+				else
+					begin
+					wr_bank <= wr_bank;
+					rd_bank <= rd_bank;
+					state <= 3'd4;
+					end
+				end
+		endcase
+		end
+end
+
+endmodule

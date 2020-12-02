@@ -1,0 +1,379 @@
+Analysis & Synthesis report for LM75A_test
+Sun Apr 12 17:28:56 2015
+Quartus II 64-Bit Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |LM75A_test|I2C_READ:I2C_READ|state
+  9. State Machine - |LM75A_test|I2C_READ:I2C_READ|cnt
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: I2C_READ:I2C_READ
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Apr 12 17:28:56 2015          ;
+; Quartus II 64-Bit Version          ; 11.0 Build 208 07/03/2011 SP 1 SJ Full Version ;
+; Revision Name                      ; LM75A_test                                     ;
+; Top-level Entity Name              ; LM75A_test                                     ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 172                                            ;
+;     Total combinational functions  ; 172                                            ;
+;     Dedicated logic registers      ; 83                                             ;
+; Total registers                    ; 83                                             ;
+; Total pins                         ; 16                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; LM75A_test         ; LM75A_test         ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ;
++----------------------------------+-----------------+------------------------+------------------------------+
+; SEG_D.v                          ; yes             ; User Verilog HDL File  ; E:/LM75A_last/SEG_D.v        ;
+; lm75a.v                          ; yes             ; User Verilog HDL File  ; E:/LM75A_last/lm75a.v        ;
+; I2C_READ.v                       ; yes             ; User Verilog HDL File  ; E:/LM75A_last/I2C_READ.v     ;
++----------------------------------+-----------------+------------------------+------------------------------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 172       ;
+;                                             ;           ;
+; Total combinational functions               ; 172       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 80        ;
+;     -- 3 input functions                    ; 17        ;
+;     -- <=2 input functions                  ; 75        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 125       ;
+;     -- arithmetic mode                      ; 47        ;
+;                                             ;           ;
+; Total registers                             ; 83        ;
+;     -- Dedicated logic registers            ; 83        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 16        ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 83        ;
+; Total fan-out                               ; 801       ;
+; Average fan-out                             ; 2.78      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                   ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; |LM75A_test                ; 172 (0)           ; 83 (0)       ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |LM75A_test                   ;              ;
+;    |I2C_READ:I2C_READ|     ; 124 (124)         ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LM75A_test|I2C_READ:I2C_READ ;              ;
+;    |SEG_D:SEG_D|           ; 48 (48)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LM75A_test|SEG_D:SEG_D       ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LM75A_test|I2C_READ:I2C_READ|state                                                                                      ;
++---------------+------------+------------+------------+-------------+------------+-------------+------------+---------------+-------------+
+; Name          ; state.IDLE ; state.STOP ; state.NACK ; state.READ2 ; state.ACK2 ; state.READ1 ; state.ACK1 ; state.ADDRESS ; state.START ;
++---------------+------------+------------+------------+-------------+------------+-------------+------------+---------------+-------------+
+; state.IDLE    ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0             ; 0           ;
+; state.START   ; 1          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0             ; 1           ;
+; state.ADDRESS ; 1          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 1             ; 0           ;
+; state.ACK1    ; 1          ; 0          ; 0          ; 0           ; 0          ; 0           ; 1          ; 0             ; 0           ;
+; state.READ1   ; 1          ; 0          ; 0          ; 0           ; 0          ; 1           ; 0          ; 0             ; 0           ;
+; state.ACK2    ; 1          ; 0          ; 0          ; 0           ; 1          ; 0           ; 0          ; 0             ; 0           ;
+; state.READ2   ; 1          ; 0          ; 0          ; 1           ; 0          ; 0           ; 0          ; 0             ; 0           ;
+; state.NACK    ; 1          ; 0          ; 1          ; 0           ; 0          ; 0           ; 0          ; 0             ; 0           ;
+; state.STOP    ; 1          ; 1          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0             ; 0           ;
++---------------+------------+------------+------------+-------------+------------+-------------+------------+---------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |LM75A_test|I2C_READ:I2C_READ|cnt         ;
++---------+---------+---------+---------+---------+---------+
+; Name    ; cnt.000 ; cnt.011 ; cnt.010 ; cnt.001 ; cnt.101 ;
++---------+---------+---------+---------+---------+---------+
+; cnt.101 ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; cnt.001 ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; cnt.010 ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; cnt.011 ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; cnt.000 ; 1       ; 0       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+---------+
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++-----------------------------------------+----------------------------------------------+
+; Register name                           ; Reason for Removal                           ;
++-----------------------------------------+----------------------------------------------+
+; I2C_READ:I2C_READ|address_reg[1..3,5,6] ; Stuck at GND due to stuck port data_in       ;
+; I2C_READ:I2C_READ|address_reg[4,7]      ; Merged with I2C_READ:I2C_READ|address_reg[0] ;
+; I2C_READ:I2C_READ|cnt.101               ; Lost fanout                                  ;
+; I2C_READ:I2C_READ|state~14              ; Lost fanout                                  ;
+; I2C_READ:I2C_READ|cnt~4                 ; Lost fanout                                  ;
+; I2C_READ:I2C_READ|cnt~5                 ; Lost fanout                                  ;
+; I2C_READ:I2C_READ|timer_cnt[0]          ; Merged with I2C_READ:I2C_READ|scl_cnt[0]     ;
+; I2C_READ:I2C_READ|timer_cnt[1]          ; Merged with I2C_READ:I2C_READ|scl_cnt[1]     ;
+; Total Number of Removed Registers = 13  ;                                              ;
++-----------------------------------------+----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 83    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 83    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; I2C_READ:I2C_READ|sda_r                ; 6       ;
+; I2C_READ:I2C_READ|sda_link             ; 2       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
+; 9:1                ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; |LM75A_test|I2C_READ:I2C_READ|data_cnt[3] ;                            ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; |LM75A_test|SEG_D:SEG_D|Mux2              ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: I2C_READ:I2C_READ ;
++----------------+-----------+-----------------------------------+
+; Parameter Name ; Value     ; Type                              ;
++----------------+-----------+-----------------------------------+
+; IDLE           ; 000000000 ; Unsigned Binary                   ;
+; START          ; 000000010 ; Unsigned Binary                   ;
+; ADDRESS        ; 000000100 ; Unsigned Binary                   ;
+; ACK1           ; 000001000 ; Unsigned Binary                   ;
+; READ1          ; 000010000 ; Unsigned Binary                   ;
+; ACK2           ; 000100000 ; Unsigned Binary                   ;
+; READ2          ; 001000000 ; Unsigned Binary                   ;
+; NACK           ; 010000000 ; Unsigned Binary                   ;
+; STOP           ; 100000000 ; Unsigned Binary                   ;
++----------------+-----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+    Info: Processing started: Sun Apr 12 17:28:54 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LM75A_test -c LM75A_test
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 1 design units, including 1 entities, in source file seg_d.v
+    Info: Found entity 1: SEG_D
+Info: Found 1 design units, including 1 entities, in source file lm75a.v
+    Info: Found entity 1: LM75A_test
+Info: Found 1 design units, including 1 entities, in source file i2c_read.v
+    Info: Found entity 1: I2C_READ
+Info: Elaborating entity "LM75A_test" for the top level hierarchy
+Info: Elaborating entity "I2C_READ" for hierarchy "I2C_READ:I2C_READ"
+Warning (10230): Verilog HDL assignment warning at I2C_READ.v(94): truncated value with size 15 to match size of target (8)
+Warning (10272): Verilog HDL Case Statement warning at I2C_READ.v(138): case item expression covers a value already covered by a previous case item
+Info: Elaborating entity "SEG_D" for hierarchy "SEG_D:SEG_D"
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(22): truncated value with size 32 to match size of target (17)
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(49): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(50): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(51): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "cs[3]" is stuck at VCC
+    Warning (13410): Pin "seg[7]" is stuck at VCC
+Info: Timing-Driven Synthesis is running
+Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
+    Info: Register "I2C_READ:I2C_READ|cnt.101" lost all its fanouts during netlist optimizations.
+    Info: Register "I2C_READ:I2C_READ|state~14" lost all its fanouts during netlist optimizations.
+    Info: Register "I2C_READ:I2C_READ|cnt~4" lost all its fanouts during netlist optimizations.
+    Info: Register "I2C_READ:I2C_READ|cnt~5" lost all its fanouts during netlist optimizations.
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 189 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 13 output pins
+    Info: Implemented 1 bidirectional pins
+    Info: Implemented 173 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 339 megabytes
+    Info: Processing ended: Sun Apr 12 17:28:56 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

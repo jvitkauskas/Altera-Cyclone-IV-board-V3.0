@@ -1,0 +1,123 @@
+Altera SOPC Builder Version 11.12 Build 259
+Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
+
+
+No .sopc_builder configuration file(!)
+# 2015.04.17 18:57:45 (*) mk_custom_sdk starting
+# 2015.04.17 18:57:45 (*) Reading project E:/AA_IO_BD/new/ColorbarforE4/nios32.ptf.
+
+# 2015.04.17 18:57:46 (*) Finding all CPUs
+# 2015.04.17 18:57:46 (*) Finding all available components
+# 2015.04.17 18:57:46 (*) Reading E:/AA_IO_BD/new/ColorbarforE4/.sopc_builder/install.ptf
+
+# 2015.04.17 18:57:46 (*) Found 63 components
+
+# 2015.04.17 18:57:46 (*) Finding all peripherals
+
+# 2015.04.17 18:57:46 (*) Finding software components
+
+# 2015.04.17 18:57:47 (*) (Legacy SDK Generation Skipped)
+# 2015.04.17 18:57:47 (*) (All TCL Script Generation Skipped)
+# 2015.04.17 18:57:47 (*) (No Libraries Built)
+# 2015.04.17 18:57:47 (*) (Contents Generation Skipped)
+# 2015.04.17 18:57:47 (*) mk_custom_sdk finishing
+
+# 2015.04.17 18:57:47 (*) Starting generation for system: nios32.
+
+.
+.
+..
+...........
+....
+..
+
+# 2015.04.17 18:57:48 (*) Running Generator Program for cpu
+
+# 2015.04.17 18:57:49 (*) Starting Nios II generation
+# 2015.04.17 18:57:49 (*)   Checking for plaintext license.
+# 2015.04.17 18:57:50 (*)   Plaintext license not found.
+# 2015.04.17 18:57:50 (*)   Checking for encrypted license (non-evaluation).
+# 2015.04.17 18:57:50 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2015.04.17 18:57:50 (*)   Getting CPU configuration settings
+# 2015.04.17 18:57:50 (*)   Elaborating CPU configuration settings
+# 2015.04.17 18:57:50 (*)   Creating all objects for CPU
+
+# 2015.04.17 18:57:50 (*)     Testbench
+# 2015.04.17 18:57:51 (*)     Instruction decoding
+# 2015.04.17 18:57:51 (*)       Instruction fields
+# 2015.04.17 18:57:51 (*)       Instruction decodes
+# 2015.04.17 18:57:51 (*)       Signals for RTL simulation waveforms
+# 2015.04.17 18:57:52 (*)       Instruction controls
+# 2015.04.17 18:57:52 (*)     Pipeline frontend
+# 2015.04.17 18:57:52 (*)     Pipeline backend
+# 2015.04.17 18:57:55 (*)   Generating HDL from CPU objects
+# 2015.04.17 18:58:02 (*)   Creating encrypted HDL
+
+# 2015.04.17 18:58:05 (*) Done Nios II generation
+
+# 2015.04.17 18:58:05 (*) Running Generator Program for sdram
+
+# 2015.04.17 18:58:07 (*) Running Generator Program for jtag_uart
+
+# 2015.04.17 18:58:09 (*) Running Generator Program for ili_db
+
+# 2015.04.17 18:58:10 (*) Running Generator Program for ili_nrst
+
+# 2015.04.17 18:58:11 (*) Running Generator Program for ili_ncs
+
+# 2015.04.17 18:58:12 (*) Running Generator Program for ili_nrd
+
+# 2015.04.17 18:58:14 (*) Running Generator Program for ili_rs
+
+# 2015.04.17 18:58:15 (*) Running Generator Program for ads_busy
+
+# 2015.04.17 18:58:16 (*) Running Generator Program for ads_nirq
+
+# 2015.04.17 18:58:17 (*) Running Generator Program for ads_clk
+
+# 2015.04.17 18:58:19 (*) Running Generator Program for ads_dout
+
+# 2015.04.17 18:58:20 (*) Running Generator Program for ads_din
+
+# 2015.04.17 18:58:21 (*) Running Generator Program for ads_ncs
+
+# 2015.04.17 18:58:22 (*) Running Generator Program for sd_ncs
+
+# 2015.04.17 18:58:23 (*) Running Generator Program for sd_clk
+
+# 2015.04.17 18:58:25 (*) Running Generator Program for sd_din
+
+# 2015.04.17 18:58:26 (*) Running Generator Program for sd_dout
+
+# 2015.04.17 18:58:27 (*) Running Generator Program for epcs_flash_controller
+
+# 2015.04.17 18:58:29 (*) Running Generator Program for ili_nwr
+
+# 2015.04.17 18:58:30 (*) Running Generator Program for pipeline_bridge
+
+.
+
+
+# 2015.04.17 18:58:32 (*) Running Test Generator Program for sdram
+
+# 2015.04.17 18:58:33 (*) Making arbitration and system (top) modules.
+
+# 2015.04.17 18:58:47 (*) Generating Quartus symbol for top level: nios32
+
+# 2015.04.17 18:58:47 (*) Generating Symbol E:/AA_IO_BD/new/ColorbarforE4/nios32.bsf
+
+# 2015.04.17 18:58:47 (*) Creating command-line system-generation script: E:/AA_IO_BD/new/ColorbarforE4/nios32_generation_script
+
+# 2015.04.17 18:58:47 (*) Running setup for HDL simulator: modelsim
+
+
+# 2015.04.17 18:58:48 (*) Completed generation for system: nios32.
+# 2015.04.17 18:58:48 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : E:/AA_IO_BD/new/ColorbarforE4/nios32.ptf 
+  System HDL Model : E:/AA_IO_BD/new/ColorbarforE4/nios32.vhd 
+  System Generation Script : E:/AA_IO_BD/new/ColorbarforE4/nios32_generation_script 
+
+# 2015.04.17 18:58:48 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

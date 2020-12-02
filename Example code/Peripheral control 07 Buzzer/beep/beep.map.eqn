@@ -1,0 +1,389 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--count[13] is count[13]
+--operation mode is arithmetic
+
+count[13]_carry_eqn = A1L03;
+count[13]_lut_out = count[13] $ (count[13]_carry_eqn);
+count[13] = DFFEAS(count[13]_lut_out, clk, VCC, , , , , , );
+
+--A1L23 is count[13]~197
+--operation mode is arithmetic
+
+A1L23 = CARRY(!A1L03 # !count[13]);
+
+
+--count[24] is count[24]
+--operation mode is arithmetic
+
+count[24]_carry_eqn = A1L25;
+count[24]_lut_out = count[24] $ (!count[24]_carry_eqn);
+count[24] = DFFEAS(count[24]_lut_out, clk, VCC, , , , , , );
+
+--A1L45 is count[24]~201
+--operation mode is arithmetic
+
+A1L45 = CARRY(count[24] & (!A1L25));
+
+
+--count[27] is count[27]
+--operation mode is normal
+
+count[27]_carry_eqn = A1L85;
+count[27]_lut_out = count[27] $ (count[27]_carry_eqn);
+count[27] = DFFEAS(count[27]_lut_out, clk, VCC, , , , , , );
+
+
+--A1L2 is beep_r~22
+--operation mode is normal
+
+A1L2 = count[13] & count[24] & count[27];
+
+
+--count[12] is count[12]
+--operation mode is arithmetic
+
+count[12]_carry_eqn = A1L82;
+count[12]_lut_out = count[12] $ (!count[12]_carry_eqn);
+count[12] = DFFEAS(count[12]_lut_out, clk, VCC, , , , , , );
+
+--A1L03 is count[12]~209
+--operation mode is arithmetic
+
+A1L03 = CARRY(count[12] & (!A1L82));
+
+
+--count[23] is count[23]
+--operation mode is arithmetic
+
+count[23]_carry_eqn = A1L05;
+count[23]_lut_out = count[23] $ (count[23]_carry_eqn);
+count[23] = DFFEAS(count[23]_lut_out, clk, VCC, , , , , , );
+
+--A1L25 is count[23]~213
+--operation mode is arithmetic
+
+A1L25 = CARRY(!A1L05 # !count[23]);
+
+
+--count[26] is count[26]
+--operation mode is arithmetic
+
+count[26]_carry_eqn = A1L65;
+count[26]_lut_out = count[26] $ (!count[26]_carry_eqn);
+count[26] = DFFEAS(count[26]_lut_out, clk, VCC, , , , , , );
+
+--A1L85 is count[26]~217
+--operation mode is arithmetic
+
+A1L85 = CARRY(count[26] & (!A1L65));
+
+
+--count[11] is count[11]
+--operation mode is arithmetic
+
+count[11]_carry_eqn = A1L62;
+count[11]_lut_out = count[11] $ (count[11]_carry_eqn);
+count[11] = DFFEAS(count[11]_lut_out, clk, VCC, , , , , , );
+
+--A1L82 is count[11]~221
+--operation mode is arithmetic
+
+A1L82 = CARRY(!A1L62 # !count[11]);
+
+
+--count[22] is count[22]
+--operation mode is arithmetic
+
+count[22]_carry_eqn = A1L84;
+count[22]_lut_out = count[22] $ (!count[22]_carry_eqn);
+count[22] = DFFEAS(count[22]_lut_out, clk, VCC, , , , , , );
+
+--A1L05 is count[22]~225
+--operation mode is arithmetic
+
+A1L05 = CARRY(count[22] & (!A1L84));
+
+
+--count[25] is count[25]
+--operation mode is arithmetic
+
+count[25]_carry_eqn = A1L45;
+count[25]_lut_out = count[25] $ (count[25]_carry_eqn);
+count[25] = DFFEAS(count[25]_lut_out, clk, VCC, , , , , , );
+
+--A1L65 is count[25]~229
+--operation mode is arithmetic
+
+A1L65 = CARRY(!A1L45 # !count[25]);
+
+
+--count[10] is count[10]
+--operation mode is arithmetic
+
+count[10]_carry_eqn = A1L42;
+count[10]_lut_out = count[10] $ (!count[10]_carry_eqn);
+count[10] = DFFEAS(count[10]_lut_out, clk, VCC, , , , , , );
+
+--A1L62 is count[10]~233
+--operation mode is arithmetic
+
+A1L62 = CARRY(count[10] & (!A1L42));
+
+
+--count[21] is count[21]
+--operation mode is arithmetic
+
+count[21]_carry_eqn = A1L64;
+count[21]_lut_out = count[21] $ (count[21]_carry_eqn);
+count[21] = DFFEAS(count[21]_lut_out, clk, VCC, , , , , , );
+
+--A1L84 is count[21]~237
+--operation mode is arithmetic
+
+A1L84 = CARRY(!A1L64 # !count[21]);
+
+
+--count[9] is count[9]
+--operation mode is arithmetic
+
+count[9]_carry_eqn = A1L22;
+count[9]_lut_out = count[9] $ (count[9]_carry_eqn);
+count[9] = DFFEAS(count[9]_lut_out, clk, VCC, , , , , , );
+
+--A1L42 is count[9]~241
+--operation mode is arithmetic
+
+A1L42 = CARRY(!A1L22 # !count[9]);
+
+
+--count[20] is count[20]
+--operation mode is arithmetic
+
+count[20]_carry_eqn = A1L44;
+count[20]_lut_out = count[20] $ (!count[20]_carry_eqn);
+count[20] = DFFEAS(count[20]_lut_out, clk, VCC, , , , , , );
+
+--A1L64 is count[20]~245
+--operation mode is arithmetic
+
+A1L64 = CARRY(count[20] & (!A1L44));
+
+
+--count[8] is count[8]
+--operation mode is arithmetic
+
+count[8]_carry_eqn = A1L02;
+count[8]_lut_out = count[8] $ (!count[8]_carry_eqn);
+count[8] = DFFEAS(count[8]_lut_out, clk, VCC, , , , , , );
+
+--A1L22 is count[8]~249
+--operation mode is arithmetic
+
+A1L22 = CARRY(count[8] & (!A1L02));
+
+
+--count[19] is count[19]
+--operation mode is arithmetic
+
+count[19]_carry_eqn = A1L24;
+count[19]_lut_out = count[19] $ (count[19]_carry_eqn);
+count[19] = DFFEAS(count[19]_lut_out, clk, VCC, , , , , , );
+
+--A1L44 is count[19]~253
+--operation mode is arithmetic
+
+A1L44 = CARRY(!A1L24 # !count[19]);
+
+
+--count[7] is count[7]
+--operation mode is arithmetic
+
+count[7]_carry_eqn = A1L81;
+count[7]_lut_out = count[7] $ (count[7]_carry_eqn);
+count[7] = DFFEAS(count[7]_lut_out, clk, VCC, , , , , , );
+
+--A1L02 is count[7]~257
+--operation mode is arithmetic
+
+A1L02 = CARRY(!A1L81 # !count[7]);
+
+
+--count[18] is count[18]
+--operation mode is arithmetic
+
+count[18]_carry_eqn = A1L04;
+count[18]_lut_out = count[18] $ (!count[18]_carry_eqn);
+count[18] = DFFEAS(count[18]_lut_out, clk, VCC, , , , , , );
+
+--A1L24 is count[18]~261
+--operation mode is arithmetic
+
+A1L24 = CARRY(count[18] & (!A1L04));
+
+
+--count[6] is count[6]
+--operation mode is arithmetic
+
+count[6]_carry_eqn = A1L61;
+count[6]_lut_out = count[6] $ (!count[6]_carry_eqn);
+count[6] = DFFEAS(count[6]_lut_out, clk, VCC, , , , , , );
+
+--A1L81 is count[6]~265
+--operation mode is arithmetic
+
+A1L81 = CARRY(count[6] & (!A1L61));
+
+
+--count[17] is count[17]
+--operation mode is arithmetic
+
+count[17]_carry_eqn = A1L83;
+count[17]_lut_out = count[17] $ (count[17]_carry_eqn);
+count[17] = DFFEAS(count[17]_lut_out, clk, VCC, , , , , , );
+
+--A1L04 is count[17]~269
+--operation mode is arithmetic
+
+A1L04 = CARRY(!A1L83 # !count[17]);
+
+
+--count[5] is count[5]
+--operation mode is arithmetic
+
+count[5]_carry_eqn = A1L41;
+count[5]_lut_out = count[5] $ (count[5]_carry_eqn);
+count[5] = DFFEAS(count[5]_lut_out, clk, VCC, , , , , , );
+
+--A1L61 is count[5]~273
+--operation mode is arithmetic
+
+A1L61 = CARRY(!A1L41 # !count[5]);
+
+
+--count[16] is count[16]
+--operation mode is arithmetic
+
+count[16]_carry_eqn = A1L63;
+count[16]_lut_out = count[16] $ (!count[16]_carry_eqn);
+count[16] = DFFEAS(count[16]_lut_out, clk, VCC, , , , , , );
+
+--A1L83 is count[16]~277
+--operation mode is arithmetic
+
+A1L83 = CARRY(count[16] & (!A1L63));
+
+
+--count[4] is count[4]
+--operation mode is arithmetic
+
+count[4]_carry_eqn = A1L21;
+count[4]_lut_out = count[4] $ (!count[4]_carry_eqn);
+count[4] = DFFEAS(count[4]_lut_out, clk, VCC, , , , , , );
+
+--A1L41 is count[4]~281
+--operation mode is arithmetic
+
+A1L41 = CARRY(count[4] & (!A1L21));
+
+
+--count[15] is count[15]
+--operation mode is arithmetic
+
+count[15]_carry_eqn = A1L43;
+count[15]_lut_out = count[15] $ (count[15]_carry_eqn);
+count[15] = DFFEAS(count[15]_lut_out, clk, VCC, , , , , , );
+
+--A1L63 is count[15]~285
+--operation mode is arithmetic
+
+A1L63 = CARRY(!A1L43 # !count[15]);
+
+
+--count[3] is count[3]
+--operation mode is arithmetic
+
+count[3]_carry_eqn = A1L01;
+count[3]_lut_out = count[3] $ (count[3]_carry_eqn);
+count[3] = DFFEAS(count[3]_lut_out, clk, VCC, , , , , , );
+
+--A1L21 is count[3]~289
+--operation mode is arithmetic
+
+A1L21 = CARRY(!A1L01 # !count[3]);
+
+
+--count[14] is count[14]
+--operation mode is arithmetic
+
+count[14]_carry_eqn = A1L23;
+count[14]_lut_out = count[14] $ (!count[14]_carry_eqn);
+count[14] = DFFEAS(count[14]_lut_out, clk, VCC, , , , , , );
+
+--A1L43 is count[14]~293
+--operation mode is arithmetic
+
+A1L43 = CARRY(count[14] & (!A1L23));
+
+
+--count[2] is count[2]
+--operation mode is arithmetic
+
+count[2]_carry_eqn = A1L8;
+count[2]_lut_out = count[2] $ (!count[2]_carry_eqn);
+count[2] = DFFEAS(count[2]_lut_out, clk, VCC, , , , , , );
+
+--A1L01 is count[2]~297
+--operation mode is arithmetic
+
+A1L01 = CARRY(count[2] & (!A1L8));
+
+
+--count[1] is count[1]
+--operation mode is arithmetic
+
+count[1]_carry_eqn = A1L6;
+count[1]_lut_out = count[1] $ (count[1]_carry_eqn);
+count[1] = DFFEAS(count[1]_lut_out, clk, VCC, , , , , , );
+
+--A1L8 is count[1]~301
+--operation mode is arithmetic
+
+A1L8 = CARRY(!A1L6 # !count[1]);
+
+
+--count[0] is count[0]
+--operation mode is arithmetic
+
+count[0]_lut_out = !count[0];
+count[0] = DFFEAS(count[0]_lut_out, clk, VCC, , , , , , );
+
+--A1L6 is count[0]~305
+--operation mode is arithmetic
+
+A1L6 = CARRY(count[0]);
+
+
+--clk is clk
+--operation mode is input
+
+clk = INPUT();
+
+
+--beep is beep
+--operation mode is output
+
+beep = OUTPUT(!A1L2);
+
+

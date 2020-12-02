@@ -1,0 +1,8 @@
+<sld_project_info>
+  <file_info>
+    <file checksum="0x00133747" device="EP4CE6E22C8" path="sdram_ov7670_vga.sof" usercode="0x00133747"/>
+    <file checksum="0x0278599E" device="EPCS4" path="sdram_ov7670_vga.pof" usercode="0x00000000"/>
+  </file_info>
+  <hub_info ir_width="0" node_count="0"/>
+  <node_info/>
+</sld_project_info>

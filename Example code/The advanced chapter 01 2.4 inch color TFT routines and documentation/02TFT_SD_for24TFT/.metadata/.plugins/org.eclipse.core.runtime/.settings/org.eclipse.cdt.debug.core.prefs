@@ -1,0 +1,4 @@
+#Fri Sep 26 13:20:15 CST 2014
+org.eclipse.cdt.debug.core.cDebug.common_source_containers=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<sourceLookupDirector>\r\n<sourceContainers duplicates\="false"/>\r\n</sourceLookupDirector>\r\n
+org.eclipse.cdt.debug.corecDebug.Source.source_locations=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<commonSourceLocations>\r\n<sourceLocation class\="org.eclipse.cdt.debug.internal.core.sourcelookup.CDirectorySourceLocation" memento\="&lt;?xml version\=&quot;1.0&quot; encoding\=&quot;UTF-8&quot; standalone\=&quot;no&quot;?&gt;&\#13;&\#10;&lt;cDirectorySourceLocation association\=&quot;\\build\\nios2\\bin\\nios2-gnutools\\src&quot; directory\=&quot;C\:\\altera\\11.1sp2\\nios2eds\\bin\\nios2-gnutools\\src&quot; searchSubfolders\=&quot;true&quot;/&gt;&\#13;&\#10;"/>\r\n</commonSourceLocations>\r\n
+eclipse.preferences.version=1

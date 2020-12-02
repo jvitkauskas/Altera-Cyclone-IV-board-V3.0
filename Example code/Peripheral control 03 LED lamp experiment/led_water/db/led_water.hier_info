@@ -1,0 +1,32 @@
+|led_water
+clk => led[0]~reg0.CLK
+clk => led[1]~reg0.CLK
+clk => led[2]~reg0.CLK
+clk => led[3]~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => counter[16].CLK
+clk => counter[17].CLK
+clk => counter[18].CLK
+clk => counter[19].CLK
+clk => counter[20].CLK
+clk => counter[21].CLK
+clk => counter[22].CLK
+clk => counter[23].CLK
+clk => counter[24].CLK
+
+

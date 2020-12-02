@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Apr 17 20:52:22 2015
+Quartus II 64-Bit Version : 11.1 Build 259 01/25/2012 SP 2.11 SJ Full Version
+Revision Name : lcd_at_nios
+Top-level Entity Name : lcd_at_nios
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 3,696 / 6,272 ( 59 % )
+    Total combinational functions : 3,269 / 6,272 ( 52 % )
+    Dedicated logic registers : 2,279 / 6,272 ( 36 % )
+Total registers : 2347
+Total pins : 67 / 92 ( 73 % )
+Total virtual pins : 0
+Total memory bits : 55,552 / 276,480 ( 20 % )
+Embedded Multiplier 9-bit elements : 4 / 30 ( 13 % )
+Total PLLs : 1 / 2 ( 50 % )

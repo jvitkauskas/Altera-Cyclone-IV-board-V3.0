@@ -1,0 +1,54 @@
+C51 COMPILER V9.01   MAIN                                                                  02/22/2014 16:10:16 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <intrins.h>
+   3          #include <sys\sys.h>
+   4          #include <lcd\lcd.h>
+   5          #include <font\font.h>
+   6          /* 
+   7          代码测试环境:单片机STC12LE5A60S2,晶振33M  单片机工作电压3.3V
+   8          程序默认IO连接方式：
+   9          控制线：RS-P3^5;    WR-P3^6;   RD-P3^7;   CS-P1^0;   REST-P1^2;
+  10          数据线: DB0-DB7依次连接P0^0-P0^7;  DB8-DB15依次连接P2^0-P2^7;（8位模式下DB0-DB7可以不连接）
+  11          触摸功能连接方式：(不使用触摸可不连接)
+  12          T_CLK-P1^7;  T_CS-P1^4;  T_DIN-P3^0;  T_OUT-P3^1;  T_IRQ-P3^4;
+  13          */      
+  14          main()
+  15          { 
+  16   1              Lcd_Init();   //tft初始化
+  17   1              LCD_Clear(WHITE); //清屏
+  18   1              BACK_COLOR=BLACK;;POINT_COLOR=WHITE; 
+  19   1      
+  20   1              while(1)
+  21   1              {
+  22   2                   LCD_Clear(RED);
+  23   2                       delayms(3000);
+  24   2                       LCD_Clear(GREEN);
+  25   2                       delayms(3000);
+  26   2                       LCD_Clear(BLUE);
+  27   2                       delayms(3000);
+  28   2          }
+  29   1      
+  30   1      
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     69    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

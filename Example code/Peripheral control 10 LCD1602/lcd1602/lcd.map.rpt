@@ -1,0 +1,416 @@
+Analysis & Synthesis report for lcd
+Mon Jun 17 13:36:24 2013
+Quartus II Version 11.0 Build 157 04/27/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |lcd|next
+  9. State Machine - |lcd|current
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |lcd
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jun 17 13:36:24 2013     ;
+; Quartus II Version                 ; 11.0 Build 157 04/27/2011 SJ Full Version ;
+; Revision Name                      ; lcd                                       ;
+; Top-level Entity Name              ; lcd                                       ;
+; Family                             ; Cyclone IV E                              ;
+; Total logic elements               ; 55                                        ;
+;     Total combinational functions  ; 41                                        ;
+;     Dedicated logic registers      ; 45                                        ;
+; Total registers                    ; 45                                        ;
+; Total pins                         ; 12                                        ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; lcd                ; lcd                ;
+; Family name                                                                ; Cyclone IV E       ; Stratix            ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; lcd.v                            ; yes             ; User Verilog HDL File  ; D:/For_study/02_interface/ok/11_lcd1602/lcd.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 55    ;
+;                                             ;       ;
+; Total combinational functions               ; 41    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 11    ;
+;     -- 3 input functions                    ; 11    ;
+;     -- <=2 input functions                  ; 19    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 26    ;
+;     -- arithmetic mode                      ; 15    ;
+;                                             ;       ;
+; Total registers                             ; 45    ;
+;     -- Dedicated logic registers            ; 45    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 12    ;
+; Maximum fan-out node                        ; clkr  ;
+; Maximum fan-out                             ; 30    ;
+; Total fan-out                               ; 224   ;
+; Average fan-out                             ; 2.04  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |lcd                       ; 41 (41)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |lcd                ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lcd|next                                                                                                                                                                                               ;
++------------+----------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------+
+; Name       ; next.nul ; next.dat10 ; next.dat9 ; next.dat8 ; next.dat7 ; next.dat6 ; next.dat5 ; next.dat4 ; next.dat3 ; next.dat2 ; next.dat1 ; next.dat0 ; next.set3 ; next.set2 ; next.set1 ; next.set0 ; next.dat11 ;
++------------+----------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------+
+; next.set0  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0          ;
+; next.set1  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 1         ; 0          ;
+; next.set2  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 1         ; 0          ;
+; next.set3  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat0  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat1  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat2  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat3  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat4  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat5  ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat6  ; 0        ; 0          ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat7  ; 0        ; 0          ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat8  ; 0        ; 0          ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat9  ; 0        ; 0          ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat10 ; 0        ; 1          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.nul   ; 1        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0          ;
+; next.dat11 ; 0        ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 1          ;
++------------+----------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lcd|current                                                                                                                                                                                                                                                  ;
++---------------+-------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+---------------+
+; Name          ; current.nul ; current.dat10 ; current.dat9 ; current.dat8 ; current.dat7 ; current.dat6 ; current.dat5 ; current.dat4 ; current.dat3 ; current.dat2 ; current.dat1 ; current.dat0 ; current.set3 ; current.set2 ; current.set1 ; current.set0 ; current.dat11 ;
++---------------+-------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+---------------+
+; current.set0  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ;
+; current.set1  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ; 0             ;
+; current.set2  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ; 0             ;
+; current.set3  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat0  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat1  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat2  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat3  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat4  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat5  ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat6  ; 0           ; 0             ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat7  ; 0           ; 0             ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat8  ; 0           ; 0             ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat9  ; 0           ; 0             ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat10 ; 0           ; 1             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.nul   ; 1           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ;
+; current.dat11 ; 0           ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1             ;
++---------------+-------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+---------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; dat[7]~reg0                            ; Stuck at GND due to stuck port data_in ;
+; current.set0                           ; Lost fanout                            ;
+; current.set1                           ; Lost fanout                            ;
+; current.set2                           ; Lost fanout                            ;
+; current.set3                           ; Lost fanout                            ;
+; current.dat0                           ; Lost fanout                            ;
+; current.dat1                           ; Lost fanout                            ;
+; current.dat2                           ; Lost fanout                            ;
+; current.dat3                           ; Lost fanout                            ;
+; current.dat4                           ; Lost fanout                            ;
+; current.dat5                           ; Lost fanout                            ;
+; current.dat6                           ; Lost fanout                            ;
+; current.dat7                           ; Lost fanout                            ;
+; current.dat8                           ; Lost fanout                            ;
+; current.dat9                           ; Lost fanout                            ;
+; current.dat10                          ; Lost fanout                            ;
+; current.nul                            ; Lost fanout                            ;
+; current.dat11                          ; Lost fanout                            ;
+; next~2                                 ; Lost fanout                            ;
+; next~3                                 ; Lost fanout                            ;
+; next~4                                 ; Lost fanout                            ;
+; next~5                                 ; Lost fanout                            ;
+; current~2                              ; Lost fanout                            ;
+; current~3                              ; Lost fanout                            ;
+; current~4                              ; Lost fanout                            ;
+; current~5                              ; Lost fanout                            ;
+; Total Number of Removed Registers = 26 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 45    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |lcd ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; set0           ; 0000  ; Unsigned Binary                            ;
+; set1           ; 0001  ; Unsigned Binary                            ;
+; set2           ; 0010  ; Unsigned Binary                            ;
+; set3           ; 0011  ; Unsigned Binary                            ;
+; dat0           ; 0100  ; Unsigned Binary                            ;
+; dat1           ; 0101  ; Unsigned Binary                            ;
+; dat2           ; 0110  ; Unsigned Binary                            ;
+; dat3           ; 0111  ; Unsigned Binary                            ;
+; dat4           ; 1000  ; Unsigned Binary                            ;
+; dat5           ; 1001  ; Unsigned Binary                            ;
+; dat6           ; 1010  ; Unsigned Binary                            ;
+; dat7           ; 1011  ; Unsigned Binary                            ;
+; dat8           ; 1100  ; Unsigned Binary                            ;
+; dat9           ; 1101  ; Unsigned Binary                            ;
+; dat10          ; 1110  ; Unsigned Binary                            ;
+; dat11          ; 10000 ; Unsigned Binary                            ;
+; nul            ; 1111  ; Unsigned Binary                            ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
+    Info: Processing started: Mon Jun 17 13:36:21 2013
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lcd -c lcd
+Critical Warning: Setting INCREMENTAL_COMPILATION to "OFF" is no longer supported. Assignment is ignored. To disable partitions, set the IGNORE_PARTITIONS global assignment to "ON" instead.
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Found 1 design units, including 1 entities, in source file lcd.v
+    Info: Found entity 1: lcd
+Info: Elaborating entity "lcd" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at lcd.v(45): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at lcd.v(73): truncated value with size 32 to match size of target (2)
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rw" is stuck at GND
+    Warning (13410): Pin "dat[7]" is stuck at GND
+Info: Timing-Driven Synthesis is running
+Info: 25 registers lost all their fanouts during netlist optimizations. The first 25 are displayed below.
+    Info: Register "current.set0" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set1" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set2" lost all its fanouts during netlist optimizations.
+    Info: Register "current.set3" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat0" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat1" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat2" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat3" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat4" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat5" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat6" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat7" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat8" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat9" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat10" lost all its fanouts during netlist optimizations.
+    Info: Register "current.nul" lost all its fanouts during netlist optimizations.
+    Info: Register "current.dat11" lost all its fanouts during netlist optimizations.
+    Info: Register "next~2" lost all its fanouts during netlist optimizations.
+    Info: Register "next~3" lost all its fanouts during netlist optimizations.
+    Info: Register "next~4" lost all its fanouts during netlist optimizations.
+    Info: Register "next~5" lost all its fanouts during netlist optimizations.
+    Info: Register "current~2" lost all its fanouts during netlist optimizations.
+    Info: Register "current~3" lost all its fanouts during netlist optimizations.
+    Info: Register "current~4" lost all its fanouts during netlist optimizations.
+    Info: Register "current~5" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file D:/For_study/02_interface/ok/11_lcd1602/lcd.map.smsg
+Critical Warning: Setting INCREMENTAL_COMPILATION to "OFF" is no longer supported. Assignment is ignored. To disable partitions, set the IGNORE_PARTITIONS global assignment to "ON" instead.
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 84 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 11 output pins
+    Info: Implemented 72 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 226 megabytes
+    Info: Processing ended: Mon Jun 17 13:36:24 2013
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/For_study/02_interface/ok/11_lcd1602/lcd.map.smsg.
+
+

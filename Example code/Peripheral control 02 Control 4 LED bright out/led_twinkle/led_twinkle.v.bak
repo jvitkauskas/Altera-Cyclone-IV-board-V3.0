@@ -1,0 +1,19 @@
+module led_twinkle(led,clk);// 模块名及端口参数
+	output [7:0] led;
+	input clk;
+	reg[7:0] led;// 输出端口定义为寄存器型
+	reg[24:0] counter;  // 中间变量counter定义为寄存器型
+	
+	always@(posedge clk)
+		begin // 顺序语句，到end止
+			counter<=counter+1;  //<=与 =区别
+		    //if(counter==25'b1011111010111100001000000) //判别counter中的数值为25000000时
+		    if(counter==25'd25000000)//    写法:counter==8'd25000000 是错误的,位宽是25,不是8,位宽表示最终表示的二进制位宽.
+			
+				begin	
+					led<=~led;// led[0]-led[7]反转一次
+			 		counter<=0;//重新计数
+				end   
+		end
+endmodule
+	

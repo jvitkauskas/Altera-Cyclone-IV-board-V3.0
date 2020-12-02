@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.953 ns
+From           : rst_n
+To             : ps2scan:ps2scan|ps2_byte_r[7]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.901 ns
+From           : my_uart_tx:my_uart_tx|rs232_tx_r
+To             : rs232_tx
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.263 ns
+From           : ps2k_data
+To             : ps2scan:ps2scan|temp_data[2]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 44.19 MHz ( period = 22.628 ns )
+From           : ps2scan:ps2scan|ps2_asci[3]
+To             : my_uart_tx:my_uart_tx|tx_data[3]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : ps2scan:ps2scan|ps2_byte_r[7]
+To             : ps2scan:ps2scan|ps2_asci[1]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 40
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 40
+
+--------------------------------------------------------------------------------------
+

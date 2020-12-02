@@ -1,0 +1,36 @@
+  //Example instantiation for system 'nios_ii_sys'
+  nios_ii_sys nios_ii_sys_inst
+    (
+      .bidir_port_to_and_from_the_ili_db (bidir_port_to_and_from_the_ili_db),
+      .clk_100                           (clk_100),
+      .data0_to_the_epcs                 (data0_to_the_epcs),
+      .dclk_from_the_epcs                (dclk_from_the_epcs),
+      .in_port_to_the_ads_busy           (in_port_to_the_ads_busy),
+      .in_port_to_the_ads_dout           (in_port_to_the_ads_dout),
+      .in_port_to_the_ads_nirq           (in_port_to_the_ads_nirq),
+      .in_port_to_the_sd_dout            (in_port_to_the_sd_dout),
+      .out_port_from_the_ads_clk         (out_port_from_the_ads_clk),
+      .out_port_from_the_ads_din         (out_port_from_the_ads_din),
+      .out_port_from_the_ads_ncs         (out_port_from_the_ads_ncs),
+      .out_port_from_the_ili_ncs         (out_port_from_the_ili_ncs),
+      .out_port_from_the_ili_nrd         (out_port_from_the_ili_nrd),
+      .out_port_from_the_ili_nrst        (out_port_from_the_ili_nrst),
+      .out_port_from_the_ili_nwr         (out_port_from_the_ili_nwr),
+      .out_port_from_the_ili_rs          (out_port_from_the_ili_rs),
+      .out_port_from_the_sd_clk          (out_port_from_the_sd_clk),
+      .out_port_from_the_sd_din          (out_port_from_the_sd_din),
+      .out_port_from_the_sd_ncs          (out_port_from_the_sd_ncs),
+      .reset_n                           (reset_n),
+      .sce_from_the_epcs                 (sce_from_the_epcs),
+      .sdo_from_the_epcs                 (sdo_from_the_epcs),
+      .zs_addr_from_the_sdram            (zs_addr_from_the_sdram),
+      .zs_ba_from_the_sdram              (zs_ba_from_the_sdram),
+      .zs_cas_n_from_the_sdram           (zs_cas_n_from_the_sdram),
+      .zs_cke_from_the_sdram             (zs_cke_from_the_sdram),
+      .zs_cs_n_from_the_sdram            (zs_cs_n_from_the_sdram),
+      .zs_dq_to_and_from_the_sdram       (zs_dq_to_and_from_the_sdram),
+      .zs_dqm_from_the_sdram             (zs_dqm_from_the_sdram),
+      .zs_ras_n_from_the_sdram           (zs_ras_n_from_the_sdram),
+      .zs_we_n_from_the_sdram            (zs_we_n_from_the_sdram)
+    );
+

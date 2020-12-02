@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 3.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="TFT_software.nios2.exec.1207080652" name="Nios II Executable" projectType="nios2.exec">
+<configuration artifactExtension="elf" artifactName="TFT_software" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="nios2.exec.debug.531949905" name="Debug" parent="nios2.exec.debug">
+<toolChain id="com.altera.nj.ui.exe.Debug.710807388" name="com.altera.nj.ui.exe.Debug" superClass="com.altera.nj.ui.exe.Debug">
+<tool id="com.altera.nj.ui.tool.compiler.exe.debug.1703559699" name="Nios II Compiler" superClass="com.altera.nj.ui.tool.compiler.exe.debug">
+<option id="nios2.compiler.general.include.paths.151330685" superClass="nios2.compiler.general.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TFT_software/my_sopc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TFT_software}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TFT_software/ads7843}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TFT_software/self_debug}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TFT_software/ili9325}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TFT_software/sd_card}&quot;"/>
+</option>
+</tool>
+<tool id="com.altera.nj.ui.tool.linker.exe.debug.1499007426" name="Linker" superClass="com.altera.nj.ui.tool.linker.exe.debug"/>
+<macros expandEnvironmentMacros="true"/>
+</toolChain>
+</configuration>
+<configuration artifactExtension="elf" artifactName="TFT_software" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="nios2.exec.release.1346608321" name="Release" parent="nios2.exec.release">
+<toolChain id="com.altera.nj.ui.exe.Release.928038076" name="com.altera.nj.ui.exe.Release" superClass="com.altera.nj.ui.exe.Release">
+<tool id="com.altera.nj.ui.tool.compiler.exe.release.55775252" name="Nios II Compiler" superClass="com.altera.nj.ui.tool.compiler.exe.release"/>
+<tool id="com.altera.nj.ui.tool.linker.exe.release.241988759" name="Linker" superClass="com.altera.nj.ui.tool.linker.exe.release"/>
+</toolChain>
+</configuration>
+<macros/>
+</project>
+</ManagedProjectBuildInfo>

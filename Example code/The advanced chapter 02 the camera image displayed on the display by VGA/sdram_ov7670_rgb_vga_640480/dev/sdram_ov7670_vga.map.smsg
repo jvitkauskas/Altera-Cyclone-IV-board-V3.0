@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at CMOS_Capture.v(211): object "DELAY_CNT" differs only in case from object "delay_cnt" in the same scope

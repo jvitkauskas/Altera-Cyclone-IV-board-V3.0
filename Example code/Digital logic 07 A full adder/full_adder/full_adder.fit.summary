@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jun 18 13:53:18 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : full_adder
+Top-level Entity Name : full_adder
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 2 / 6,272 ( < 1 % )
+    Total combinational functions : 2 / 6,272 ( < 1 % )
+    Dedicated logic registers : 0 / 6,272 ( 0 % )
+Total registers : 0
+Total pins : 5 / 92 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

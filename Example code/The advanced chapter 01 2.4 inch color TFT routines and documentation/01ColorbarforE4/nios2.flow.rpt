@@ -1,0 +1,175 @@
+Flow report for nios2
+Fri Apr 17 20:07:11 2015
+Quartus II 64-Bit Version 11.1 Build 259 01/25/2012 Service Pack 2.11 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; Flow Summary                                                                           ;
++------------------------------------+---------------------------------------------------+
+; Flow Status                        ; Successful - Fri Apr 17 20:07:01 2015             ;
+; Quartus II 64-Bit Version          ; 11.1 Build 259 01/25/2012 SP 2.11 SJ Full Version ;
+; Revision Name                      ; nios2                                             ;
+; Top-level Entity Name              ; nios2                                             ;
+; Family                             ; Cyclone IV E                                      ;
+; Device                             ; EP4CE6E22C8                                       ;
+; Timing Models                      ; Final                                             ;
+; Total logic elements               ; 3,860 / 6,272 ( 62 % )                            ;
+;     Total combinational functions  ; 3,368 / 6,272 ( 54 % )                            ;
+;     Dedicated logic registers      ; 2,332 / 6,272 ( 37 % )                            ;
+; Total registers                    ; 2384                                              ;
+; Total pins                         ; 67 / 92 ( 73 % )                                  ;
+; Total virtual pins                 ; 0                                                 ;
+; Total memory bits                  ; 55,680 / 276,480 ( 20 % )                         ;
+; Embedded Multiplier 9-bit elements ; 4 / 30 ( 13 % )                                   ;
+; Total PLLs                         ; 1 / 2 ( 50 % )                                    ;
++------------------------------------+---------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/17/2015 20:05:53 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; nios2               ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                     ;
++-------------------------------------+-----------------------------------------------+---------------+-------------+------------------+
+; Assignment Name                     ; Value                                         ; Default Value ; Entity Name ; Section Id       ;
++-------------------------------------+-----------------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 106258779494184.142927235313184               ; --            ; --          ; --               ;
+; CYCLONEII_OPTIMIZATION_TECHNIQUE    ; Speed                                         ; Balanced      ; --          ; --               ;
+; ENABLE_SIGNALTAP                    ; On                                            ; --            ; --          ; --               ;
+; IP_TOOL_ENV                         ; sopc                                          ; --            ; nios32      ; --               ;
+; IP_TOOL_NAME                        ; ALTPLL                                        ; --            ; --          ; --               ;
+; IP_TOOL_NAME                        ; ALTPLL                                        ; --            ; --          ; --               ;
+; IP_TOOL_NAME                        ; sopc                                          ; --            ; nios32      ; --               ;
+; IP_TOOL_VERSION                     ; 11.0                                          ; --            ; --          ; --               ;
+; IP_TOOL_VERSION                     ; 9.0                                           ; --            ; --          ; --               ;
+; IP_TOOL_VERSION                     ; 11.1sp2                                       ; --            ; nios32      ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                            ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                             ; --            ; --          ; --               ;
+; MISC_FILE                           ; D:/NIOS_II/sdram/nios2.dpf                    ; --            ; --          ; --               ;
+; MISC_FILE                           ; C:/NIOS_2/1.NIOS_SDRAM/nios2.dpf              ; --            ; --          ; --               ;
+; MISC_FILE                           ; C:/NIOS_2/1.NIOS_SDRAM128/nios2.dpf           ; --            ; --          ; --               ;
+; MISC_FILE                           ; D:/NIOS_2/TESTSDRAM128/nios2.dpf              ; --            ; --          ; --               ;
+; MISC_FILE                           ; D:/NIOS_2/1.NIOS_SDRAM/nios2.dpf              ; --            ; --          ; --               ;
+; MISC_FILE                           ; C:/NIOS/2.NIOS_SDRAM/nios2.dpf                ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll0.bsf                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll0_inst.vhd                              ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll0.inc                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll0.cmp                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll0.ppf                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll1.bsf                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll1.inc                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll1.cmp                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; altpll1.ppf                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; C:/TFT/nios2.dpf                              ; --            ; --          ; --               ;
+; MISC_FILE                           ; F:/TFT/nios2.dpf                              ; --            ; --          ; --               ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                             ; --            ; --          ; --               ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                             ; --            ; --          ; --               ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                    ; --            ; --          ; --               ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                    ; --            ; --          ; --               ;
+; PARTITION_COLOR                     ; 2147039                                       ; --            ; --          ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                         ; --            ; --          ; Top              ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                        ; --            ; --          ; Top              ;
+; SLD_NODE_CREATOR_ID                 ; 110                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=1                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=24                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                             ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=27424                     ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=13610                     ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                      ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                 ; --            ; --          ; auto_signaltap_0 ;
+; SOPC_BUILDER_SIGNATURE_ID           ; 60A44CCE57280000014CC7068A79                  ; --            ; --          ; --               ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                           ; --            ; --          ; eda_palace       ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                      ; --            ; --          ; --               ;
++-------------------------------------+-----------------------------------------------+---------------+-------------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:41     ; 1.0                     ; 567 MB              ; 00:00:40                           ;
+; Fitter                    ; 00:00:20     ; 1.0                     ; 523 MB              ; 00:00:20                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 364 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 455 MB              ; 00:00:09                           ;
+; Total                     ; 00:01:12     ; --                      ; --                  ; 00:01:11                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ww-PC            ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off nios2 -c nios2
+quartus_fit --read_settings_files=off --write_settings_files=off nios2 -c nios2
+quartus_asm --read_settings_files=off --write_settings_files=off nios2 -c nios2
+quartus_sta nios2 -c nios2
+
+
+

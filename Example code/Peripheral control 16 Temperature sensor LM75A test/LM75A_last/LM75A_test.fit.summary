@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Apr 12 17:29:00 2015
+Quartus II 64-Bit Version : 11.0 Build 208 07/03/2011 SP 1 SJ Full Version
+Revision Name : LM75A_test
+Top-level Entity Name : LM75A_test
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 172 / 6,272 ( 3 % )
+    Total combinational functions : 172 / 6,272 ( 3 % )
+    Dedicated logic registers : 83 / 6,272 ( 1 % )
+Total registers : 83
+Total pins : 16 / 92 ( 17 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

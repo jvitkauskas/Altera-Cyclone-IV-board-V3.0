@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>altera.components</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>IP Device Drivers</name>
+			<type>2</type>
+			<location>C:/altera/11.1/ip</location>
+		</link>
+		<link>
+			<name>Nios II Software Packages</name>
+			<type>2</type>
+			<location>C:/altera/11.1/nios2eds/components</location>
+		</link>
+		<link>
+			<name>Newlib C Library/src</name>
+			<type>2</type>
+			<location>C:/altera/11.1/nios2eds/bin/nios2-gnutools/src</location>
+		</link>
+		<link>
+			<name>Newlib C Library/include</name>
+			<type>2</type>
+			<location>C:/altera/11.1/nios2eds/bin/nios2-gnutools/include</location>
+		</link>
+	</linkedResources>
+</projectDescription>

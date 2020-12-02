@@ -1,0 +1,126 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.943 ns
+From           : cmos_sdat
+To             : I2C_AV_Config:u_I2C_AV_Config|I2C_Controller:u_I2C_Controller|ACKW1
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 31.601 ns
+From           : sdram_vga_top:u_sdram_vga_top|lcd_top:u_lcd_top|lcd_driver:u_lcd_driver|vcnt[5]
+To             : lcd_green[9]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -5.256 ns
+From           : cmos_data[4]
+To             : CMOS_Capture:u_CMOS_Capture|Pre_CMOS_iDATA[4]
+From Clock     : --
+To Clock       : cmos_pclk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk1'
+Slack          : 2.260 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : 129.20 MHz ( period = 7.740 ns )
+From           : sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|dcfifo_ctrl:u_dcfifo_ctrl|sdram_rdaddr[11]
+To             : sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|dcfifo_ctrl:u_dcfifo_ctrl|sdram_rdaddr[21]
+From Clock     : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk1
+To Clock       : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk0'
+Slack          : 7.438 ns
+Required Time  : 25.00 MHz ( period = 40.000 ns )
+Actual Time    : N/A
+From           : system_ctrl:u_system_ctrl|sysrst_nr2
+To             : sdram_vga_top:u_sdram_vga_top|sdbank_switch:u_sdbank_switch|state_write.000
+From Clock     : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk1
+To Clock       : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : 13.493 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 153.68 MHz ( period = 6.507 ns )
+From           : system_ctrl:u_system_ctrl|system_delay:u_system_delay|cnt[13]
+To             : system_ctrl:u_system_ctrl|system_delay:u_system_delay|cnt[7]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'cmos_pclk'
+Slack          : 34.901 ns
+Required Time  : 26.00 MHz ( period = 38.461 ns )
+Actual Time    : 280.90 MHz ( period = 3.560 ns )
+From           : CMOS_Capture:u_CMOS_Capture|mCMOS_VSYNC
+To             : CMOS_Capture:u_CMOS_Capture|Frame_Cont[3]
+From Clock     : cmos_pclk
+To Clock       : cmos_pclk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk0'
+Slack          : 0.499 ns
+Required Time  : 25.00 MHz ( period = 40.000 ns )
+Actual Time    : N/A
+From           : I2C_AV_Config:u_I2C_AV_Config|I2C_Controller:u_I2C_Controller|I2C_RDATA[7]
+To             : I2C_AV_Config:u_I2C_AV_Config|I2C_Controller:u_I2C_Controller|I2C_RDATA[7]
+From Clock     : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk0
+To Clock       : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk1'
+Slack          : 0.499 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : N/A
+From           : sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|dcfifo_ctrl:u_dcfifo_ctrl|sdram_wraddr[8]
+To             : sdram_vga_top:u_sdram_vga_top|sdram_2fifo_top:u_sdram_2fifo_top|dcfifo_ctrl:u_dcfifo_ctrl|sdram_wraddr[8]
+From Clock     : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk1
+To Clock       : system_ctrl:u_system_ctrl|sdram_pll:u_sdram_pll|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Hold: 'cmos_pclk'
+Slack          : 0.499 ns
+Required Time  : 26.00 MHz ( period = 38.461 ns )
+Actual Time    : N/A
+From           : CMOS_Capture:u_CMOS_Capture|Frame_Cont[0]
+To             : CMOS_Capture:u_CMOS_Capture|Frame_Cont[0]
+From Clock     : cmos_pclk
+To Clock       : cmos_pclk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : 0.499 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : system_ctrl:u_system_ctrl|system_delay:u_system_delay|cnt[0]
+To             : system_ctrl:u_system_ctrl|system_delay:u_system_delay|cnt[0]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

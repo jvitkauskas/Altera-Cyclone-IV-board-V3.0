@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.301 ns
+From           : ADS_nIRQ
+To             : nios_ii_sys:nios_ii_sys_inst|ads_nirq:the_ads_nirq|readdata
+From Clock     : --
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.752 ns
+From           : nios_ii_sys:nios_ii_sys_inst|ili_rs:the_ili_rs|data_out
+To             : ILI_RS
+From Clock     : CLOCK_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.106 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.252 ns
+From           : altera_internal_jtag~TDIUTAP
+To             : nios_ii_sys:nios_ii_sys_inst|jtag_uart:the_jtag_uart|alt_jtag_atlantic:jtag_uart_alt_jtag_atlantic|write_stalled
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pll:pll_inst|altpll:altpll_component|_clk0'
+Slack          : -0.621 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : 94.15 MHz ( period = 10.621 ns )
+From           : nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|E_src1[0]
+To             : nios_ii_sys:nios_ii_sys_inst|nios_f:the_nios_f|E_src2[0]
+From Clock     : pll:pll_inst|altpll:altpll_component|_clk0
+To Clock       : pll:pll_inst|altpll:altpll_component|_clk0
+Failed Paths   : 130
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 73.16 MHz ( period = 13.668 ns )
+From           : sld_hub:auto_hub|irsr_reg[2]
+To             : sld_hub:auto_hub|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'pll:pll_inst|altpll:altpll_component|_clk0'
+Slack          : 0.499 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : N/A
+From           : nios_ii_sys:nios_ii_sys_inst|sdram:the_sdram|i_cmd[3]
+To             : nios_ii_sys:nios_ii_sys_inst|sdram:the_sdram|i_cmd[3]
+From Clock     : pll:pll_inst|altpll:altpll_component|_clk0
+To Clock       : pll:pll_inst|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 130
+
+--------------------------------------------------------------------------------------
+

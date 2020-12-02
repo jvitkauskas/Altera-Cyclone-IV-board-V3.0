@@ -1,0 +1,47 @@
+--------------------------------------------------------------------------------
+--
+-- File Type:    VHDL 
+-- Tool Version: verilog2vhdl 20.20
+-- Input file was: .\my_and.v.vpp
+-- Command line was: C:\SynaptiCAD\bin\win32\verilog2vhdl.exe .\my_and.v
+-- Date Created: Thu Sep 21 23:42:11 2017
+--
+--------------------------------------------------------------------------------
+
+
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+LIBRARY ASC;
+USE ASC.numeric_std.all;
+ENTITY my_and IS	-- --;号容易漏掉
+    PORT (
+        SIGNAL a : IN std_logic;	
+        SIGNAL b : IN std_logic;	
+        SIGNAL c : OUT std_logic);	
+END my_and;
+
+-- /*******************************************************************
+-- **我们的FPGA开发网
+-- **网站：www.OurFPGA.com
+-- **淘宝：OurFPGA.taobao.com
+-- **邮箱: OurFPGA@gmail.com下载免费视频教程及资料
+-- *****************文件信息********************************************
+-- **创建日期：   2011.06.01
+-- **版本号：     version 1.0
+-- **功能描述：   与门 
+-- ********************************************************************/
+
+LIBRARY ASC;
+ARCHITECTURE VeriArch OF my_and IS
+    USE ASC.FUNCTIONS.ALL;
+-- Intermediate signal for c
+    SIGNAL V2V_c : std_logic;	
+
+    SIGNAL GUARD : boolean:= TRUE;	
+BEGIN
+    V2V_c <= to_stdlogic(a AND b);	--输入a由开关KEY1决定，0：按下，1：未按下--输出c由LED显示， 0：点亮，1：熄灭--用直接赋值语句
+    c <= V2V_c;	
+END VeriArch;
+

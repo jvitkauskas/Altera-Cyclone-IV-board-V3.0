@@ -1,0 +1,33 @@
+# clk_100
+# nios_f
+set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) nios_f.sdc]
+set_global_assignment -name SOURCE_FILE [file join $::quartus(qip_path) nios_f.ocp]
+# sdram
+# epcs
+# jtag_uart
+# sysid
+# sys_clk_timer
+# high_res_timer
+# watchdog_timer
+# pipeline_bridge_0
+# ili_db
+# ili_nrst
+# ili_ncs
+# ili_nwr
+# ili_nrd
+# ili_rs
+# ads_busy
+# ads_nirq
+# ads_clk
+# ads_dout
+# ads_din
+# ads_ncs
+# sd_ncs
+# sd_clk
+# sd_din
+# sd_dout
+# null
+set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID "60A44CCE57280000014CC7525063"
+set_global_assignment -entity "nios_ii_sys" -name IP_TOOL_NAME "sopc"
+set_global_assignment -entity "nios_ii_sys" -name IP_TOOL_VERSION "11.1sp2"
+set_global_assignment -entity "nios_ii_sys" -name IP_TOOL_ENV "sopc"

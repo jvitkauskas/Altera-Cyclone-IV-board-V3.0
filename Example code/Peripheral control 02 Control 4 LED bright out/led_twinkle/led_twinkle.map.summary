@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jun 18 12:11:58 2013
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : led_twinkle
+Top-level Entity Name : led_twinkle
+Family : Cyclone IV E
+Total logic elements : 47
+    Total combinational functions : 47
+    Dedicated logic registers : 26
+Total registers : 26
+Total pins : 5
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

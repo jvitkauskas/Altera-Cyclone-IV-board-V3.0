@@ -1,0 +1,6 @@
+|my_nand
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+

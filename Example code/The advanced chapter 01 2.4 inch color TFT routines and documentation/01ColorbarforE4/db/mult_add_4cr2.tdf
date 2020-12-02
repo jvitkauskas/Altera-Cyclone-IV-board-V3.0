@@ -1,0 +1,51 @@
+--altmult_add ADDNSUB_MULTIPLIER_PIPELINE_ACLR1="ACLR0" ADDNSUB_MULTIPLIER_PIPELINE_REGISTER1="CLOCK0" ADDNSUB_MULTIPLIER_REGISTER1="UNREGISTERED" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEDICATED_MULTIPLIER_CIRCUITRY="YES" DEVICE_FAMILY="Cyclone II" DSP_BLOCK_BALANCING="Auto" INPUT_REGISTER_A0="UNREGISTERED" INPUT_REGISTER_B0="UNREGISTERED" INPUT_SOURCE_A0="DATAA" INPUT_SOURCE_B0="DATAB" MULTIPLIER1_DIRECTION="ADD" MULTIPLIER_ACLR0="ACLR0" MULTIPLIER_REGISTER0="CLOCK0" NUMBER_OF_MULTIPLIERS=1 OUTPUT_REGISTER="UNREGISTERED" port_addnsub1="PORT_UNUSED" port_signa="PORT_UNUSED" port_signb="PORT_UNUSED" REPRESENTATION_A="UNSIGNED" REPRESENTATION_B="UNSIGNED" SIGNED_PIPELINE_ACLR_A="ACLR0" SIGNED_PIPELINE_ACLR_B="ACLR0" SIGNED_PIPELINE_REGISTER_A="CLOCK0" SIGNED_PIPELINE_REGISTER_B="CLOCK0" SIGNED_REGISTER_A="UNREGISTERED" SIGNED_REGISTER_B="UNREGISTERED" WIDTH_A=16 WIDTH_B=16 WIDTH_RESULT=32 aclr0 clock0 dataa datab result CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 11.0 cbx_alt_ded_mult_y 2011:04:27:21:07:08:SJ cbx_altera_mult_add 2011:04:27:21:07:08:SJ cbx_altmult_add 2011:04:27:21:07:09:SJ cbx_cycloneii 2011:04:27:21:07:09:SJ cbx_lpm_add_sub 2011:04:27:21:07:09:SJ cbx_lpm_compare 2011:04:27:21:07:09:SJ cbx_lpm_counter 2011:04:27:21:07:09:SJ cbx_lpm_decode 2011:04:27:21:07:09:SJ cbx_lpm_mult 2011:04:27:21:07:09:SJ cbx_mgl 2011:04:27:21:08:59:SJ cbx_padd 2011:04:27:21:07:09:SJ cbx_parallel_add 2011:04:27:21:07:09:SJ cbx_stratix 2011:04:27:21:07:09:SJ cbx_stratixii 2011:04:27:21:07:09:SJ cbx_stratixiii 2011:04:27:21:07:09:SJ cbx_stratixv 2011:04:27:21:07:09:SJ cbx_util_mgl 2011:04:27:21:07:09:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION ded_mult_2o81 (aclr[3..0], clock[3..0], dataa[15..0], datab[15..0], ena[3..0])
+RETURNS ( result[31..0]);
+
+--synthesis_resources = dsp_9bit 2 
+SUBDESIGN mult_add_4cr2
+( 
+	aclr0	:	input;
+	clock0	:	input;
+	dataa[15..0]	:	input;
+	datab[15..0]	:	input;
+	result[31..0]	:	output;
+) 
+VARIABLE 
+	ded_mult1 : ded_mult_2o81;
+	dataa_bus[15..0]	: WIRE;
+	datab_bus[15..0]	: WIRE;
+	ena0	: NODE;
+	pre_result[31..0]	: WIRE;
+
+BEGIN 
+	ded_mult1.aclr[] = ( B"000", aclr0);
+	ded_mult1.clock[] = ( B"111", clock0);
+	ded_mult1.dataa[] = ( dataa_bus[15..0]);
+	ded_mult1.datab[] = ( datab_bus[15..0]);
+	ded_mult1.ena[] = ( B"111", ena0);
+	dataa_bus[] = ( dataa[15..0]);
+	datab_bus[] = ( datab[15..0]);
+	ena0 = VCC;
+	pre_result[31..0] = ded_mult1.result[31..0];
+	result[31..0] = pre_result[31..0];
+END;
+--VALID FILE

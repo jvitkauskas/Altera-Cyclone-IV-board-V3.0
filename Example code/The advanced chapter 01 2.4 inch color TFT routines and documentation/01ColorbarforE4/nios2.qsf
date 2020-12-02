@@ -1,0 +1,223 @@
+# Copyright (C) 1991-2007 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		nios2_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6E22C8
+set_global_assignment -name TOP_LEVEL_ENTITY nios2
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 7.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:10:27  DECEMBER 14, 2007"
+set_global_assignment -name LAST_QUARTUS_VERSION "11.1 SP2.11"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_palace
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 2147039 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+
+
+
+set_instance_assignment -name AUTO_GLOBAL_CLOCK ON -to sdram_clk
+set_instance_assignment -name AUTO_GLOBAL_CLOCK ON -to clk
+
+set_global_assignment -name USE_CHECKSUM_AS_USERCODE ON
+set_global_assignment -name GENERATE_TTF_FILE ON
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_CONFIGURATION_DEVICE EPCS4
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name MISC_FILE "D:/NIOS_II/sdram/nios2.dpf"
+set_global_assignment -name MISC_FILE "C:/NIOS_2/1.NIOS_SDRAM/nios2.dpf"
+set_global_assignment -name MISC_FILE "C:/NIOS_2/1.NIOS_SDRAM128/nios2.dpf"
+set_global_assignment -name MISC_FILE "D:/NIOS_2/TESTSDRAM128/nios2.dpf"
+set_global_assignment -name MISC_FILE "D:/NIOS_2/1.NIOS_SDRAM/nios2.dpf"
+set_global_assignment -name ENABLE_INIT_DONE_OUTPUT OFF
+set_global_assignment -name MISC_FILE "C:/NIOS/2.NIOS_SDRAM/nios2.dpf"
+set_global_assignment -name BDF_FILE nios2.bdf
+set_global_assignment -name QIP_FILE nios32.qip
+set_global_assignment -name QIP_FILE altpll0.qip
+set_global_assignment -name QIP_FILE altpll1.qip
+set_global_assignment -name MISC_FILE "C:/TFT/nios2.dpf"
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to clk -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to in_port_to_the_ads_nirq -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to in_port_to_the_ads_nirq -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=24" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=128" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=27424" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=13610" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=128" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name MISC_FILE "F:/TFT/nios2.dpf"
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_23 -to clk
+set_location_assignment PIN_25 -to reset_n
+set_location_assignment PIN_28 -to sdram_data[0]
+set_location_assignment PIN_30 -to sdram_data[1]
+set_location_assignment PIN_31 -to sdram_data[2]
+set_location_assignment PIN_32 -to sdram_data[3]
+set_location_assignment PIN_33 -to sdram_data[4]
+set_location_assignment PIN_34 -to sdram_data[5]
+set_location_assignment PIN_38 -to sdram_data[6]
+set_location_assignment PIN_39 -to sdram_data[7]
+set_location_assignment PIN_54 -to sdram_data[8]
+set_location_assignment PIN_53 -to sdram_data[9]
+set_location_assignment PIN_52 -to sdram_data[10]
+set_location_assignment PIN_51 -to sdram_data[11]
+set_location_assignment PIN_50 -to sdram_data[12]
+set_location_assignment PIN_49 -to sdram_data[13]
+set_location_assignment PIN_46 -to sdram_data[14]
+set_location_assignment PIN_44 -to sdram_data[15]
+set_location_assignment PIN_76 -to sdram_addr[0]
+set_location_assignment PIN_77 -to sdram_addr[1]
+set_location_assignment PIN_80 -to sdram_addr[2]
+set_location_assignment PIN_83 -to sdram_addr[3]
+set_location_assignment PIN_68 -to sdram_addr[4]
+set_location_assignment PIN_67 -to sdram_addr[5]
+set_location_assignment PIN_66 -to sdram_addr[6]
+set_location_assignment PIN_65 -to sdram_addr[7]
+set_location_assignment PIN_64 -to sdram_addr[8]
+set_location_assignment PIN_60 -to sdram_addr[9]
+set_location_assignment PIN_75 -to sdram_addr[10]
+set_location_assignment PIN_59 -to sdram_addr[11]
+set_location_assignment PIN_43 -to sdram_clk
+set_location_assignment PIN_73 -to sdram_ba[0]
+set_location_assignment PIN_74 -to sdram_ba[1]
+set_location_assignment PIN_70 -to sdram_cas_n
+set_location_assignment PIN_58 -to sdram_cke
+set_location_assignment PIN_71 -to sdram_ras_n
+set_location_assignment PIN_69 -to sdram_we_n
+set_location_assignment PIN_72 -to sdram_cs_n
+set_location_assignment PIN_42 -to sdram_dqm[0]
+set_location_assignment PIN_55 -to sdram_dqm[1]
+set_location_assignment PIN_87 -to led[1]
+set_location_assignment PIN_86 -to led[2]
+set_location_assignment PIN_13 -to DATA0
+set_location_assignment PIN_12 -to DCLK
+set_location_assignment PIN_8 -to SCE
+set_location_assignment PIN_6 -to SDO
+set_location_assignment PIN_3 -to out_port_from_the_ili_rs
+set_location_assignment PIN_1 -to out_port_from_the_ili_nwr
+set_location_assignment PIN_113 -to out_port_from_the_ili_nrst
+set_location_assignment PIN_143 -to out_port_from_the_ili_nrd
+set_location_assignment PIN_114 -to out_port_from_the_ili_ncs
+set_location_assignment PIN_141 -to out_port_from_the_ili_db[0]
+set_location_assignment PIN_137 -to out_port_from_the_ili_db[1]
+set_location_assignment PIN_135 -to out_port_from_the_ili_db[2]
+set_location_assignment PIN_132 -to out_port_from_the_ili_db[3]
+set_location_assignment PIN_128 -to out_port_from_the_ili_db[4]
+set_location_assignment PIN_125 -to out_port_from_the_ili_db[5]
+set_location_assignment PIN_121 -to out_port_from_the_ili_db[6]
+set_location_assignment PIN_119 -to out_port_from_the_ili_db[7]
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE "0 MHz" -to DCLK
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_location_assignment PIN_23 -to CLOCK_50
+set_location_assignment PIN_25 -to Q_KEY
+set_location_assignment PIN_28 -to SDRAM_DQ[0]
+set_location_assignment PIN_30 -to SDRAM_DQ[1]
+set_location_assignment PIN_31 -to SDRAM_DQ[2]
+set_location_assignment PIN_32 -to SDRAM_DQ[3]
+set_location_assignment PIN_33 -to SDRAM_DQ[4]
+set_location_assignment PIN_34 -to SDRAM_DQ[5]
+set_location_assignment PIN_38 -to SDRAM_DQ[6]
+set_location_assignment PIN_39 -to SDRAM_DQ[7]
+set_location_assignment PIN_54 -to SDRAM_DQ[8]
+set_location_assignment PIN_53 -to SDRAM_DQ[9]
+set_location_assignment PIN_52 -to SDRAM_DQ[10]
+set_location_assignment PIN_51 -to SDRAM_DQ[11]
+set_location_assignment PIN_50 -to SDRAM_DQ[12]
+set_location_assignment PIN_49 -to SDRAM_DQ[13]
+set_location_assignment PIN_46 -to SDRAM_DQ[14]
+set_location_assignment PIN_44 -to SDRAM_DQ[15]
+set_location_assignment PIN_76 -to SDRAM_ADDR[0]
+set_location_assignment PIN_77 -to SDRAM_ADDR[1]
+set_location_assignment PIN_80 -to SDRAM_ADDR[2]
+set_location_assignment PIN_83 -to SDRAM_ADDR[3]
+set_location_assignment PIN_68 -to SDRAM_ADDR[4]
+set_location_assignment PIN_67 -to SDRAM_ADDR[5]
+set_location_assignment PIN_66 -to SDRAM_ADDR[6]
+set_location_assignment PIN_65 -to SDRAM_ADDR[7]
+set_location_assignment PIN_64 -to SDRAM_ADDR[8]
+set_location_assignment PIN_60 -to SDRAM_ADDR[9]
+set_location_assignment PIN_75 -to SDRAM_ADDR[10]
+set_location_assignment PIN_59 -to SDRAM_ADDR[11]
+set_location_assignment PIN_43 -to SDRAM_CLK
+set_location_assignment PIN_73 -to SDRAM_BA[0]
+set_location_assignment PIN_74 -to SDRAM_BA[1]
+set_location_assignment PIN_70 -to SDRAM_CAS_N
+set_location_assignment PIN_58 -to SDRAM_CKE
+set_location_assignment PIN_71 -to SDRAM_RAS_N
+set_location_assignment PIN_69 -to SDRAM_WE_N
+set_location_assignment PIN_72 -to SDRAM_CS_N
+set_location_assignment PIN_42 -to SDRAM_DQM[0]
+set_location_assignment PIN_55 -to SDRAM_DQM[1]
+set_location_assignment PIN_3 -to ILI_RS
+set_location_assignment PIN_1 -to ILI_nWR
+set_location_assignment PIN_113 -to ILI_nRST
+set_location_assignment PIN_143 -to ILI_nRD
+set_location_assignment PIN_114 -to ILI_nCS
+set_location_assignment PIN_141 -to ILI_DB[0]
+set_location_assignment PIN_137 -to ILI_DB[1]
+set_location_assignment PIN_135 -to ILI_DB[2]
+set_location_assignment PIN_132 -to ILI_DB[3]
+set_location_assignment PIN_128 -to ILI_DB[4]
+set_location_assignment PIN_125 -to ILI_DB[5]
+set_location_assignment PIN_121 -to ILI_DB[6]
+set_location_assignment PIN_119 -to ILI_DB[7]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"

@@ -1,0 +1,292 @@
+/*-------------------------------------------------------------------------
+This confidential and proprietary software may be only used as authorized
+by a licensing agreement from CrazyBingo.
+(C) COPYRIGHT 2012 CrazyBingo. ALL RIGHTS RESERVED
+Filename			:		sdram_vga_test.v
+Author				:		CrazyBingo
+Data				:		2012-03-18
+Version				:		1.0
+Description			:		sdram test with uart interface.
+Modification History	:
+Data			By			Version			Change Description
+===========================================================================
+12/03/19		CrazyBingo	1.0				Original
+12/03/21		CrazyBingo	1.1				Modification
+12/05/09		CrazyBingo	1.2				Modification
+12/05/13		CrazyBingo	1.3				Modification
+--------------------------------------------------------------------------*/
+`timescale 1ns / 1ps
+module sdram_vga_test
+(
+	//input			clk_27,			//27MHz
+	input			clk_50,			//global clock 50MHz
+	input			rst_n,			//global reset
+	
+	//sdram control
+	output			sdram_clk,		//sdram clock
+	output			sdram_cke,		//sdram clock enable
+	output			sdram_cs_n,		//sdram chip select
+	output			sdram_we_n,		//sdram write enable
+	output			sdram_cas_n,	//sdram column address strobe
+	output			sdram_ras_n,	//sdram row address strobe
+	output			sdram_udqm,		//sdram data enable (H:8)
+	output			sdram_ldqm,		//sdram data enable (L:8)
+	output	[1:0]	sdram_ba,		//sdram bank address
+	output	[11:0]	sdram_addr,		//sdram address
+	inout	[15:0]	sdram_data,		//sdram data
+	
+	//lcd port
+	output			lcd_dclk,		//lcd pixel clock			
+	output			lcd_hs,			//lcd horizontal sync 
+	output			lcd_vs,			//lcd vertical sync
+	output			lcd_sync,		//lcd sync
+	output			lcd_blank,		//lcd blank(L:blank)
+	output	[9:0]	lcd_red,		//lcd red data
+	output	[9:0]	lcd_green,		//lcd green data
+	output	[9:0]	lcd_blue,		//lcd blue data
+	
+	//cmos interface
+	output			i2c_sclk,		//cmos i2c clock
+	inout			i2c_sdat,		//cmos i2c data
+	input			cmos_vsync,		//cmos vsync
+	input			cmos_href,		//cmos hsync refrence
+	input			cmos_pclk,		//cmos pxiel clock
+	output			cmos_xclk,		//cmos externl clock
+	input	[7:0]	cmos_data,		//cmos data
+	output			cmos_rst_n,		//cmos reset
+	output			cmos_pwdn,		//cmos pwer down
+	
+//	//intel 8080 interface
+//	input			sys_cs,			//sys chip enable
+//	input			sys_rs,			//sys record/statement
+//	input			sys_we,			//sys write enable
+//	input	[15:0]	sys_data_in,	//sys data input
+
+	input	[1:0]	key_data,	//key data input
+	output	[7:0]	led_data,	//led data input
+	output	[6:0]	oSEG0,		//SEG0
+	output	[6:0]	oSEG1,		//SEG1
+	output	[6:0]	oSEG4,		//SEG0
+	output	[6:0]	oSEG5,		//SEG1
+	output	[6:0]	oSEG6,		//SEG0
+	output	[6:0]	oSEG7		//SEG1		
+);
+
+//---------------------------------------------
+wire	clk_vga;
+wire	clk_ref;
+wire	clk_refout;
+wire	sys_rst_n;
+system_ctrl	u_system_ctrl
+(
+	.clk				(clk_50),
+	.rst_n				(rst_n),
+	
+	.sys_rst_n			(sys_rst_n),
+	.clk_c0				(clk_vga),		//25MHz
+	.clk_c1				(clk_ref),		//125MHz	-3ns
+	.clk_c2				(clk_refout)	//125MHz
+);
+
+//----------------------------------------------
+wire			sys_we;				//fifo write enable
+wire	[15:0]	sys_data_in;   		//fifo data input
+wire			sys_rd;        		//fifo read enable
+wire	[15:0]	sys_data_out;  		//fifo data output
+wire			lcd_framesync;		//lcd frame sync
+wire			sdram_init_done;	//sdram init done
+wire			frame_write_done;	//sdram write frame done
+wire			frame_read_done;	//sdram read frame done
+wire	[1:0]	wr_bank;			//sdram write bank
+wire	[1:0]	rd_bank;			//sdram read bank
+wire			wr_load;			//sdram write address reset
+wire			rd_load;			//sdram read address reset
+sdram_2fifo_top	u_sdram_2fifo_top
+(
+	//global clock
+	.clk_ref			(clk_ref),			//sdram	reference clock
+	.clk_refout			(clk_refout),		//sdram clk	input 
+	.clk_write			(clk_vga),			//fifo data write clock
+	.clk_read			(clk_vga),			//fifo data read clock
+	.rst_n				(sys_rst_n),		//global reset
+	
+	//sdram interface
+	.sdram_clk			(sdram_clk),		//sdram clock	
+	.sdram_cke			(sdram_cke),		//sdram clock enable	
+	.sdram_cs_n			(sdram_cs_n),		//sdram chip select	
+	.sdram_we_n			(sdram_we_n),		//sdram write enable	
+	.sdram_ras_n		(sdram_ras_n),		//sdram column address strobe	
+	.sdram_cas_n		(sdram_cas_n),		//sdram row address strobe	
+	.sdram_ba			(sdram_ba),			//sdram data enable (H:8)    
+	.sdram_addr			(sdram_addr),		//sdram data enable (L:8)	
+	.sdram_data			(sdram_data),		//sdram bank address	
+	.sdram_udqm			(sdram_udqm),		//sdram address	
+	.sdram_ldqm			(sdram_ldqm),		//sdram data
+	
+	//user interface
+	//burst and addr
+	.wr_length			(9'd256),			//sdram write burst length
+	.rd_length			(9'd256),			//sdram read burst length
+	.wr_addr			({wr_bank,20'd0}),			//sdram start write address
+	.wr_max_addr		({wr_bank,20'd307200}),		//sdram max write address
+	.wr_load			(wr_load),			//sdram write address reset
+	.rd_addr			({rd_bank,20'd0}),			//sdram start read address
+	.rd_max_addr		({rd_bank,20'd307200}),		//sdram max read address
+	.rd_load			(rd_load),			//sdram read address reset
+	
+	//dcfifo interface
+	.sdram_init_done	(sdram_init_done),	//sdram init done
+	.frame_write_done	(frame_write_done),	//sdram write one frame
+	.frame_read_done	(frame_read_done),	//sdram read one frame
+	.sys_we				(sys_we),			//fifo write enable
+	.sys_data_in		(sys_data_in),		//fifo data input
+	.sys_rd				(sys_rd),			//fifo read enable
+	.sys_data_out		(sys_data_out),		//fifo data output
+	.data_valid			(lcd_framesync)		//system data output enable
+);
+
+//-----------------------------
+sdbank_switch	u_sdbank_switch
+(
+	.clk				(clk_vga),
+	.rst_n				(sys_rst_n),
+	
+	.bank_valid			(cmos_valid),
+	.frame_write_done	(frame_write_done),
+	.frame_read_done	(frame_read_done),
+	
+	.wr_bank			(wr_bank),
+	.rd_bank			(rd_bank),
+	.wr_load			(wr_load),
+	.rd_load			(rd_load)
+);
+
+//-----------------------------
+//data_generate	data_generate
+//(
+//	.clk				(clk_vga),		
+//	.rst_n				(sys_rst_n),     
+//	
+//	.sdram_init_done	(sdram_init_done),
+//	.sys_data			(sys_data_in),	
+//	.sys_we				(sys_we),
+//	.wr_load			(wr_load),
+//	.rd_load			(rd_load),
+//	.wr_bank			(wr_bank),			
+//    .rd_bank			(rd_bank)
+//);   
+
+//-----------------------------
+assign	cmos_rst_n = 1'b1;		//cmos work state (5ms delay for sccb config)
+assign	cmos_pwdn = 1'b0;		//cmos power on
+//assign	cmos_xclk = clk_vga;	//25MHz
+wire	[7:0]	I2C_RDATA;
+wire	[7:0]	LUT_INDEX;
+wire			Config_Done;			
+I2C_AV_Config	u_I2C_AV_Config 
+(
+	//Global clock
+	.iCLK		(clk_vga),		//25MHz
+	.iRST_N		(sys_rst_n),	//Global Reset
+	
+	//I2C Side
+	.I2C_SCLK	(i2c_sclk),		//I2C CLOCK
+	.I2C_SDAT	(i2c_sdat),		//I2C DATA
+	
+	//CMOS Signal
+	.Config_Done(Config_Done),
+	.I2C_RDATA	(I2C_RDATA),	//CMOS ID
+	.LUT_INDEX	(LUT_INDEX)
+);
+
+Seg7_lut	u5	(	LUT_INDEX[7:4],	oSEG5	);
+Seg7_lut	u4	(	LUT_INDEX[3:0],	oSEG4	);
+Seg7_lut	u1	(	I2C_RDATA[7:4],	oSEG1	);
+Seg7_lut	u0	(	I2C_RDATA[3:0],	oSEG0	);
+                          
+wire			cmos_valid;		//data valid, or address restart
+wire	[7:0]	cmos_fps_data;
+CMOS_Capture	u_CMOS_Capture
+(
+	//Global Clock
+	.iCLK				(clk_vga),			//25MHz
+	.iRST_N				(sys_rst_n),
+	
+	//I2C Initilize Done
+	.Init_Done			(Config_Done & sdram_init_done),	//Init Done
+	
+	//Sensor Interface
+	.CMOS_XCLK			(cmos_xclk),	//25MHz
+	.CMOS_PCLK			(cmos_pclk),	//25MHz
+	.CMOS_iDATA			(cmos_data),    //CMOS Data
+	.CMOS_VSYNC			(cmos_vsync),   //L: Vaild
+	.CMOS_HREF			(cmos_href), 	//H: Vaild
+	                                    
+	//Ouput Sensor Data                 
+	.CMOS_oCLK			(sys_we),		//Data PCLK
+	.CMOS_oDATA			(sys_data_in),  //16Bits RGB
+	.CMOS_VALID			(cmos_valid),	//Data Enable
+	.CMOS_FPS_DATA		(cmos_fps_data)
+);
+
+Seg7_lut	u7	(	cmos_fps_data[7:4],	oSEG7	);	//fsp rate
+Seg7_lut	u6	(	cmos_fps_data[3:0],	oSEG6	);	//fps rate
+
+
+wire	[7:0]	alpha_data;
+assign	led_data = alpha_data;
+alpha_control	u_alpha_control
+(
+	.clk			(clk_vga),
+	.rst_n			(sys_rst_n),
+	
+	.key_data		(key_data),
+	.alpha_data		(alpha_data)
+);
+
+//---------------------------------
+//display on lcd
+wire	[10:0]	lcd_xpos;
+wire	[10:0]	lcd_ypos;
+wire	[15:0]	lcd_data;
+lcd_display	U_lcd_display
+(
+	.clk			(clk_vga),
+	.rst_n			(sys_rst_n),
+    
+    .alpha_data		(alpha_data),
+	.lcd_xpos		(lcd_xpos),
+	.lcd_ypos		(lcd_ypos),
+	.lcd_data_in	(sys_data_out),	
+	.lcd_data		(lcd_data)
+);
+				
+//-----------------------------
+lcd_top	u_lcd_top
+(
+	//global clock
+	.clk			(clk_vga),	
+	.rst_n			(sys_rst_n),	
+
+	//lcd interface
+	.lcd_blank		(lcd_blank),
+	.lcd_sync		(lcd_sync),
+	.lcd_dclk		(lcd_dclk),
+	.lcd_hs			(lcd_hs),		
+	.lcd_vs			(lcd_vs),	
+	.lcd_en			(),	
+	.lcd_rgb		({lcd_red[9:5], lcd_green[9:4] ,lcd_blue[9:5]}),
+
+	//user interface
+	.lcd_request	(sys_rd),
+	.lcd_framesync	(lcd_framesync),
+	.lcd_data		(lcd_data),
+	.lcd_xpos		(lcd_xpos),
+	.lcd_ypos		(lcd_ypos)
+);
+assign	lcd_red[4:0] = 5'd0;
+assign	lcd_green[3:0] = 4'd0;
+assign	lcd_blue[4:0] = 5'd0;
+
+
+endmodule

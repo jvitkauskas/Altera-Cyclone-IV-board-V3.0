@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.nj.launch.HWLaunch">
+<booleanAttribute key="com.altera.nj.launch.VALIDATE_HW_SYSID" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/TFT_software.elf"/>
+<booleanAttribute key="com.altera.nj.launch.LAUNCH_FS2" value="false"/>
+<booleanAttribute key="com.altera.nj.launch.USE_ALTERA_GENERATED_GDB_SCRIPT" value="true"/>
+<intAttribute key="com.altera.nj.launch.DEBUG_TARGET" value="1"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.GDB_INIT" value="E:\AA_IO_BD\new\2.4TFT_ok\ColorbarforE4\software\TFT_software_syslib\Debug\system_description\generated.gdb"/>
+<stringAttribute key="com.altera.nj.launch.PTF_NAME" value="E:\AA_IO_BD\new\2.4TFT_ok\ColorbarforE4\nios32.ptf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="TFT_software"/>
+<stringAttribute key="com.altera.nj.launch.PTF_CPU" value="cpu"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.altera.nj.debug.core.NJGDBDebugger"/>
+</launchConfiguration>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="613" key="DIALOG_WIDTH"/>
+		<item value="265" key="DIALOG_Y_ORIGIN"/>
+		<item value="653" key="DIALOG_X_ORIGIN"/>
+		<item value="375" key="DIALOG_HEIGHT"/>
+		<item value="1|微软雅黑|9|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+	</section>
+	<section name="org.eclipse.ui.views.problem">
+	</section>
+</section>
